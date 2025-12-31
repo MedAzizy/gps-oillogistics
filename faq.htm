@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frequently Asked Questions | GPS International</title>
+    <meta name="description" content="Find answers to common questions about GPS International's oil and gas logistics services, operations, and partnerships.">
+    <meta name="author" content="GPS International">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==================== CSS RESET & VARIABLES ==================== */
+        :root {
+            /* Premium Color Palette */
+            --color-primary: #1a365d;
+            --color-secondary: #2d5aa0;
+            --color-accent: #f97316;
+            --color-dark: #0f172a;
+            --color-light: #f8fafc;
+            --color-success: #059669;
+            --color-warning: #f59e0b;
+            --color-info: #0891b2;
+            --color-total: #1e40af;
+            --color-mabrouk: #dc2626;
+            --color-baker: #7c3aed;
+            --color-technip: #059669;
+            --color-bg-light: #f1f5f9;
+            
+            /* Gradient Colors */
+            --gradient-primary: linear-gradient(135deg, #1a365d 0%, #2d5aa0 100%);
+            --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --gradient-accent: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-xxl: 3rem;
+            --space-xxxl: 4rem;
+            
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-heading: 'Poppins', 'Arial Rounded MT Bold', sans-serif;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+            --shadow-xxl: 0 25px 50px -12px rgba(0,0,0,0.25);
+            
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 30px;
+            --radius-full: 9999px;
+            
+            /* Transitions */
+            --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.7;
+            color: #334155;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+        
+        /* ==================== TYPOGRAPHY ==================== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--color-dark);
+            letter-spacing: -0.025em;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: var(--space-md);
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--color-accent);
+            border-radius: var(--radius-full);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--space-xxl);
+        }
+        
+        .section-title:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        p {
+            margin-bottom: var(--space-md);
+            font-size: 1.125rem;
+            color: #475569;
+        }
+        
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--color-primary);
+        }
+        
+        a {
+            color: var(--color-secondary);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            font-weight: 500;
+        }
+        
+        a:hover {
+            color: var(--color-accent);
+        }
+        
+        /* ==================== LAYOUT & CONTAINER ==================== */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+        
+        .section {
+            padding: var(--space-xxxl) 0;
+            position: relative;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* ==================== HEADER & NAVIGATION ==================== */
+        .site-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+            box-shadow: var(--shadow-sm);
+            padding: var(--space-sm) 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: var(--space-sm);
+            position: relative;
+        }
+        
+        .logo-icon {
+            background: var(--gradient-primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-main {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .logo-tagline {
+            font-size: 0.75rem;
+            color: #64748b;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Main Navigation */
+        .primary-navigation {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: var(--space-sm);
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            color: #475569;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            transition: all var(--transition-fast);
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width var(--transition-fast);
+        }
+        
+        .nav-link:hover {
+            color: var(--color-primary);
+        }
+        
+        .nav-link:hover:before {
+            width: 20px;
+        }
+        
+        .nav-link.active {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+        
+        .nav-link.active:before {
+            width: 20px;
+        }
+        
+        .nav-icon {
+            font-size: 1.1rem;
+            opacity: 0.7;
+        }
+        
+        .nav-link.active .nav-icon {
+            opacity: 1;
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: var(--gradient-primary);
+            border: none;
+            color: white;
+            font-size: 1.25rem;
+            cursor: pointer;
+            padding: var(--space-sm);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+            width: 44px;
+            height: 44px;
+        }
+        
+        .mobile-menu-toggle:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Secondary Navigation */
+        .secondary-navigation {
+            background: rgba(241, 245, 249, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(226, 232, 240, 0.5);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+        }
+        
+        .secondary-nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: var(--space-lg);
+            padding: var(--space-sm) 0;
+        }
+        
+        .secondary-nav-link {
+            color: #64748b;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .secondary-nav-link:hover {
+            color: var(--color-accent);
+        }
+        
+        .secondary-nav-link.active {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+        
+        /* ==================== HERO SECTION ==================== */
+        .hero-section {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, 
+                rgba(26, 54, 93, 0.9) 0%,
+                rgba(45, 90, 160, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+        }
+        
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--color-accent) 0%,
+                #fbbf24 50%,
+                var(--color-accent) 100%);
+            z-index: 2;
+        }
+        
+        .hero-container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: var(--space-sm) var(--space-xl);
+            border-radius: var(--radius-full);
+            margin-bottom: var(--space-xl);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .badge-icon {
+            color: var(--color-accent);
+            font-size: 1.25rem;
+        }
+        
+        .badge-text {
+            font-weight: 600;
+            color: white;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: var(--space-lg);
+            line-height: 1.1;
+            color: white;
+            background: linear-gradient(135deg, white, rgba(255, 255, 255, 0.9));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            display: block;
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+            font-weight: 600;
+        }
+        
+        .hero-description {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto var(--space-xxl);
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+        }
+        
+        /* ==================== FAQ SECTION ==================== */
+        .faq-section {
+            background: white;
+            position: relative;
+        }
+        
+        .faq-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent 0%,
+                rgba(226, 232, 240, 0.5) 50%,
+                transparent 100%);
+        }
+        
+        .faq-categories {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xxl);
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            background: white;
+            border: 2px solid #e2e8f0;
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            color: #64748b;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        
+        .category-btn:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+        
+        .category-btn.active {
+            background: var(--gradient-accent);
+            border-color: transparent;
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .faq-grid {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-md);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-fast);
+        }
+        
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .faq-item.active {
+            border-color: var(--color-accent);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .faq-question {
+            padding: var(--space-xl);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+        }
+        
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: var(--color-primary);
+            flex: 1;
+            padding-right: var(--space-lg);
+        }
+        
+        .faq-icon {
+            color: var(--color-accent);
+            font-size: 1.25rem;
+            transition: transform var(--transition-fast);
+            flex-shrink: 0;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 var(--space-xl);
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            background: #f8fafc;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: var(--space-xl);
+            max-height: 1000px;
+        }
+        
+        .faq-answer p {
+            color: #475569;
+            margin-bottom: var(--space-md);
+        }
+        
+        .faq-answer ul, .faq-answer ol {
+            padding-left: var(--space-xl);
+            margin-bottom: var(--space-md);
+            color: #475569;
+        }
+        
+        .faq-answer li {
+            margin-bottom: var(--space-sm);
+        }
+        
+        /* Quick Stats */
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-xxxl);
+            padding-top: var(--space-xxxl);
+            border-top: 1px solid rgba(226, 232, 240, 0.5);
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: var(--space-xl);
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .stat-label {
+            color: #64748b;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* ==================== CONTACT PROMPT ==================== */
+        .contact-prompt {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            position: relative;
+        }
+        
+        .contact-prompt:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent 0%,
+                rgba(226, 232, 240, 0.5) 50%,
+                transparent 100%);
+        }
+        
+        .prompt-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .prompt-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-full);
+            background: var(--gradient-accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-lg);
+            font-size: 2rem;
+        }
+        
+        /* ==================== CTA SECTION ==================== */
+        .cta-section {
+            background: linear-gradient(135deg, 
+                rgba(15, 23, 42, 0.95) 0%,
+                rgba(30, 41, 59, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--color-accent) 0%,
+                var(--color-secondary) 100%);
+        }
+        
+        .cta-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-title {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: var(--space-lg);
+            background: linear-gradient(135deg, white, rgba(255, 255, 255, 0.9));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .cta-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.25rem;
+            margin-bottom: var(--space-xxl);
+        }
+        
+        .cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-lg) var(--space-xxl);
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: left 0.7s;
+        }
+        
+        .btn:hover:before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-accent), #fb923c);
+            color: white;
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(249, 115, 22, 0.4);
+            background: linear-gradient(135deg, #fb923c, var(--color-accent));
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-icon {
+            transition: transform var(--transition-fast);
+        }
+        
+        .btn:hover .btn-icon {
+            transform: translateX(5px);
+        }
+        
+        /* ==================== FOOTER ==================== */
+        .site-footer {
+            background: var(--color-dark);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .site-footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--color-accent) 0%,
+                var(--color-secondary) 100%);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-xxl);
+            padding: var(--space-xxxl) 0 var(--space-xxl);
+        }
+        
+        .footer-section {
+            position: relative;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .footer-logo-icon {
+            background: linear-gradient(135deg, white, #e2e8f0);
+            color: var(--color-primary);
+            width: 50px;
+            height: 50px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .footer-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .footer-title {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--color-accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--space-sm);
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            transition: all var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-xs) 0;
+            font-size: 0.95rem;
+        }
+        
+        .footer-link:hover {
+            color: var(--color-accent);
+            transform: translateX(5px);
+        }
+        
+        .footer-address {
+            color: rgba(255, 255, 255, 0.7);
+            font-style: normal;
+            line-height: 1.6;
+        }
+        
+        .footer-address strong {
+            color: white;
+            display: block;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .contact-icon {
+            color: var(--color-accent);
+            min-width: 20px;
+        }
+        
+        .contact-link {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .contact-link:hover {
+            color: var(--color-accent);
+        }
+        
+        .global-offices {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+        
+        .office-item {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+        
+        .office-item strong {
+            color: white;
+            display: block;
+            margin-bottom: 2px;
+        }
+        
+        .footer-bottom {
+            padding: var(--space-xl) 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* ==================== BACK TO TOP ==================== */
+        .back-to-top {
+            position: fixed;
+            bottom: var(--space-xl);
+            right: var(--space-xl);
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--color-accent), #fb923c);
+            color: white;
+            border: none;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            z-index: 1001;
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(249, 115, 22, 0.4);
+        }
+        
+        /* ==================== RESPONSIVE DESIGN ==================== */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .container {
+                padding: 0 var(--space-lg);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.25rem; }
+            h3 { font-size: 1.5rem; }
+            
+            .hero-title { 
+                font-size: 3rem;
+                line-height: 1.2;
+            }
+            
+            .hero-description {
+                font-size: 1.25rem;
+            }
+            
+            .cta-title { font-size: 2.5rem; }
+            
+            .faq-question h3 {
+                font-size: 1.125rem;
+            }
+            
+            .secondary-nav-list {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: var(--space-md);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .primary-navigation {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: var(--space-lg);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all var(--transition-normal);
+                box-shadow: var(--shadow-xl);
+                border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+                border-top: 1px solid rgba(226, 232, 240, 0.5);
+            }
+            
+            .primary-navigation.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                gap: var(--space-xs);
+            }
+            
+            .nav-link {
+                padding: var(--space-md);
+                justify-content: center;
+            }
+            
+            .hero-section {
+                min-height: auto;
+                padding: 120px 0 var(--space-xxxl);
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.125rem;
+            }
+            
+            .faq-categories {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .category-btn {
+                justify-content: center;
+            }
+            
+            .faq-question {
+                padding: var(--space-lg);
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: var(--space-lg);
+            }
+            
+            .quick-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-actions {
+                flex-direction: column;
+                align-items: center;
+                gap: var(--space-md);
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 320px;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 { font-size: 2.25rem; }
+            h2 { font-size: 2rem; }
+            h3 { font-size: 1.375rem; }
+            
+            .hero-title { font-size: 2.25rem; }
+            .cta-title { font-size: 2rem; }
+            
+            .faq-question {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-sm);
+            }
+            
+            .faq-question h3 {
+                padding-right: 0;
+            }
+            
+            .faq-icon {
+                align-self: flex-end;
+            }
+            
+            .back-to-top {
+                bottom: var(--space-md);
+                right: var(--space-md);
+                width: 50px;
+                height: 50px;
+            }
+        }
+        
+        /* ==================== ANIMATIONS ==================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .faq-item {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        /* Animation delays for FAQ items */
+        .faq-item:nth-child(1) { animation-delay: 0.1s; }
+        .faq-item:nth-child(2) { animation-delay: 0.2s; }
+        .faq-item:nth-child(3) { animation-delay: 0.3s; }
+        .faq-item:nth-child(4) { animation-delay: 0.4s; }
+        .faq-item:nth-child(5) { animation-delay: 0.5s; }
+        .faq-item:nth-child(6) { animation-delay: 0.6s; }
+        
+        /* Smooth accordion animation */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .faq-answer {
+            animation: slideDown 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="page-faq">
+    <!-- ==================== HEADER ==================== -->
+    <header class="site-header" role="banner">
+        <div class="container header-container">
+            <!-- Logo -->
+            <div class="logo-section">
+                <a href="index.htm" class="logo-link" aria-label="GPS International Home">
+                    <div class="logo-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">GPS International</span>
+                        <span class="logo-tagline">Global Project Services</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Main Navigation -->
+            <nav class="primary-navigation" id="primary-navigation" aria-label="Primary Navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.htm" class="nav-link" data-page="home">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.htm" class="nav-link" data-page="services">
+                            <i class="fas fa-cogs nav-icon"></i>
+                            <span>Services</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="references.htm" class="nav-link" data-page="references">
+                            <i class="fas fa-star nav-icon"></i>
+                            <span>References</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.htm" class="nav-link" data-page="contact">
+                            <i class="fas fa-envelope nav-icon"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="intranet.htm" class="nav-link" data-page="intranet">
+                            <i class="fas fa-network-wired nav-icon"></i>
+                            <span>Intranet</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Secondary Navigation -->
+        <nav class="secondary-navigation" aria-label="Secondary Navigation">
+            <div class="container">
+                <ul class="secondary-nav-list">
+                    <li class="secondary-nav-item">
+                        <a href="news.htm" class="secondary-nav-link" data-page="news">
+                            <i class="fas fa-newspaper"></i>
+                            <span>News</span>
+                        </a>
+                    </li>
+                    <li class="secondary-nav-item">
+                        <a href="company.htm" class="secondary-nav-link" data-page="company">
+                            <i class="fas fa-building"></i>
+                            <span>Company</span>
+                        </a>
+                    </li>
+                    <li class="secondary-nav-item">
+                        <a href="why-zarzis.htm" class="secondary-nav-link" data-page="why-zarzis">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Why Zarzis?</span>
+                        </a>
+                    </li>
+                    <li class="secondary-nav-item">
+                        <a href="partners.htm" class="secondary-nav-link" data-page="partners">
+                            <i class="fas fa-handshake"></i>
+                            <span>Partners</span>
+                        </a>
+                    </li>
+                    <li class="secondary-nav-item">
+                        <a href="faq.htm" class="secondary-nav-link active" data-page="faq" aria-current="page">
+                            <i class="fas fa-question-circle"></i>
+                            <span>FAQ</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section" aria-labelledby="hero-title">
+        <div class="container hero-container">
+            <div class="hero-badge fade-in-up">
+                <i class="fas fa-question-circle badge-icon"></i>
+                <span class="badge-text">Find Your Answers</span>
+            </div>
+            <h1 id="hero-title" class="hero-title fade-in-up">
+                <span class="hero-subtitle">Frequently Asked Questions</span>
+                Answers You Need
+            </h1>
+            <p class="hero-description fade-in-up" style="animation-delay: 0.1s;">
+                Everything you need to know about GPS International's services, operations, and partnerships. 
+                Can't find what you're looking for? Contact our team directly.
+            </p>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ SECTION ==================== -->
+    <section class="faq-section" aria-labelledby="faq-title">
+        <div class="container">
+            <h2 id="faq-title" class="section-title fade-in-up">Common Questions</h2>
+            <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
+                Browse through our frequently asked questions organized by category
+            </p>
+            
+            <!-- FAQ Categories -->
+            <div class="faq-categories fade-in-up">
+                <button class="category-btn active" data-category="all">
+                    <i class="fas fa-globe"></i>
+                    <span>All Questions</span>
+                </button>
+                <button class="category-btn" data-category="services">
+                    <i class="fas fa-cogs"></i>
+                    <span>Services</span>
+                </button>
+                <button class="category-btn" data-category="operations">
+                    <i class="fas fa-industry"></i>
+                    <span>Operations</span>
+                </button>
+                <button class="category-btn" data-category="logistics">
+                    <i class="fas fa-ship"></i>
+                    <span>Logistics</span>
+                </button>
+                <button class="category-btn" data-category="partnership">
+                    <i class="fas fa-handshake"></i>
+                    <span>Partnership</span>
+                </button>
+            </div>
+            
+            <!-- FAQ Grid -->
+            <div class="faq-grid">
+                <!-- FAQ Item 1 -->
+                <article class="faq-item fade-in-up" data-category="services">
+                    <div class="faq-question">
+                        <h3>What logistics services does GPS International provide?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>GPS International offers comprehensive oil and gas logistics services including:</p>
+                        <ul>
+                            <li><strong>Marine Logistics:</strong> Vessels agency, stevedoring, and offshore support</li>
+                            <li><strong>Heavy Transport:</strong> Specialized transport for oversized equipment</li>
+                            <li><strong>Supply Base Management:</strong> Full management of logistics hubs</li>
+                            <li><strong>Customs & Freight:</strong> International freight forwarding and customs clearance</li>
+                            <li><strong>Project Management:</strong> End-to-end project logistics management</li>
+                            <li><strong>Engineering Support:</strong> Technical and engineering services</li>
+                        </ul>
+                    </div>
+                </article>
+                
+                <!-- FAQ Item 2 -->
+                <article class="faq-item fade-in-up" data-category="operations">
+                    <div class="faq-question">
+                        <h3>Where are your main operational bases located?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>GPS International operates from strategic locations:</p>
+                        <ul>
+                            <li><strong>Tunisia Headquarters:</strong> Zarzis Supply Base - Our main operational hub</li>
+                            <li><strong>Libya:</strong> WGPS Libya in Tripoli</li>
+                            <li><strong>Iraq:</strong> GPS Iraq in Erbil</li>
+                            <li><strong>Regional Coverage:</strong> North Africa, Mediterranean, and Middle East</li>
+                        </ul>
+                        <p>Our Zarzis base is strategically positioned as the gateway to North African oil and gas operations with direct access to Mediterranean offshore fields.</p>
+                    </div>
+                </article>
+                
+                <!-- FAQ Item 3 -->
+                <article class="faq-item fade-in-up" data-category="services">
+                    <div class="faq-question">
+                        <h3>Do you handle oversized and heavy equipment transport?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we specialize in oversized and heavy equipment transport with proven capabilities:</p>
+                        <ul>
+                            <li>Transport of equipment up to 165 tons</li>
+                            <li>Desert route planning and development</li>
+                            <li>Permit acquisition and regulatory compliance</li>
+                            <li>Risk management and safety coordination</li>
+                            <li>Route obstacle management (successfully handled 358 obstacles in one project)</li>
+                            <li>Construction of new desert roads when necessary</li>
+                        </ul>
+                        <p>Our most notable project was transporting Rig Galileo III over 450km through challenging Algerian desert terrain.</p>
+                    </div>
+                </article>
+                
+                <!-- FAQ Item 4 -->
+                <article class="faq-item fade-in-up" data-category="logistics">
+                    <div class="faq-question">
+                        <h3>What is your experience in supply base management?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We have extensive experience in supply base management:</p>
+                        <ul>
+                            <li><strong>TOTAL E&P Libya:</strong> Managing Zarzis Supply Base since June 2008</li>
+                            <li><strong>Mabrouk Oil Operations:</strong> Managed Tripoli Marine Base (June 2009 - March 2012)</li>
+                            <li>Dedicated on-site management teams</li>
+                            <li>Advanced inventory management systems</li>
+                            <li>Mobile equipment fleet management</li>
+                            <li>Offshore containers and rigging loft operations</li>
+                            <li>Third-party contractor coordination</li>
+                        </ul>
+                        <p>Our teams provide full base management services including operations, maintenance, and personnel management.</p>
+                    </div>
+                </article>
+                
+                <!-- FAQ Item 5 -->
+                <article class="faq-item fade-in-up" data-category="operations">
+                    <div class="faq-question">
+                        <h3>What safety standards do you follow?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Safety is our top priority. We adhere to:</p>
+                        <ul>
+                            <li>International oil and gas industry safety standards</li>
+                            <li>ISO safety management protocols</li>
+                            <li>Regular safety audits and inspections</li>
+                            <li>Comprehensive risk assessments for all operations</li>
+                            <li>Continuous safety training for all personnel</li>
+                            <li>Emergency response planning and drills</li>
+                            <li>Environmental protection standards</li>
+                        </ul>
+                        <p>We maintain a zero-accident culture and invest heavily in safety equipment, training, and procedures.</p>
+                    </div>
+                </article>
+                
+                <!-- FAQ Item 6 -->
+                <article class="faq-item fade-in-up" data-category="partnership">
+                    <div class="faq-question">
+                        <h3>How do you handle customs clearance and documentation?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our customs clearance services include:</p>
+                        <ul>
+                            <li>Expert knowledge of import/export regulations</li>
+                            <li>Documentation preparation and submission</li>
+                            <li>Duty and tax calculation</li>
+                            <li>Customs bond and guarantee arrangements</li>
+                            <li>Harmonized System (HS) code classification</li>
+                            <li>Clearance for temporary imports</li>
+                            <li>Expedited clearance for critical shipments</li>
+                        </ul>
+                        <p>We have established relationships with customs authorities in all regions we operate, ensuring smooth and efficient clearance processes.</p>
+                    </div>
+                </article>
+                
+                <!-- FAQ Item 7 -->
+                <article class="faq-item fade-in-up" data-category="logistics">
+                    <div class="faq-question">
+                        <h3>What vessels agency services do you provide?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our vessels agency services include:</p>
+                        <ul>
+                            <li>Port call arrangements and coordination</li>
+                            <li>Crew changes and shore passes</li>
+                            <li>Bunkering and provisions arrangements</li>
+                            <li>Customs and immigration clearance for vessels</li>
+                            <li>Port authority liaison</li>
+                            <li>Stevedoring supervision</li>
+                            <li>Waste management and environmental compliance</li>
+                            <li>Emergency response coordination</li>
+                        </ul>
+                        <p>We provide 24/7 vessel support services from our strategically located bases.</p>
+                    </div>
+                </article>
+                
+                <!-- FAQ Item 8 -->
+                <article class="faq-item fade-in-up" data-category="partnership">
+                    <div class="faq-question">
+                        <h3>What are your response times for emergency situations?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We maintain rapid response capabilities:</p>
+                        <ul>
+                            <li><strong>24/7 Operations Center:</strong> Always staffed for immediate response</li>
+                            <li><strong>Emergency Response:</strong> Within 2 hours for critical situations</li>
+                            <li><strong>Equipment Mobilization:</strong> Within 24 hours for standard emergencies</li>
+                            <li><strong>Personnel Deployment:</strong> Within 48 hours to any operational location</li>
+                            <li><strong>Vessel Support:</strong> Within 4 hours for vessel-related emergencies</li>
+                        </ul>
+                        <p>Our emergency response plans are regularly tested and updated. We maintain strategic equipment stockpiles for rapid deployment.</p>
+                    </div>
+                </article>
+                
+                <!-- FAQ Item 9 -->
+                <article class="faq-item fade-in-up" data-category="services">
+                    <div class="faq-question">
+                        <h3>Do you provide engineering and technical support?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide comprehensive engineering support:</p>
+                        <ul>
+                            <li>Engineering design and documentation</li>
+                            <li>Technical specifications development</li>
+                            <li>Quality control and assurance</li>
+                            <li>Safety coordination and risk assessment</li>
+                            <li>Project management support</li>
+                            <li>Logistics planning and optimization</li>
+                            <li>Regulatory compliance assistance</li>
+                            <li>Technical training and supervision</li>
+                        </ul>
+                        <p>Our engineering team has extensive experience with major offshore pipeline projects and complex oil and gas operations.</p>
+                    </div>
+                </article>
+                
+                <!-- FAQ Item 10 -->
+                <article class="faq-item fade-in-up" data-category="partnership">
+                    <div class="faq-question">
+                        <h3>How can we start working with GPS International?</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Starting a partnership with GPS International is straightforward:</p>
+                        <ol>
+                            <li><strong>Initial Consultation:</strong> Contact us to discuss your specific needs</li>
+                            <li><strong>Needs Assessment:</strong> We analyze your logistics requirements</li>
+                            <li><strong>Proposal Development:</strong> We create a customized solution</li>
+                            <li><strong>Presentation:</strong> We present our proposal and capabilities</li>
+                            <li><strong>Contract Finalization:</strong> We finalize terms and agreements</li>
+                            <li><strong>Team Deployment:</strong> We assign a dedicated project team</li>
+                            <li><strong>Implementation:</strong> We begin operations with regular progress updates</li>
+                        </ol>
+                        <p>Contact our business development team to schedule an introductory meeting.</p>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="quick-stats fade-in-up">
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT PROMPT ==================== -->
+    <section class="contact-prompt" aria-labelledby="contact-prompt-title">
+        <div class="container">
+            <div class="prompt-content fade-in-up">
+                <div class="prompt-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h2 id="contact-prompt-title" class="section-title">Still Have Questions?</h2>
+                <p class="lead" style="max-width: 700px; margin: 0 auto var(--space-xl);">
+                    Our team is ready to provide personalized answers to your specific questions. 
+                    Contact us directly for detailed information about our services and capabilities.
+                </p>
+                <div class="cta-actions">
+                    <a href="contact.htm" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact Support</span>
+                    </a>
+                    <a href="tel:+441224015670" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Now</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA SECTION ==================== -->
+    <section class="cta-section" aria-labelledby="cta-title">
+        <div class="container">
+            <div class="cta-content fade-in-up">
+                <div class="cta-text">
+                    <h2 id="cta-title" class="cta-title">Ready to Partner With Us?</h2>
+                    <p class="cta-description">
+                        Join industry leaders who trust GPS International for their logistics needs. 
+                        Let's discuss how we can support your next project.
+                    </p>
+                </div>
+                <div class="cta-actions">
+                    <a href="contact.htm" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        <span>Get a Quote</span>
+                    </a>
+                    <a href="references.htm" class="btn btn-secondary">
+                        <i class="fas fa-star"></i>
+                        <span>View References</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <i class="fas fa-ship"></i>
+                        </div>
+                        <div class="footer-logo-text">
+                            <span class="logo-main">GPS International</span>
+                            <span class="logo-tagline">Global Project Services</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Delivering excellence in oil and gas logistics since 2008. 
+                        Your trusted partner for complex logistics solutions in challenging environments.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <nav aria-label="Footer Navigation">
+                        <ul class="footer-links">
+                            <li><a href="index.htm" class="footer-link"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="services.htm" class="footer-link"><i class="fas fa-cogs"></i> Services</a></li>
+                            <li><a href="references.htm" class="footer-link"><i class="fas fa-star"></i> References</a></li>
+                            <li><a href="faq.htm" class="footer-link active"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                            <li><a href="contact.htm" class="footer-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Information</h3>
+                    <address class="footer-address">
+                        <strong>Tunisia Headquarters:</strong><br>
+                        Parc d'activites economiques de Zarzis<br>
+                        BP 91 - Port de Zarzis 4337<br>
+                        Tunisia
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone contact-icon"></i>
+                                <a href="tel:+441224015670" class="contact-link">+44 1224 015670</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone contact-icon"></i>
+                                <a href="tel:+21622254554" class="contact-link">+216 22 254 554</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope contact-icon"></i>
+                                <a href="mailto:info@gps-oillogistics.com" class="contact-link">info@gps-oillogistics.com</a>
+                            </div>
+                        </div>
+                    </address>
+                </div>
+                
+                <!-- Global Offices -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Global Offices</h3>
+                    <div class="global-offices">
+                        <div class="office-item">
+                            <strong><i class="fas fa-map-marker-alt"></i> Libya:</strong><br>
+                            WGPS Libya - Rashassan, near ElEntelaka Former gas station, Tripoli<br>
+                            <a href="tel:+218213403749" class="contact-link">+218 21 340 3749</a>
+                        </div>
+                        <div class="office-item">
+                            <strong><i class="fas fa-map-marker-alt"></i> Iraq:</strong><br>
+                            GPS Iraq - Justice Tower floor 14, Office 23, Erbil<br>
+                            <a href="tel:+9647504325583" class="contact-link">+964 750 432 5583</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; <span id="current-year">2024</span> GPS International. All rights reserved.</p>
+                    <p>
+                        <a href="privacy.htm" class="footer-link">Privacy Policy</a> | 
+                        <a href="terms.htm" class="footer-link">Terms of Service</a> | 
+                        <a href="sitemap.htm" class="footer-link">Sitemap</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Mobile navigation toggle
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const primaryNav = document.getElementById('primary-navigation');
+            
+            if (mobileToggle && primaryNav) {
+                mobileToggle.addEventListener('click', () => {
+                    const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+                    mobileToggle.setAttribute('aria-expanded', !isExpanded);
+                    mobileToggle.classList.toggle('active');
+                    primaryNav.classList.toggle('active');
+                    document.body.classList.toggle('menu-open');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!primaryNav.contains(e.target) && !mobileToggle.contains(e.target)) {
+                        primaryNav.classList.remove('active');
+                        mobileToggle.setAttribute('aria-expanded', 'false');
+                        mobileToggle.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                    }
+                });
+            }
+            
+            // Back to top button
+            const backToTopBtn = document.querySelector('.back-to-top');
+            
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 500) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
+                });
+                
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Animate elements on scroll
+            const fadeElements = document.querySelectorAll('.fade-in-up');
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        fadeObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => {
+                el.style.animationPlayState = 'paused';
+                fadeObserver.observe(el);
+            });
+            
+            // Set active navigation based on current page
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link, .secondary-nav-link');
+            
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage || 
+                   (currentPage === '' && linkHref === 'index.htm')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            
+            // FAQ Accordion Functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    const isActive = faqItem.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        faqItem.classList.add('active');
+                    }
+                });
+            });
+            
+            // FAQ Category Filtering
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    const category = btn.getAttribute('data-category');
+                    
+                    // Filter FAQ items
+                    faqItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // Auto-open first FAQ item
+            if (faqItems.length > 0) {
+                setTimeout(() => {
+                    faqItems[0].classList.add('active');
+                }, 1000);
+            }
+            
+            // Search functionality (simulated)
+            const searchInput = document.createElement('div');
+            searchInput.innerHTML = `
+                <div class="search-container" style="max-width: 600px; margin: var(--space-xl) auto;">
+                    <div style="position: relative;">
+                        <input type="text" id="faq-search" placeholder="Search for answers..." 
+                               style="width: 100%; padding: var(--space-lg) var(--space-xl); 
+                                      border: 2px solid #e2e8f0; border-radius: var(--radius-full);
+                                      font-size: 1rem; transition: all var(--transition-fast);">
+                        <i class="fas fa-search" style="position: absolute; right: var(--space-xl); 
+                           top: 50%; transform: translateY(-50%); color: #64748b;"></i>
+                    </div>
+                </div>
+            `;
+            
+            // Insert search after hero description
+            const heroDesc = document.querySelector('.hero-description');
+            if (heroDesc) {
+                heroDesc.parentNode.insertBefore(searchInput, heroDesc.nextSibling);
+                
+                // Add search functionality
+                const searchField = document.getElementById('faq-search');
+                if (searchField) {
+                    searchField.addEventListener('input', (e) => {
+                        const searchTerm = e.target.value.toLowerCase().trim();
+                        
+                        if (searchTerm.length > 2) {
+                            faqItems.forEach(item => {
+                                const question = item.querySelector('h3').textContent.toLowerCase();
+                                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                                
+                                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                                    item.style.display = 'block';
+                                    item.style.opacity = '1';
+                                    item.style.transform = 'translateY(0)';
+                                    
+                                    // Highlight search term
+                                    const questionEl = item.querySelector('h3');
+                                    const answerEl = item.querySelector('.faq-answer');
+                                    
+                                    const originalQuestion = questionEl.innerHTML;
+                                    const originalAnswer = answerEl.innerHTML;
+                                    
+                                    questionEl.innerHTML = originalQuestion.replace(
+                                        new RegExp(searchTerm, 'gi'),
+                                        match => `<mark style="background-color: #fef3c7; padding: 2px 4px; border-radius: 4px;">${match}</mark>`
+                                    );
+                                    
+                                    answerEl.innerHTML = originalAnswer.replace(
+                                        new RegExp(searchTerm, 'gi'),
+                                        match => `<mark style="background-color: #fef3c7; padding: 2px 4px; border-radius: 4px;">${match}</mark>`
+                                    );
+                                    
+                                    // Open matching items
+                                    item.classList.add('active');
+                                } else {
+                                    item.style.display = 'none';
+                                }
+                            });
+                            
+                            // Update category buttons
+                            categoryBtns.forEach(btn => btn.classList.remove('active'));
+                            categoryBtns[0].classList.add('active');
+                        } else {
+                            // Reset to default
+                            faqItems.forEach(item => {
+                                item.style.display = 'block';
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                                
+                                // Remove highlights
+                                const questionEl = item.querySelector('h3');
+                                const answerEl = item.querySelector('.faq-answer');
+                                
+                                questionEl.innerHTML = questionEl.textContent;
+                                answerEl.innerHTML = answerEl.textContent;
+                                
+                                // Close all items except first
+                                if (item !== faqItems[0]) {
+                                    item.classList.remove('active');
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+            
+            // Add print FAQ functionality
+            const printBtn = document.createElement('button');
+            printBtn.innerHTML = `
+                <i class="fas fa-print"></i>
+                <span>Print FAQ</span>
+            `;
+            printBtn.className = 'category-btn';
+            printBtn.style.marginLeft = 'auto';
+            printBtn.style.background = 'var(--color-primary)';
+            printBtn.style.color = 'white';
+            printBtn.style.border = 'none';
+            
+            printBtn.addEventListener('click', () => {
+                window.print();
+            });
+            
+            const faqCategories = document.querySelector('.faq-categories');
+            if (faqCategories) {
+                faqCategories.appendChild(printBtn);
+            }
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add keyboard navigation for FAQ
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    
+                    const activeItems = Array.from(faqItems).filter(item => 
+                        item.classList.contains('active')
+                    );
+                    
+                    if (activeItems.length > 0) {
+                        const currentIndex = Array.from(faqItems).indexOf(activeItems[0]);
+                        let nextIndex;
+                        
+                        if (e.key === 'ArrowDown') {
+                            nextIndex = (currentIndex + 1) % faqItems.length;
+                        } else {
+                            nextIndex = (currentIndex - 1 + faqItems.length) % faqItems.length;
+                        }
+                        
+                        // Close current item
+                        faqItems[currentIndex].classList.remove('active');
+                        // Open next item
+                        faqItems[nextIndex].classList.add('active');
+                        
+                        // Scroll into view
+                        faqItems[nextIndex].scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
