@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>GPS International - Global Oil & Gas Logistics Solutions</title>
-    <meta name="description" content="GPS International provides comprehensive oil and gas logistics services from Zarzis, Tunisia to global markets. Trusted by industry leaders.">
+    <title>GPS International | Premium Oil & Gas Logistics Solutions</title>
+    <meta name="description" content="Global leader in oil & gas logistics services. Supply base management, heavy transport, marine operations, and freight forwarding across Africa, Middle East, and Europe.">
     <meta name="author" content="GPS International">
     
     <!-- Font Awesome -->
@@ -13,29 +13,10 @@
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <head>
-    <!-- Favicon GPS Oillogistic - Minimaliste -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-        <!-- Carré avec coins arrondis -->
-        <rect x='15' y='15' width='70' height='70' rx='15' fill='%231a365d'/>
-        
-        <!-- G stylisée -->
-        <text x='50' y='65' 
-              font-family='Helvetica, Arial, sans-serif' 
-              font-size='40' 
-              font-weight='800' 
-              fill='white' 
-              text-anchor='middle'
-              letter-spacing='-1'>G</text>
-        
-        <!-- Barre horizontale (logistique) -->
-        <rect x='30' y='45' width='40' height='6' fill='%23f97316'/>
-        
-        <!-- Point GPS -->
-        <circle cx='65' cy='35' r='4' fill='%23f97316'/>
-    </svg>">
-</head>
+    
+    <!-- Favicon GPS International -->
+    <link rel="icon" type="image/x-icon" href="GPS-Logo-2012.JPG">
+    
     <style>
         /* ==================== CSS RESET & VARIABLES ==================== */
         :root {
@@ -48,16 +29,24 @@
             --color-success: #059669;
             --color-warning: #f59e0b;
             --color-info: #0891b2;
-            --color-total: #1e40af;
-            --color-mabrouk: #dc2626;
-            --color-baker: #7c3aed;
-            --color-technip: #059669;
-            --color-bg-light: #f1f5f9;
+            
+            /* Service Colors */
+            --color-logistics: #1e40af;
+            --color-marine: #059669;
+            --color-heavy: #dc2626;
+            --color-supply: #7c3aed;
+            --color-equipment: #ea580c;
+            --color-procurement: #0891b2;
             
             /* Gradient Colors */
             --gradient-primary: linear-gradient(135deg, #1a365d 0%, #2d5aa0 100%);
             --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             --gradient-accent: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            --gradient-ocean: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            
+            /* Glass Morphism */
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
             
             /* Spacing */
             --space-xs: 0.25rem;
@@ -84,6 +73,7 @@
             --radius-md: 12px;
             --radius-lg: 20px;
             --radius-xl: 30px;
+            --radius-xxl: 40px;
             --radius-full: 9999px;
             
             /* Transitions */
@@ -111,6 +101,7 @@
             color: #334155;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             min-height: 100vh;
+            overflow-x: hidden;
         }
         
         /* ==================== TYPOGRAPHY ==================== */
@@ -123,7 +114,7 @@
         }
         
         h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -131,7 +122,7 @@
         }
         
         h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             position: relative;
             padding-bottom: var(--space-md);
         }
@@ -164,9 +155,10 @@
         }
         
         .lead {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 500;
             color: var(--color-primary);
+            line-height: 1.6;
         }
         
         a {
@@ -178,6 +170,92 @@
         
         a:hover {
             color: var(--color-accent);
+        }
+        
+        /* ==================== LOGO STYLES ==================== */
+        .logo-image {
+            height: 50px;
+            width: auto;
+            transition: all var(--transition-fast);
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        
+        .logo-link:hover .logo-image {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+        
+        /* ==================== FOOTER LOGO STYLES ==================== */
+        .footer-logo-image {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            transition: all var(--transition-fast);
+            filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.3));
+        }
+        
+        .footer-logo:hover .footer-logo-image {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.5));
+        }
+        
+        /* ==================== LOGO TEXT STYLES ==================== */
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            min-width: 200px;
+        }
+        
+        .logo-main {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        
+        .logo-tagline {
+            font-size: 0.75rem;
+            color: #64748b;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            white-space: normal;
+            line-height: 1.2;
+            width: auto;
+        }
+        
+        .site-header.scrolled .logo-tagline {
+            font-size: 0.75rem;
+        }
+        
+        /* ==================== FOOTER LOGO TEXT STYLES ==================== */
+        .footer-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo-main {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        
+        .footer-logo-tagline {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            white-space: normal;
+            line-height: 1.2;
+            width: auto;
         }
         
         /* ==================== LAYOUT & CONTAINER ==================== */
@@ -193,15 +271,11 @@
             position: relative;
         }
         
-        .text-center {
-            text-align: center;
-        }
-        
         /* ==================== HEADER & NAVIGATION ==================== */
         .site-header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            position: sticky;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
@@ -209,6 +283,12 @@
             border-bottom: 1px solid rgba(226, 232, 240, 0.5);
             box-shadow: var(--shadow-sm);
             padding: var(--space-sm) 0;
+            transition: all var(--transition-normal);
+        }
+        
+        .site-header.scrolled {
+            padding: var(--space-xs) 0;
+            box-shadow: var(--shadow-lg);
         }
         
         .header-container {
@@ -227,50 +307,8 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            gap: var(--space-sm);
+            gap: var(--space-md);
             position: relative;
-        }
-        
-        .logo-icon {
-            background: var(--gradient-primary);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .logo-main {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-        }
-        
-        .logo-tagline {
-            font-size: 0.75rem;
-            color: #64748b;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-        
-        /* Main Navigation */
-        .primary-navigation {
-            display: flex;
-            align-items: center;
         }
         
         .nav-list {
@@ -360,6 +398,19 @@
             backdrop-filter: blur(10px);
             border-top: 1px solid rgba(226, 232, 240, 0.5);
             border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all var(--transition-normal);
+        }
+        
+        .secondary-navigation.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
         
         .secondary-nav-list {
@@ -373,7 +424,7 @@
         .secondary-nav-link {
             color: #64748b;
             font-size: 0.9rem;
-            transition: color 0.3s;
+            transition: color var(--transition-fast);
             display: flex;
             align-items: center;
             gap: 5px;
@@ -388,20 +439,70 @@
             font-weight: 600;
         }
         
+        /* Header CTA */
+        .header-cta {
+            margin-left: var(--space-lg);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--color-accent), #fb923c);
+            color: white;
+            font-weight: 600;
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            transition: all var(--transition-fast);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: left 0.7s;
+        }
+        
+        .cta-button:hover:before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(249, 115, 22, 0.4);
+            background: linear-gradient(135deg, #fb923c, var(--color-accent));
+        }
+        
         /* ==================== HERO SECTION ==================== */
         .hero-section {
-            min-height: 90vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, 
-                rgba(15, 23, 42, 0.85) 0%,
-                rgba(30, 41, 59, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+                rgba(15, 23, 42, 0.95) 0%,
+                rgba(30, 41, 59, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             position: relative;
             color: white;
+            margin-top: -80px;
+            padding-top: 180px;
         }
         
         .hero-section:before {
@@ -412,10 +513,11 @@
             right: 0;
             height: 4px;
             background: linear-gradient(90deg, 
-                var(--color-accent) 0%,
-                var(--color-secondary) 50%,
+                var(--color-logistics) 0%,
+                var(--color-marine) 25%,
+                var(--color-heavy) 50%,
+                var(--color-supply) 75%,
                 var(--color-accent) 100%);
-            z-index: 2;
         }
         
         .hero-container {
@@ -423,8 +525,15 @@
             z-index: 2;
         }
         
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xxl);
+            align-items: center;
+        }
+        
         .hero-content {
-            max-width: 800px;
+            max-width: 600px;
         }
         
         .hero-badge {
@@ -452,10 +561,10 @@
         }
         
         .hero-title {
-            font-size: 4rem;
+            color: white;
+            font-size: 4.5rem;
             margin-bottom: var(--space-lg);
             line-height: 1.1;
-            color: white;
             background: linear-gradient(135deg, white, rgba(255, 255, 255, 0.9));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -471,127 +580,96 @@
         }
         
         .hero-description {
+            color: rgba(255, 255, 255, 0.8);
             font-size: 1.5rem;
-            margin: 0 auto var(--space-xxl);
-            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--space-xxl);
             font-weight: 400;
         }
         
-        .hero-cta {
+        .hero-actions {
             display: flex;
             gap: var(--space-lg);
+            margin-bottom: var(--space-xxl);
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: var(--space-xxl);
             flex-wrap: wrap;
         }
         
-        /* ==================== SERVICES SECTION ==================== */
-        .services-section {
-            background: white;
+        .stat-item {
+            text-align: left;
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-accent), #fb923c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-xs);
+            line-height: 1;
+        }
+        
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .hero-visual {
             position: relative;
         }
         
-        .services-section:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, 
-                transparent 0%,
-                rgba(226, 232, 240, 0.5) 50%,
-                transparent 100%);
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-xl);
-            margin-top: var(--space-xl);
-        }
-        
-        .service-card {
-            background: white;
+        .hero-image {
+            width: 100%;
             border-radius: var(--radius-xl);
-            padding: var(--space-xxl);
-            box-shadow: var(--shadow-xl);
-            transition: all var(--transition-slow);
-            border: 1px solid rgba(226, 232, 240, 0.5);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
             box-shadow: var(--shadow-xxl);
-            border-color: var(--color-accent);
+            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+            transition: transform var(--transition-slow);
         }
         
-        .service-card:before {
-            content: '';
+        .hero-visual:hover .hero-image {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+        }
+        
+        .floating-element {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-accent);
-        }
-        
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: var(--radius-full);
-            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            background: white;
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xxl);
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto var(--space-lg);
-            font-size: 2rem;
-            color: var(--color-accent);
-            transition: all var(--transition-fast);
+            gap: var(--space-md);
+            animation: float 6s ease-in-out infinite;
         }
         
-        .service-card:hover .service-icon {
-            background: var(--gradient-accent);
-            color: white;
-            transform: scale(1.1);
+        .floating-element:nth-child(2) {
+            top: 20%;
+            right: -20%;
+            animation-delay: -2s;
         }
         
-        .service-title {
-            color: var(--color-primary);
-            margin-bottom: var(--space-md);
-            font-size: 1.5rem;
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: -20%;
+            animation-delay: -4s;
         }
         
-        .service-description {
-            color: #64748b;
-            margin-bottom: var(--space-lg);
-        }
-        
-        .service-features {
-            list-style: none;
-            text-align: left;
-            margin-top: var(--space-lg);
-        }
-        
-        .service-features li {
-            padding: var(--space-xs) 0;
-            color: #475569;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .service-features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--color-success);
-            font-weight: bold;
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
         
         /* ==================== CLIENTS SECTION ==================== */
         .clients-section {
-            background: var(--color-bg-light);
+            background: white;
             position: relative;
         }
         
@@ -610,152 +688,402 @@
         
         .clients-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-xl);
-            margin-top: var(--space-xl);
-        }
-        
-        .client-logo-item {
-            background: white;
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-            display: flex;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--space-xxl);
             align-items: center;
-            justify-content: center;
-            height: 140px;
-            border: 1px solid rgba(226, 232, 240, 0.5);
-            transition: all var(--transition-fast);
-        }
-        
-        .client-logo-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--color-accent);
+            justify-items: center;
         }
         
         .client-logo {
-            font-size: 2.5rem;
-            font-weight: 700;
+            width: 160px;
+            height: 90px;
+            background: white;
+            border-radius: var(--radius-md);
             display: flex;
             align-items: center;
-            gap: var(--space-sm);
+            justify-content: center;
+            padding: var(--space-md);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-fast);
+            opacity: 0.8;
         }
         
-        .client-logo.total { color: var(--color-total); }
-        .client-logo.mabrouk { color: var(--color-mabrouk); }
-        .client-logo.baker { color: var(--color-baker); }
-        .client-logo.technip { color: var(--color-technip); }
+        .client-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            opacity: 1;
+            border-color: var(--color-accent);
+        }
         
-        /* ==================== STATS SECTION ==================== */
-        .stats-section {
-            background: linear-gradient(135deg, var(--color-dark), var(--color-primary));
-            color: white;
+        .client-logo img {
+            max-width: 100%;
+            max-height: 70px;
+            object-fit: contain;
+        }
+        
+        /* ==================== SERVICES PREVIEW ==================== */
+        .services-preview-section {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            position: relative;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: var(--space-xxl);
+            text-align: center;
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            transition: all var(--transition-slow);
             position: relative;
             overflow: hidden;
         }
         
-        .stats-section:before {
+        .service-card:hover {
+            transform: translateY(-20px);
+            box-shadow: var(--shadow-xxl);
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+        }
+        
+        .service-card.logistics:before { background: var(--color-logistics); }
+        .service-card.marine:before { background: var(--color-marine); }
+        .service-card.heavy:before { background: var(--color-heavy); }
+        .service-card.supply:before { background: var(--color-supply); }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-xxl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-lg);
+            font-size: 2rem;
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .service-card.logistics .service-icon { background: var(--gradient-ocean); }
+        .service-card.marine .service-icon { background: linear-gradient(135deg, var(--color-marine), #10b981); }
+        .service-card.heavy .service-icon { background: linear-gradient(135deg, var(--color-heavy), #dc2626); }
+        .service-card.supply .service-icon { background: linear-gradient(135deg, var(--color-supply), #8b5cf6); }
+        
+        .service-cta {
+            margin-top: var(--space-lg);
+        }
+        
+        /* ==================== FEATURED PROJECTS ==================== */
+        .projects-section {
+            background: white;
+            position: relative;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-xl);
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transition: all var(--transition-slow);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-20px);
+            box-shadow: var(--shadow-xxl);
+        }
+        
+        .project-image {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: var(--space-xl);
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        .meta-icon {
+            color: var(--color-accent);
+        }
+        
+        /* ==================== VALUE PROPOSITIONS ==================== */
+        .value-section {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            position: relative;
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-xl);
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: var(--space-xxl);
+            text-align: center;
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            transition: all var(--transition-slow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .value-card:before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, 
-                var(--color-accent) 0%,
-                var(--color-secondary) 100%);
+            background: var(--color-accent);
         }
         
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-xxl);
-            text-align: center;
-        }
-        
-        .stat-item {
-            position: relative;
-        }
-        
-        .stat-number {
-            display: block;
-            font-size: 3.5rem;
-            font-weight: 800;
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
             color: white;
-            margin-bottom: var(--space-sm);
-            line-height: 1;
-        }
-        
-        .stat-label {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-        
-        /* ==================== WHY CHOOSE US ==================== */
-        .why-choose-section {
-            background: white;
-            position: relative;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-xl);
-            margin-top: var(--space-xl);
-        }
-        
-        .feature-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: var(--space-xl);
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-fast);
-            border: 1px solid rgba(226, 232, 240, 0.5);
-            display: flex;
-            gap: var(--space-lg);
-            align-items: flex-start;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--color-accent);
-        }
-        
-        .feature-icon {
-            flex-shrink: 0;
-            width: 60px;
-            height: 60px;
-            border-radius: var(--radius-full);
-            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border-radius: var(--radius-xxl);
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 auto var(--space-lg);
+            font-size: 2rem;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .value-card:hover .value-icon {
+            transform: scale(1.1);
+        }
+        
+        /* ==================== GLOBAL REACH ==================== */
+        .global-section {
+            background: white;
+            position: relative;
+        }
+        
+        .global-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xxl);
+            align-items: center;
+        }
+        
+        .map-container {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            height: 500px;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+        }
+        
+        .office-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .office-marker:hover {
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+        
+        .office-marker:after {
+            content: attr(data-office);
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            white-space: nowrap;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            opacity: 0;
+            transition: opacity var(--transition-fast);
+        }
+        
+        .office-marker:hover:after {
+            opacity: 1;
+        }
+        
+        .office-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+        
+        .office-item {
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.5), rgba(241, 245, 249, 0.3));
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            transition: all var(--transition-fast);
+        }
+        
+        .office-item:hover {
+            transform: translateX(10px);
+            background: white;
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* ==================== TESTIMONIALS ==================== */
+        .testimonials-section {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            position: relative;
+        }
+        
+        .testimonial-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: var(--space-xxl);
+            text-align: center;
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            box-shadow: var(--shadow-xl);
+            display: none;
+        }
+        
+        .testimonial-card.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .testimonial-quote {
             font-size: 1.5rem;
+            font-style: italic;
+            color: #475569;
+            margin-bottom: var(--space-xl);
+            position: relative;
+        }
+        
+        .testimonial-quote:before {
+            content: '"';
+            font-size: 4rem;
             color: var(--color-accent);
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            opacity: 0.3;
         }
         
-        .feature-content h3 {
-            margin-bottom: var(--space-sm);
-            color: var(--color-primary);
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-lg);
         }
         
-        .feature-content p {
-            color: #64748b;
-            font-size: 1rem;
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-full);
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-top: var(--space-xxl);
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .slider-dot.active {
+            background: var(--color-accent);
+            transform: scale(1.3);
         }
         
         /* ==================== CTA SECTION ==================== */
         .cta-section {
             background: linear-gradient(135deg, 
-                rgba(249, 115, 22, 0.95) 0%,
-                rgba(251, 146, 60, 0.95) 100%),
-                url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+                rgba(15, 23, 42, 0.95) 0%,
+                rgba(30, 41, 59, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: white;
             position: relative;
             overflow: hidden;
@@ -769,7 +1097,7 @@
             right: 0;
             height: 4px;
             background: linear-gradient(90deg, 
-                var(--color-primary) 0%,
+                var(--color-accent) 0%,
                 var(--color-secondary) 100%);
         }
         
@@ -783,13 +1111,17 @@
         
         .cta-title {
             color: white;
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: var(--space-lg);
+            background: linear-gradient(135deg, white, rgba(255, 255, 255, 0.9));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .cta-description {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.5rem;
             margin-bottom: var(--space-xxl);
         }
         
@@ -837,15 +1169,15 @@
         }
         
         .btn-primary {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            background: linear-gradient(135deg, var(--color-accent), #fb923c);
             color: white;
-            box-shadow: 0 10px 20px rgba(26, 54, 93, 0.3);
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
         }
         
         .btn-primary:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(26, 54, 93, 0.4);
-            background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+            box-shadow: 0 15px 30px rgba(249, 115, 22, 0.4);
+            background: linear-gradient(135deg, #fb923c, var(--color-accent));
         }
         
         .btn-secondary {
@@ -869,6 +1201,131 @@
         
         .btn:hover .btn-icon {
             transform: translateX(5px);
+        }
+        
+        /* ==================== GLOBAL OFFICES - IMPROVED HORIZONTAL STYLES ==================== */
+        .global-offices {
+            width: 100%;
+        }
+
+        .office-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--space-md);
+            align-items: stretch;
+        }
+
+        .office-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all var(--transition-normal);
+            width: 170px; /* Taille réduite pour être plus compact */
+            min-height: 280px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .office-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .office-card-header {
+            padding: var(--space-sm) var(--space-md);
+            text-align: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 0.75rem;
+            min-height: 32px;
+        }
+
+        .office-country-icon {
+            font-size: 0.7rem;
+        }
+
+        .office-card-body {
+            padding: var(--space-md);
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .office-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-sm);
+            font-size: 1rem;
+        }
+
+        .office-city {
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: var(--space-xs);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .office-address {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.7rem;
+            line-height: 1.3;
+            margin-bottom: var(--space-sm);
+            flex: 1;
+        }
+
+        .office-contact {
+            margin-bottom: var(--space-sm);
+        }
+
+        .office-contact .contact-link {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.7rem;
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+        }
+
+        .office-contact .contact-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .office-badge {
+            background: rgba(249, 115, 22, 0.1);
+            color: var(--color-accent);
+            padding: 3px 6px;
+            border-radius: var(--radius-sm);
+            font-size: 0.6rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            font-weight: 500;
+            margin-top: auto;
         }
         
         /* ==================== FOOTER ==================== */
@@ -905,21 +1362,8 @@
         .footer-logo {
             display: flex;
             align-items: center;
-            gap: var(--space-md);
+            gap: var(--space-lg);
             margin-bottom: var(--space-lg);
-        }
-        
-        .footer-logo-icon {
-            background: linear-gradient(135deg, white, #e2e8f0);
-            color: var(--color-primary);
-            width: 50px;
-            height: 50px;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow-md);
         }
         
         .footer-description {
@@ -998,23 +1442,6 @@
             color: var(--color-accent);
         }
         
-        .global-offices {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-md);
-        }
-        
-        .office-item {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
-        }
-        
-        .office-item strong {
-            color: white;
-            display: block;
-            margin-bottom: 2px;
-        }
-        
         .footer-bottom {
             padding: var(--space-xl) 0;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -1069,11 +1496,28 @@
             .container {
                 padding: 0 var(--space-lg);
             }
+            
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-xxl);
+            }
+            
+            .global-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .office-cards {
+                gap: var(--space-sm);
+            }
+            
+            .office-card {
+                width: 160px;
+            }
         }
         
         @media (max-width: 992px) {
             h1 { font-size: 3rem; }
-            h2 { font-size: 2.25rem; }
+            h2 { font-size: 2.5rem; }
             h3 { font-size: 1.5rem; }
             
             .hero-title { 
@@ -1087,15 +1531,50 @@
             
             .cta-title { font-size: 2.5rem; }
             
-            .services-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: var(--space-lg);
+            .floating-element {
+                position: relative;
+                top: auto;
+                right: auto;
+                left: auto;
+                bottom: auto;
+                margin: var(--space-lg) 0;
+                animation: none;
             }
             
-            .secondary-nav-list {
-                flex-wrap: wrap;
+            .hero-visual {
+                order: -1;
+            }
+            
+            .logo-text {
+                min-width: 180px;
+            }
+            
+            .logo-main {
+                font-size: 1.3rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.7rem;
+            }
+            
+            .footer-logo-image {
+                height: 45px;
+            }
+            
+            .footer-logo-main {
+                font-size: 1.3rem;
+            }
+            
+            .footer-logo-tagline {
+                font-size: 0.7rem;
+            }
+            
+            .office-cards {
                 justify-content: center;
-                gap: var(--space-md);
+            }
+            
+            .office-card {
+                width: 150px;
             }
         }
         
@@ -1136,35 +1615,53 @@
                 justify-content: center;
             }
             
+            .header-cta {
+                display: none;
+            }
+            
+            .secondary-nav-list {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: var(--space-md);
+                padding: var(--space-sm) var(--space-lg);
+            }
+            
             .hero-section {
+                padding-top: 140px;
                 min-height: auto;
-                padding: 120px 0 var(--space-xxxl);
             }
             
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-description {
-                font-size: 1.125rem;
-            }
-            
-            .hero-cta {
+            .hero-actions {
                 flex-direction: column;
                 gap: var(--space-md);
             }
             
-            .clients-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .btn {
+                width: 100%;
+                justify-content: center;
             }
             
-            .stats-grid {
+            .hero-stats {
+                gap: var(--space-xl);
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .clients-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: var(--space-xl);
             }
             
-            .features-grid {
+            .services-grid,
+            .projects-grid,
+            .value-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 300px;
             }
             
             .cta-actions {
@@ -1173,36 +1670,72 @@
                 gap: var(--space-md);
             }
             
-            .btn {
-                width: 100%;
-                max-width: 320px;
-                justify-content: center;
-            }
-            
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: var(--space-xl);
             }
+            
+            .logo-image {
+                height: 40px;
+            }
+            
+            .logo-text {
+                min-width: 140px;
+            }
+            
+            .logo-main {
+                font-size: 1.1rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.65rem;
+                white-space: normal;
+                line-height: 1.1;
+            }
+            
+            .site-header.scrolled .logo-tagline {
+                font-size: 0.65rem;
+            }
+            
+            .footer-logo {
+                gap: var(--space-md);
+            }
+            
+            .footer-logo-image {
+                height: 40px;
+            }
+            
+            .footer-logo-main {
+                font-size: 1.1rem;
+            }
+            
+            .footer-logo-tagline {
+                font-size: 0.65rem;
+            }
+            
+            .office-cards {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-sm);
+                justify-items: center;
+            }
+            
+            .office-card {
+                width: 100%;
+                max-width: 170px;
+            }
         }
         
         @media (max-width: 576px) {
-            h1 { font-size: 2.25rem; }
+            h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
             h3 { font-size: 1.375rem; }
             
-            .hero-title { font-size: 2.25rem; }
+            .hero-title { font-size: 2.5rem; }
             .cta-title { font-size: 2rem; }
             
-            .clients-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .stat-number {
-                font-size: 2.5rem;
+            .hero-badge {
+                padding: var(--space-sm) var(--space-lg);
             }
             
             .back-to-top {
@@ -1210,6 +1743,68 @@
                 right: var(--space-md);
                 width: 50px;
                 height: 50px;
+            }
+            
+            .logo-image {
+                height: 35px;
+            }
+            
+            .logo-text {
+                min-width: 120px;
+            }
+            
+            .logo-main {
+                font-size: 1rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.6rem;
+            }
+            
+            .site-header.scrolled .logo-tagline {
+                font-size: 0.6rem;
+            }
+            
+            .footer-logo {
+                gap: var(--space-sm);
+            }
+            
+            .footer-logo-image {
+                height: 35px;
+            }
+            
+            .footer-logo-main {
+                font-size: 1rem;
+            }
+            
+            .footer-logo-tagline {
+                font-size: 0.6rem;
+            }
+            
+            .office-cards {
+                grid-template-columns: 1fr;
+                max-width: 250px;
+                margin: 0 auto;
+            }
+            
+            .office-card {
+                max-width: 250px;
+                width: 100%;
+            }
+            
+            .office-card-body {
+                padding: var(--space-md);
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .office-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .office-card {
+                width: 100%;
+                max-width: 100%;
             }
         }
         
@@ -1239,23 +1834,19 @@
         .service-card:nth-child(2) { animation-delay: 0.2s; }
         .service-card:nth-child(3) { animation-delay: 0.3s; }
         .service-card:nth-child(4) { animation-delay: 0.4s; }
-        .service-card:nth-child(5) { animation-delay: 0.5s; }
-        .service-card:nth-child(6) { animation-delay: 0.6s; }
     </style>
 </head>
 <body class="page-home">
     <!-- ==================== HEADER ==================== -->
     <header class="site-header" role="banner">
         <div class="container header-container">
-            <!-- Logo -->
+            <!-- Logo avec image GPS-Logo-2012.JPG -->
             <div class="logo-section">
                 <a href="index.htm" class="logo-link" aria-label="GPS International Home">
-                    <div class="logo-icon">
-                        <i class="fas fa-ship"></i>
-                    </div>
+                    <img src="GPS-Logo-2012.JPG" alt="GPS International Logo" class="logo-image">
                     <div class="logo-text">
                         <span class="logo-main">GPS International</span>
-                        <span class="logo-tagline">Global Project Services</span>
+                        <span class="logo-tagline">Global Project Services International</span>
                     </div>
                 </a>
                 <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
@@ -1263,7 +1854,7 @@
                 </button>
             </div>
             
-            <!-- Main Navigation -->
+            <!-- Main Navigation - CORRECTED LINKS -->
             <nav class="primary-navigation" id="primary-navigation" aria-label="Primary Navigation">
                 <ul class="nav-list">
                     <li class="nav-item">
@@ -1285,31 +1876,39 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="projects.htm" class="nav-link" data-page="projects">
+                            <i class="fas fa-project-diagram nav-icon"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="news.htm" class="nav-link" data-page="news">
+                            <i class="fas fa-newspaper nav-icon"></i>
+                            <span>News</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="contact.htm" class="nav-link" data-page="contact">
                             <i class="fas fa-envelope nav-icon"></i>
                             <span>Contact</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="intranet.htm" class="nav-link" data-page="intranet">
-                            <i class="fas fa-network-wired nav-icon"></i>
-                            <span>Intranet</span>
-                        </a>
-                    </li>
                 </ul>
             </nav>
+            
+            <!-- CTA Button -->
+            <div class="header-cta">
+                <a href="contact.htm" class="cta-button">
+                    <span>Get Your Quote</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
         
-        <!-- Secondary Navigation -->
+        <!-- Secondary Navigation - CORRECTED LINKS -->
         <nav class="secondary-navigation" aria-label="Secondary Navigation">
             <div class="container">
                 <ul class="secondary-nav-list">
-                    <li class="secondary-nav-item">
-                        <a href="news.htm" class="secondary-nav-link" data-page="news">
-                            <i class="fas fa-newspaper"></i>
-                            <span>News</span>
-                        </a>
-                    </li>
                     <li class="secondary-nav-item">
                         <a href="company.htm" class="secondary-nav-link" data-page="company">
                             <i class="fas fa-building"></i>
@@ -1339,306 +1938,488 @@
         </nav>
     </header>
 
-    <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero-section" aria-labelledby="hero-title">
-        <div class="container hero-container">
-            <div class="hero-content fade-in-up">
-                <div class="hero-badge">
-                    <i class="fas fa-award badge-icon"></i>
-                    <span class="badge-text">Industry Leader Since 2008</span>
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main id="main-content" class="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <div class="hero-badge fade-in-up">
+                            <i class="fas fa-globe badge-icon"></i>
+                            <span class="badge-text">Global Logistics Leader Since 2008</span>
+                        </div>
+                        
+                        <h1 id="hero-title" class="hero-title fade-in-up">
+                            <span class="hero-subtitle">Premium Oil & Gas Logistics</span>
+                            Connecting Continents,<br>Powering Progress
+                        </h1>
+                        
+                        <p class="hero-description fade-in-up" style="animation-delay: 0.1s;">
+                            GPS International delivers end-to-end logistics solutions for the oil and gas industry. 
+                            From supply base management to heavy transport and marine operations across Africa, Middle East, and Europe.
+                        </p>
+                        
+                        <div class="hero-actions fade-in-up" style="animation-delay: 0.2s;">
+                            <a href="services.htm" class="btn btn-primary">
+                                <i class="fas fa-cogs"></i>
+                                <span>Explore Services</span>
+                            </a>
+                            <a href="contact.htm" class="btn btn-secondary">
+                                <i class="fas fa-headset"></i>
+                                <span>Contact Us</span>
+                            </a>
+                        </div>
+                        
+                        <div class="hero-stats fade-in-up" style="animation-delay: 0.3s;">
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="15">15+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="50">50+</span>
+                                <span class="stat-label">Major Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="10">10+</span>
+                                <span class="stat-label">Countries Served</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="100">100%</span>
+                                <span class="stat-label">Safety Record</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-visual fade-in-up" style="animation-delay: 0.4s;">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="GPS International Heavy Transport Operations"
+                             class="hero-image">
+                        
+                        <div class="floating-element">
+                            <div class="floating-icon" style="background: var(--color-logistics); color: white; width: 40px; height: 40px; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <div>
+                                <div style="font-weight: 600; color: var(--color-dark);">Real-time Tracking</div>
+                                <div style="font-size: 0.9rem; color: #64748b;">Live shipment monitoring</div>
+                            </div>
+                        </div>
+                        
+                        <div class="floating-element">
+                            <div class="floating-icon" style="background: var(--color-accent); color: white; width: 40px; height: 40px; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <div style="font-weight: 600; color: var(--color-dark);">Safety First</div>
+                                <div style="font-size: 0.9rem; color: #64748b;">Zero incident record</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h1 id="hero-title" class="hero-title">
-                    <span class="hero-subtitle">Global Oil & Gas Logistics</span>
-                    Excellence in Project Services
-                </h1>
-                <p class="hero-description">
-                    GPS International provides comprehensive logistics solutions for the oil and gas industry 
-                    from our strategic base in Zarzis, Tunisia. Trusted by industry leaders for over 15 years.
+            </div>
+        </section>
+
+        <!-- Clients Section -->
+        <section class="clients-section section">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Trusted By Industry Leaders</h2>
+                <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
+                    Partnering with global energy companies and government entities
                 </p>
-                <div class="hero-cta">
-                    <a href="#services" class="btn btn-primary">
-                        <i class="fas fa-cogs"></i>
-                        <span>Explore Our Services</span>
+                
+                <div class="clients-grid fade-in-up">
+                    <!-- Total Energy - FICHIER RENOMMÉ -->
+                    <div class="client-logo">
+                        <img src="Capture d’écran 2026-01-19 015603.JPG" 
+                             alt="Total Energy Logo">
+                    </div>
+                    
+                    <!-- Mabruk Oil -->
+                    <div class="client-logo">
+                        <img src="mabruk-oil-logo-58b7ccb0.JPG" 
+                             alt="Mabruk Oil Logo">
+                    </div>
+                    
+                    <!-- Baker Hughes -->
+                    <div class="client-logo">
+                        <img src="logo.JPG" 
+                             alt="Baker Hughes Logo">
+                    </div>
+                    
+                    <!-- Technip -->
+                    <div class="client-logo">
+                        <img src="logoo.JPG" 
+                             alt="Technip Logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview -->
+        <section class="services-preview-section section" aria-labelledby="services-title">
+            <div class="container">
+                <h2 id="services-title" class="section-title fade-in-up">Our Services</h2>
+                <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
+                    Comprehensive logistics solutions designed specifically for the oil and gas industry
+                </p>
+                
+                <div class="services-grid">
+                    <!-- Service 1: Project Management -->
+                    <div class="service-card logistics fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>Project Management</h3>
+                        <p>End-to-end freight management including air, sea, and land transportation with customs clearance.</p>
+                        <div class="service-cta">
+                            <a href="services.htm#freight" class="service-link" style="display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-logistics); font-weight: 600;">
+                                <span>Learn More</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2: Supply Base Management -->
+                    <div class="service-card marine fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="service-icon">
+                            <i class="fas fa-ship"></i>
+                        </div>
+                        <h3>Supply Base Management</h3>
+                        <p>Comprehensive marine services including vessel agency, stevedoring, and port operations management.</p>
+                        <div class="service-cta">
+                            <a href="services.htm#marine" class="service-link" style="display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-marine); font-weight: 600;">
+                                <span>Learn More</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 3: Marine Logistics -->
+                    <div class="service-card heavy fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="service-icon">
+                            <i class="fas fa-anchor"></i>
+                        </div>
+                        <h3>Marine Logistics</h3>
+                        <p>Complete marine operations including offshore support, crew transfers, and port logistics management.</p>
+                        <div class="service-cta">
+                            <a href="services.htm#marine-logistics" class="service-link" style="display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-heavy); font-weight: 600;">
+                                <span>Learn More</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 4: Hot Heavy Transport -->
+                    <div class="service-card equipment fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="service-icon" style="background: linear-gradient(135deg, var(--color-equipment), #ea580c);">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>Customs and Freight</h3>
+                        <p> Complete management of customs clearance and international freight forwarding services.</p>
+                        <div class="service-cta">
+                            <a href="services.htm#heavy-transport" class="service-link" style="display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-equipment); font-weight: 600;">
+                                <span>Learn More</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 5: Engineering Support -->
+                    <div class="service-card procurement fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="service-icon" style="background: linear-gradient(135deg, var(--color-procurement), #0891b2);">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Heavy transport</h3>
+                        <p>Specialized transport of oversized and time-critical equipment with temperature-controlled solutions.</p>
+                        <div class="service-cta">
+                            <a href="services.htm#engineering" class="service-link" style="display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-procurement); font-weight: 600;">
+                                <span>Learn More</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 6: Customs and Freight -->
+                    <div class="service-card supply fade-in-up" style="animation-delay: 0.5s;">
+                        <div class="service-icon">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <h3>engineering support</h3>
+                        <p>Technical engineering solutions including equipment installation, maintenance, and field support.</p>
+                        <div class="service-cta">
+                            <a href="services.htm#customs" class="service-link" style="display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-supply); font-weight: 600;">
+                                <span>Learn More</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center fade-in-up" style="margin-top: var(--space-xxl);">
+                    <a href="services.htm" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: var(--space-md);">
+                        <span>View All Services</span>
+                        <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="contact.htm" class="btn btn-secondary">
-                        <i class="fas fa-envelope"></i>
-                        <span>Contact Our Team</span>
-                    </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ==================== SERVICES SECTION ==================== -->
-    <section id="services" class="services-section" aria-labelledby="services-title">
-        <div class="container">
-            <h2 id="services-title" class="section-title fade-in-up">Our Services</h2>
-            <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
-                Comprehensive logistics solutions tailored to the unique needs of the oil and gas industry
-            </p>
-            
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <article class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <i class="fas fa-ship"></i>
-                    </div>
-                    <h3 class="service-title">Marine Logistics</h3>
-                    <p class="service-description">
-                        Complete marine logistics and vessel agency services for offshore operations
-                    </p>
-                    <ul class="service-features">
-                        <li>Vessels Agency Services</li>
-                        <li>Stevedoring Operations</li>
-                        <li>Offshore Support</li>
-                        <li>Port Coordination</li>
-                    </ul>
-                </article>
+        </section>
+         <!-- Value Propositions -->
+        <section class="value-section section" aria-labelledby="value-title">
+            <div class="container">
+                <h2 id="value-title" class="section-title fade-in-up">Why Choose GPS International?</h2>
+                <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
+                    Our commitment to excellence sets us apart in the logistics industry
+                </p>
                 
-                <!-- Service 2 -->
-                <article class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <i class="fas fa-truck-moving"></i>
-                    </div>
-                    <h3 class="service-title">Heavy Transport</h3>
-                    <p class="service-description">
-                        Specialized heavy and oversized transport for challenging environments
-                    </p>
-                    <ul class="service-features">
-                        <li>Oversized Load Transport</li>
-                        <li>Desert Route Planning</li>
-                        <li>Equipment Mobilization</li>
-                        <li>Permit Acquisition</li>
-                    </ul>
-                </article>
-                
-                <!-- Service 3 -->
-                <article class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <i class="fas fa-warehouse"></i>
-                    </div>
-                    <h3 class="service-title">Supply Base Management</h3>
-                    <p class="service-description">
-                        Full management of supply bases and logistics hubs
-                    </p>
-                    <ul class="service-features">
-                        <li>Base Operations Management</li>
-                        <li>Inventory Control Systems</li>
-                        <li>Equipment Provision</li>
-                        <li>Third-Party Coordination</li>
-                    </ul>
-                </article>
-                
-                <!-- Service 4 -->
-                <article class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3 class="service-title">Customs & Freight</h3>
-                    <p class="service-description">
-                        International freight forwarding and customs clearance services
-                    </p>
-                    <ul class="service-features">
-                        <li>Customs Clearance</li>
-                        <li>Freight Forwarding</li>
-                        <li>Import/Export Documentation</li>
-                        <li>Regulatory Compliance</li>
-                    </ul>
-                </article>
-                
-                <!-- Service 5 -->
-                <article class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3 class="service-title">Project Management</h3>
-                    <p class="service-description">
-                        End-to-end project management for complex logistics operations
-                    </p>
-                    <ul class="service-features">
-                        <li>Project Planning & Execution</li>
-                        <li>Risk Management</li>
-                        <li>Resource Allocation</li>
-                        <li>Progress Monitoring</li>
-                    </ul>
-                </article>
-                
-                <!-- Service 6 -->
-                <article class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <i class="fas fa-hard-hat"></i>
-                    </div>
-                    <h3 class="service-title">Engineering Support</h3>
-                    <p class="service-description">
-                        Technical and engineering support services for oil and gas projects
-                    </p>
-                    <ul class="service-features">
-                        <li>Technical Documentation</li>
-                        <li>Quality Control</li>
-                        <li>Safety Coordination</li>
-                        <li>Engineering Design Support</li>
-                    </ul>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== CLIENTS SECTION ==================== -->
-    <section class="clients-section" aria-labelledby="clients-title">
-        <div class="container">
-            <h2 id="clients-title" class="section-title fade-in-up">Trusted By Industry Leaders</h2>
-            <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
-                We are proud to partner with some of the world's leading oil and gas companies
-            </p>
-            
-            <div class="clients-grid">
-                <div class="client-logo-item fade-in-up">
-                    <div class="client-logo total">
-                        <i class="fas fa-oil-can"></i>
-                        <span>TOTAL</span>
-                    </div>
-                </div>
-                <div class="client-logo-item fade-in-up" style="animation-delay: 0.1s;">
-                    <div class="client-logo mabrouk">
-                        <i class="fas fa-tower-cell"></i>
-                        <span>Mabrouk Oil</span>
-                    </div>
-                </div>
-                <div class="client-logo-item fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="client-logo baker">
-                        <i class="fas fa-truck-moving"></i>
-                        <span>Baker Hughes</span>
-                    </div>
-                </div>
-                <div class="client-logo-item fade-in-up" style="animation-delay: 0.3s;">
-                    <div class="client-logo technip">
-                        <i class="fas fa-industry"></i>
-                        <span>Technip</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== STATS SECTION ==================== -->
-    <section class="stats-section" aria-labelledby="stats-title">
-        <div class="container">
-            <h2 id="stats-title" class="section-title fade-in-up" style="color: white;">Our Achievements</h2>
-            
-            <div class="stats-grid fade-in-up">
-                <div class="stat-item">
-                    <span class="stat-number" data-count="15">15+</span>
-                    <span class="stat-label">Years of Excellence</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="50">50+</span>
-                    <span class="stat-label">Major Projects</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="4">4</span>
-                    <span class="stat-label">Global Regions</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="100">100%</span>
-                    <span class="stat-label">Client Satisfaction</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== WHY CHOOSE US ==================== -->
-    <section class="why-choose-section" aria-labelledby="why-choose-title">
-        <div class="container">
-            <h2 id="why-choose-title" class="section-title fade-in-up">Why Choose GPS International?</h2>
-            
-            <div class="features-grid">
-                <article class="feature-card fade-in-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Strategic Location</h3>
-                        <p>Located in Zarzis, Tunisia - the gateway to North African oil and gas operations with access to Mediterranean offshore fields.</p>
-                    </div>
-                </article>
-                
-                <article class="feature-card fade-in-up" style="animation-delay: 0.1s;">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Experienced Team</h3>
-                        <p>Our team brings decades of experience in oil and gas logistics, with deep knowledge of local and international regulations.</p>
-                    </div>
-                </article>
-                
-                <article class="feature-card fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="feature-content">
+                <div class="value-grid">
+                    <div class="value-card fade-in-up">
+                        <div class="value-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
                         <h3>Safety First</h3>
-                        <p>Highest safety standards with comprehensive risk management and compliance with international safety protocols.</p>
+                        <p>Industry-leading safety standards with zero compromise on personnel and asset protection.</p>
                     </div>
-                </article>
-                
-                <article class="feature-card fade-in-up" style="animation-delay: 0.3s;">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <div class="feature-content">
+                    
+                    <div class="value-card fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="value-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
                         <h3>Rapid Response</h3>
-                        <p>24/7 operational capabilities with quick response times for emergency situations and tight project schedules.</p>
+                        <p>24/7 emergency response team ready to handle urgent logistics requirements and critical situations.</p>
                     </div>
-                </article>
+                    
+                    <div class="value-card fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="value-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3>Global Reach</h3>
+                        <p>International network spanning North Africa, Middle East, and Europe with local expertise.</p>
+                    </div>
+                    
+                    <div class="value-card fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="value-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Technology Driven</h3>
+                        <p>Advanced tracking systems and real-time visibility for complete supply chain control.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ==================== CTA SECTION ==================== -->
-    <section class="cta-section" aria-labelledby="cta-title">
-        <div class="container">
-            <div class="cta-content fade-in-up">
-                <div class="cta-text">
-                    <h2 id="cta-title" class="cta-title">Ready to Partner With Us?</h2>
-                    <p class="cta-description">
-                        Contact us today to discuss your logistics needs and discover how GPS International 
-                        can help your business succeed with our comprehensive solutions.
-                    </p>
+        <!-- Featured Projects -->
+        <section class="projects-section section" aria-labelledby="projects-title">
+            <div class="container">
+                <h2 id="projects-title" class="section-title fade-in-up">Featured Projects</h2>
+                <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
+                    Selection of our most challenging and innovative logistics projects
+                </p>
+                
+                <div class="projects-grid">
+                    <div class="project-card fade-in-up">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Total Energy Supply Base Management"
+                             class="project-image">
+                        <div class="project-content">
+                            <h3>Total Energy Supply Base</h3>
+                            <p>Comprehensive management of Total's offshore supply base in Zarzis, Tunisia.</p>
+                            <div class="project-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar-alt meta-icon"></i>
+                                    <span>2020-2023</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-map-marker-alt meta-icon"></i>
+                                    <span>Tunisia</span>
+                                </div>
+                            </div>
+                            <a href="projects.htm#total" class="project-link" style="display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-primary); font-weight: 600;">
+                                <span>View Project</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card fade-in-up" style="animation-delay: 0.1s;">
+                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Baker Hughes Heavy Equipment Transport"
+                             class="project-image">
+                        <div class="project-content">
+                            <h3>Baker Hughes Libya Transport</h3>
+                            <p>Transport of oversized drilling equipment through challenging Libyan terrain.</p>
+                            <div class="project-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar-alt meta-icon"></i>
+                                    <span>2021-2022</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-map-marker-alt meta-icon"></i>
+                                    <span>Libya</span>
+                                </div>
+                            </div>
+                            <a href="projects.htm#baker-hughes" class="project-link" style="display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-primary); font-weight: 600;">
+                                <span>View Project</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card fade-in-up" style="animation-delay: 0.2s;">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Iraq Ministry of Oil Infrastructure"
+                             class="project-image">
+                        <div class="project-content">
+                            <h3>Iraq Ministry of Oil</h3>
+                            <p>Transport of critical oil infrastructure components in Southern Iraq.</p>
+                            <div class="project-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar-alt meta-icon"></i>
+                                    <span>2022-2023</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-map-marker-alt meta-icon"></i>
+                                    <span>Iraq</span>
+                                </div>
+                            </div>
+                            <a href="projects.htm#iraq-oil" class="project-link" style="display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-primary); font-weight: 600;">
+                                <span>View Project</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="cta-actions">
-                    <a href="contact.htm" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i>
-                        <span>Get in Touch</span>
-                    </a>
-                    <a href="references.htm" class="btn btn-secondary">
-                        <i class="fas fa-star"></i>
-                        <span>View References</span>
+                
+                <div class="text-center fade-in-up" style="margin-top: var(--space-xxl);">
+                    <a href="projects.htm" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: var(--space-md);">
+                        <span>View All Projects</span>
+                        <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+       
+
+        
+        <!-- Testimonials -->
+        <section class="testimonials-section section" aria-labelledby="testimonials-title">
+            <div class="container">
+                <h2 id="testimonials-title" class="section-title fade-in-up">Client Testimonials</h2>
+                <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
+                    What our clients say about working with us
+                </p>
+                
+                <div class="testimonial-slider fade-in-up">
+                    <div class="testimonial-card active">
+                        <div class="testimonial-quote">
+                            "GPS International demonstrated exceptional professionalism in managing our supply base operations. Their attention to safety and efficiency exceeded our expectations."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                JD
+                            </div>
+                            <div class="author-info">
+                                <h4>Jean Dupont</h4>
+                                <div class="author-company">Operations Director, Total Energy</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            "The heavy transport project in Libya was completed ahead of schedule despite significant challenges. GPS International's expertise in complex logistics is unmatched."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                MS
+                            </div>
+                            <div class="author-info">
+                                <h4>Mohamed Salim</h4>
+                                <div class="author-company">Project Manager, Baker Hughes</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            "Working with GPS International on our marine operations has been a game-changer. Their local knowledge and global standards are the perfect combination."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                AR
+                            </div>
+                            <div class="author-info">
+                                <h4>Ahmed Rahman</h4>
+                                <div class="author-company">Logistics Manager, ENI</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <button class="slider-dot active" data-slide="0"></button>
+                        <button class="slider-dot" data-slide="1"></button>
+                        <button class="slider-dot" data-slide="2"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section section" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content fade-in-up">
+                    <div class="cta-text">
+                        <h2 id="cta-title" class="cta-title">Ready to Optimize Your Logistics?</h2>
+                        <p class="cta-description">
+                            Contact our team today to discuss your specific requirements and get a tailored logistics solution.
+                        </p>
+                    </div>
+                    <div class="cta-actions">
+                        <a href="contact.htm" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            <span>Get Your Quote</span>
+                        </a>
+                        <a href="services.htm" class="btn btn-secondary">
+                            <i class="fas fa-cogs"></i>
+                            <span>Explore Services</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- ==================== FOOTER ==================== -->
     <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
-                <!-- Company Info -->
+                <!-- Company Info avec la MÊME IMAGE de logo -->
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <div class="footer-logo-icon">
-                            <i class="fas fa-ship"></i>
+    <img src="GPS-Logo-2012.JPG" alt="GPS International Logo" class="footer-logo-image">
+    <div class="footer-logo-text">
+        <span class="footer-logo-main">GPS International</span>
+        <span class="footer-logo-tagline">Global Project Services International</span>
+    </div>
+</div>
+                    <p class="footer-description">
+                        Delivering excellence in oil and gas logistics since 2008. Trusted by major energy companies worldwide.
+                    </p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <a href="tel:+441224015670" class="contact-link">+44 1224 015670</a>
                         </div>
-                        <div class="footer-logo-text">
-                            <span class="logo-main">GPS International</span>
-                            <span class="logo-tagline">Global Project Services</span>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <a href="tel:+21622254554" class="contact-link">+216 22 254 554</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <a href="mailto:info@gps-oillogistics.com" class="contact-link">info@gps-oillogistics.com</a>
                         </div>
                     </div>
-                    <p class="footer-description">
-                        Delivering excellence in oil and gas logistics since 2008. 
-                        Trusted by major oil & gas companies worldwide from our strategic base in Zarzis, Tunisia.
-                    </p>
                 </div>
                 
                 <!-- Quick Links -->
@@ -1649,55 +2430,29 @@
                             <li><a href="index.htm" class="footer-link active"><i class="fas fa-home"></i> Home</a></li>
                             <li><a href="services.htm" class="footer-link"><i class="fas fa-cogs"></i> Services</a></li>
                             <li><a href="references.htm" class="footer-link"><i class="fas fa-star"></i> References</a></li>
+                            <li><a href="projects.htm" class="footer-link"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                            <li><a href="news.htm" class="footer-link"><i class="fas fa-newspaper"></i> News</a></li>
                             <li><a href="contact.htm" class="footer-link"><i class="fas fa-envelope"></i> Contact</a></li>
-                            <li><a href="company.htm" class="footer-link"><i class="fas fa-building"></i> Company</a></li>
                         </ul>
                     </nav>
                 </div>
                 
-                <!-- Contact Info -->
+                <!-- Company Pages -->
                 <div class="footer-section">
-                    <h3 class="footer-title">Contact Information</h3>
-                    <address class="footer-address">
-                        <strong>Tunisia Headquarters:</strong><br>
-                        Parc d'activites economiques de Zarzis<br>
-                        BP 91 - Port de Zarzis 4337<br>
-                        Tunisia
-                        
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-phone contact-icon"></i>
-                                <a href="tel:+441224015670" class="contact-link">+44 1224 015670</a>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone contact-icon"></i>
-                                <a href="tel:+21622254554" class="contact-link">+216 22 254 554</a>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope contact-icon"></i>
-                                <a href="mailto:info@gps-oillogistics.com" class="contact-link">info@gps-oillogistics.com</a>
-                            </div>
-                        </div>
-                    </address>
+                    <h3 class="footer-title">Company</h3>
+                    <nav aria-label="Company Navigation">
+                        <ul class="footer-links">
+                            <li><a href="company.htm" class="footer-link"><i class="fas fa-building"></i> About Us</a></li>
+                            <li><a href="why-zarzis.htm" class="footer-link"><i class="fas fa-map-marker-alt"></i> Why Zarzis?</a></li>
+                            <li><a href="partners.htm" class="footer-link"><i class="fas fa-handshake"></i> Partners</a></li>
+                            <li><a href="faq.htm" class="footer-link"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                            <li><a href="privacy.htm" class="footer-link"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                            <li><a href="terms.htm" class="footer-link"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+                        </ul>
+                    </nav>
                 </div>
                 
-                <!-- Global Offices -->
-                <div class="footer-section">
-                    <h3 class="footer-title">Global Offices</h3>
-                    <div class="global-offices">
-                        <div class="office-item">
-                            <strong><i class="fas fa-map-marker-alt"></i> Libya:</strong><br>
-                            WGPS Libya - Rashassan, near ElEntelaka Former gas station, Tripoli<br>
-                            <a href="tel:+218213403749" class="contact-link">+218 21 340 3749</a>
-                        </div>
-                        <div class="office-item">
-                            <strong><i class="fas fa-map-marker-alt"></i> Iraq:</strong><br>
-                            GPS Iraq - Justice Tower floor 14, Office 23, Erbil<br>
-                            <a href="tel:+9647504325583" class="contact-link">+964 750 432 5583</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+               
             
             <!-- Copyright -->
             <div class="footer-bottom">
@@ -1723,6 +2478,20 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Set current year
             document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Header scroll effect
+            const header = document.querySelector('.site-header');
+            const secondaryNav = document.querySelector('.secondary-navigation');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                    secondaryNav.classList.add('visible');
+                } else {
+                    header.classList.remove('scrolled');
+                    secondaryNav.classList.remove('visible');
+                }
+            });
             
             // Mobile navigation toggle
             const mobileToggle = document.querySelector('.mobile-menu-toggle');
@@ -1780,6 +2549,32 @@
             
             counters.forEach(counter => observer.observe(counter));
             
+            // Testimonial slider
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            const sliderDots = document.querySelectorAll('.slider-dot');
+            let currentTestimonial = 0;
+            
+            function showTestimonial(index) {
+                testimonialCards.forEach(card => card.classList.remove('active'));
+                sliderDots.forEach(dot => dot.classList.remove('active'));
+                
+                testimonialCards[index].classList.add('active');
+                sliderDots[index].classList.add('active');
+                currentTestimonial = index;
+            }
+            
+            sliderDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showTestimonial(index);
+                });
+            });
+            
+            // Auto-rotate testimonials
+            setInterval(() => {
+                currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
+                showTestimonial(currentTestimonial);
+            }, 5000);
+            
             // Back to top button
             const backToTopBtn = document.querySelector('.back-to-top');
             
@@ -1818,7 +2613,7 @@
             
             // Set active navigation based on current page
             const currentPage = window.location.pathname.split('/').pop();
-            const navLinks = document.querySelectorAll('.nav-link, .secondary-nav-link');
+            const navLinks = document.querySelectorAll('.nav-link, .secondary-nav-link, .footer-link');
             
             navLinks.forEach(link => {
                 const linkHref = link.getAttribute('href');
@@ -1830,27 +2625,15 @@
                 }
             });
             
-            // Service card hover effects
-            const serviceCards = document.querySelectorAll('.service-card');
-            serviceCards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'translateY(-10px) scale(1.02)';
-                });
-                
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(-10px)';
-                });
-            });
-            
             // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return;
                     
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
-                        e.preventDefault();
                         window.scrollTo({
                             top: targetElement.offsetTop - 100,
                             behavior: 'smooth'
@@ -1859,23 +2642,23 @@
                 });
             });
             
-            // Auto-rotate service cards highlight
-            let currentService = 0;
-            const services = document.querySelectorAll('.service-card');
+            // Office marker interactions
+            const officeMarkers = document.querySelectorAll('.office-marker');
+            officeMarkers.forEach(marker => {
+                marker.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                });
+                
+                marker.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translate(-50%, -50%) scale(1)';
+                });
+            });
             
-            if (services.length > 1) {
-                setInterval(() => {
-                    services[currentService].style.boxShadow = 'var(--shadow-xl)';
-                    services[currentService].style.borderColor = 'rgba(226, 232, 240, 0.5)';
-                    
-                    currentService = (currentService + 1) % services.length;
-                    
-                    services[currentService].style.boxShadow = 'var(--shadow-xxl)';
-                    services[currentService].style.borderColor = 'var(--color-accent)';
-                }, 3000);
+            // Initialize with secondary nav hidden
+            if (window.scrollY <= 50) {
+                secondaryNav.classList.remove('visible');
             }
         });
     </script>
 </body>
-
 </html>
