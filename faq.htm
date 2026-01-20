@@ -13,29 +13,10 @@
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <head>
-    <!-- Favicon GPS Oillogistic - Minimaliste -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-        <!-- Carré avec coins arrondis -->
-        <rect x='15' y='15' width='70' height='70' rx='15' fill='%231a365d'/>
-        
-        <!-- G stylisée -->
-        <text x='50' y='65' 
-              font-family='Helvetica, Arial, sans-serif' 
-              font-size='40' 
-              font-weight='800' 
-              fill='white' 
-              text-anchor='middle'
-              letter-spacing='-1'>G</text>
-        
-        <!-- Barre horizontale (logistique) -->
-        <rect x='30' y='45' width='40' height='6' fill='%23f97316'/>
-        
-        <!-- Point GPS -->
-        <circle cx='65' cy='35' r='4' fill='%23f97316'/>
-    </svg>">
-</head>
+    
+    <!-- Favicon GPS International -->
+    <link rel="icon" type="image/x-icon" href="GPS-Logo-2012.JPG">
+    
     <style>
         /* ==================== CSS RESET & VARIABLES ==================== */
         :root {
@@ -48,6 +29,16 @@
             --color-success: #059669;
             --color-warning: #f59e0b;
             --color-info: #0891b2;
+            
+            /* Service Colors */
+            --color-logistics: #1e40af;
+            --color-marine: #059669;
+            --color-heavy: #dc2626;
+            --color-supply: #7c3aed;
+            --color-equipment: #ea580c;
+            --color-procurement: #0891b2;
+            
+            /* Partner Colors */
             --color-total: #1e40af;
             --color-mabrouk: #dc2626;
             --color-baker: #7c3aed;
@@ -111,6 +102,8 @@
             color: #334155;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             min-height: 100vh;
+            overflow-x: hidden;
+            padding-top: 80px; /* Added for fixed header */
         }
         
         /* ==================== TYPOGRAPHY ==================== */
@@ -123,7 +116,7 @@
         }
         
         h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -131,7 +124,7 @@
         }
         
         h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             position: relative;
             padding-bottom: var(--space-md);
         }
@@ -164,9 +157,10 @@
         }
         
         .lead {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 500;
             color: var(--color-primary);
+            line-height: 1.6;
         }
         
         a {
@@ -178,6 +172,105 @@
         
         a:hover {
             color: var(--color-accent);
+        }
+        
+        /* ==================== LOGO STYLES ==================== */
+        .logo-image {
+            height: 50px;
+            width: auto;
+            transition: all var(--transition-fast);
+            object-fit: contain;
+            /* Remove white background using blend mode */
+            background: transparent !important;
+            mix-blend-mode: multiply;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        
+        .logo-link:hover .logo-image {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+        
+        /* ==================== FOOTER LOGO STYLES - TRANSPARENT BACKGROUND ==================== */
+        .footer-logo-image {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            transition: all var(--transition-fast);
+            background: transparent !important;
+            padding: 8px;
+            border-radius: var(--radius-sm);
+            /* For dark background - make logo white */
+            filter: 
+                brightness(0) 
+                invert(1)
+                drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+        
+        .footer-logo:hover .footer-logo-image {
+            transform: scale(1.05);
+            filter: 
+                brightness(0) 
+                invert(1)
+                drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+        }
+        
+        /* ==================== LOGO TEXT STYLES ==================== */
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            min-width: 200px;
+        }
+        
+        .logo-main {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        
+        .logo-tagline {
+            font-size: 0.75rem;
+            color: #a7b1bf;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            white-space: normal;
+            line-height: 1.2;
+            width: auto;
+        }
+        
+        .site-header.scrolled .logo-tagline {
+            font-size: 0.75rem;
+        }
+        
+        /* ==================== FOOTER LOGO TEXT STYLES ==================== */
+        .footer-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo-main {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        
+        .footer-logo-tagline {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            white-space: normal;
+            line-height: 1.2;
+            width: auto;
         }
         
         /* ==================== LAYOUT & CONTAINER ==================== */
@@ -201,7 +294,7 @@
         .site-header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            position: sticky;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
@@ -209,6 +302,12 @@
             border-bottom: 1px solid rgba(226, 232, 240, 0.5);
             box-shadow: var(--shadow-sm);
             padding: var(--space-sm) 0;
+            transition: all var(--transition-normal);
+        }
+        
+        .site-header.scrolled {
+            padding: var(--space-xs) 0;
+            box-shadow: var(--shadow-lg);
         }
         
         .header-container {
@@ -227,50 +326,8 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            gap: var(--space-sm);
+            gap: var(--space-md);
             position: relative;
-        }
-        
-        .logo-icon {
-            background: var(--gradient-primary);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .logo-main {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-        }
-        
-        .logo-tagline {
-            font-size: 0.75rem;
-            color: #64748b;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-        
-        /* Main Navigation */
-        .primary-navigation {
-            display: flex;
-            align-items: center;
         }
         
         .nav-list {
@@ -360,6 +417,19 @@
             backdrop-filter: blur(10px);
             border-top: 1px solid rgba(226, 232, 240, 0.5);
             border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all var(--transition-normal);
+        }
+        
+        .secondary-navigation.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
         
         .secondary-nav-list {
@@ -373,7 +443,7 @@
         .secondary-nav-link {
             color: #64748b;
             font-size: 0.9rem;
-            transition: color 0.3s;
+            transition: color var(--transition-fast);
             display: flex;
             align-items: center;
             gap: 5px;
@@ -388,19 +458,70 @@
             font-weight: 600;
         }
         
+        /* Header CTA */
+        .header-cta {
+            margin-left: var(--space-lg);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--color-accent), #fb923c);
+            color: white;
+            font-weight: 600;
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            transition: all var(--transition-fast);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: left 0.7s;
+        }
+        
+        .cta-button:hover:before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(249, 115, 22, 0.4);
+            background: linear-gradient(135deg, #fb923c, var(--color-accent));
+        }
+        
         /* ==================== HERO SECTION ==================== */
         .hero-section {
             min-height: 70vh;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, 
-                rgba(26, 54, 93, 0.9) 0%,
-                rgba(45, 90, 160, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+                rgba(15, 23, 42, 0.95) 0%,
+                rgba(30, 41, 59, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             position: relative;
             color: white;
+            margin-top: -80px;
+            padding-top: 180px;
         }
         
         .hero-section:before {
@@ -448,10 +569,10 @@
         }
         
         .hero-title {
-            font-size: 3.5rem;
+            color: white;
+            font-size: 4.5rem;
             margin-bottom: var(--space-lg);
             line-height: 1.1;
-            color: white;
             background: linear-gradient(135deg, white, rgba(255, 255, 255, 0.9));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -467,10 +588,10 @@
         }
         
         .hero-description {
-            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.5rem;
             max-width: 800px;
             margin: 0 auto var(--space-xxl);
-            color: rgba(255, 255, 255, 0.9);
             font-weight: 400;
         }
         
@@ -627,9 +748,12 @@
         }
         
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 800;
-            color: var(--color-primary);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: var(--space-sm);
         }
         
@@ -684,9 +808,10 @@
             background: linear-gradient(135deg, 
                 rgba(15, 23, 42, 0.95) 0%,
                 rgba(30, 41, 59, 0.95) 100%),
-                url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+                url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: white;
             position: relative;
             overflow: hidden;
@@ -714,7 +839,7 @@
         
         .cta-title {
             color: white;
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: var(--space-lg);
             background: linear-gradient(135deg, white, rgba(255, 255, 255, 0.9));
             -webkit-background-clip: text;
@@ -724,7 +849,7 @@
         
         .cta-description {
             color: rgba(255, 255, 255, 0.8);
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             margin-bottom: var(--space-xxl);
         }
         
@@ -840,21 +965,8 @@
         .footer-logo {
             display: flex;
             align-items: center;
-            gap: var(--space-md);
+            gap: var(--space-lg);
             margin-bottom: var(--space-lg);
-        }
-        
-        .footer-logo-icon {
-            background: linear-gradient(135deg, white, #e2e8f0);
-            color: var(--color-primary);
-            width: 50px;
-            height: 50px;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow-md);
         }
         
         .footer-description {
@@ -933,23 +1045,6 @@
             color: var(--color-accent);
         }
         
-        .global-offices {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-md);
-        }
-        
-        .office-item {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
-        }
-        
-        .office-item strong {
-            color: white;
-            display: block;
-            margin-bottom: 2px;
-        }
-        
         .footer-bottom {
             padding: var(--space-xl) 0;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -1008,7 +1103,7 @@
         
         @media (max-width: 992px) {
             h1 { font-size: 3rem; }
-            h2 { font-size: 2.25rem; }
+            h2 { font-size: 2.5rem; }
             h3 { font-size: 1.5rem; }
             
             .hero-title { 
@@ -1030,6 +1125,30 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: var(--space-md);
+            }
+            
+            .logo-text {
+                min-width: 180px;
+            }
+            
+            .logo-main {
+                font-size: 1.3rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.7rem;
+            }
+            
+            .footer-logo-image {
+                height: 45px;
+            }
+            
+            .footer-logo-main {
+                font-size: 1.3rem;
+            }
+            
+            .footer-logo-tagline {
+                font-size: 0.7rem;
             }
         }
         
@@ -1070,9 +1189,20 @@
                 justify-content: center;
             }
             
+            .header-cta {
+                display: none;
+            }
+            
+            .secondary-nav-list {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: var(--space-md);
+                padding: var(--space-sm) var(--space-lg);
+            }
+            
             .hero-section {
+                padding-top: 140px;
                 min-height: auto;
-                padding: 120px 0 var(--space-xxxl);
             }
             
             .hero-title {
@@ -1112,7 +1242,6 @@
             
             .btn {
                 width: 100%;
-                max-width: 320px;
                 justify-content: center;
             }
             
@@ -1120,14 +1249,52 @@
                 grid-template-columns: 1fr;
                 gap: var(--space-xl);
             }
+            
+            .logo-image {
+                height: 40px;
+            }
+            
+            .logo-text {
+                min-width: 140px;
+            }
+            
+            .logo-main {
+                font-size: 1.1rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.65rem;
+                white-space: normal;
+                line-height: 1.1;
+            }
+            
+            .site-header.scrolled .logo-tagline {
+                font-size: 0.65rem;
+            }
+            
+            .footer-logo {
+                gap: var(--space-md);
+            }
+            
+            .footer-logo-image {
+                height: 40px;
+            }
+            
+            .footer-logo-main {
+                font-size: 1.1rem;
+            }
+            
+            .footer-logo-tagline {
+                font-size: 0.65rem;
+            }
         }
         
         @media (max-width: 576px) {
-            h1 { font-size: 2.25rem; }
+            h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
             h3 { font-size: 1.375rem; }
             
-            .hero-title { font-size: 2.25rem; }
+            .hero-title { font-size: 2.5rem; }
             .cta-title { font-size: 2rem; }
             
             .faq-question {
@@ -1149,6 +1316,42 @@
                 right: var(--space-md);
                 width: 50px;
                 height: 50px;
+            }
+            
+            .logo-image {
+                height: 35px;
+            }
+            
+            .logo-text {
+                min-width: 120px;
+            }
+            
+            .logo-main {
+                font-size: 1rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.6rem;
+            }
+            
+            .site-header.scrolled .logo-tagline {
+                font-size: 0.6rem;
+            }
+            
+            .footer-logo {
+                gap: var(--space-sm);
+            }
+            
+            .footer-logo-image {
+                height: 35px;
+            }
+            
+            .footer-logo-main {
+                font-size: 1rem;
+            }
+            
+            .footer-logo-tagline {
+                font-size: 0.6rem;
             }
         }
         
@@ -1181,37 +1384,19 @@
         .faq-item:nth-child(4) { animation-delay: 0.4s; }
         .faq-item:nth-child(5) { animation-delay: 0.5s; }
         .faq-item:nth-child(6) { animation-delay: 0.6s; }
-        
-        /* Smooth accordion animation */
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .faq-answer {
-            animation: slideDown 0.3s ease-out;
-        }
     </style>
 </head>
 <body class="page-faq">
-    <!-- ==================== HEADER ==================== -->
+    <!-- ==================== HEADER - EXACTLY LIKE INDEX.HTM ==================== -->
     <header class="site-header" role="banner">
         <div class="container header-container">
-            <!-- Logo -->
+            <!-- Logo avec image GPS-Logo-2012.JPG -->
             <div class="logo-section">
                 <a href="index.htm" class="logo-link" aria-label="GPS International Home">
-                    <div class="logo-icon">
-                        <i class="fas fa-ship"></i>
-                    </div>
+                    <img src="GPS-Logo-2012.JPG" alt="GPS International Logo" class="logo-image">
                     <div class="logo-text">
                         <span class="logo-main">GPS International</span>
-                        <span class="logo-tagline">Global Project Services</span>
+                        <span class="logo-tagline">Global Project Services International</span>
                     </div>
                 </a>
                 <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
@@ -1219,7 +1404,7 @@
                 </button>
             </div>
             
-            <!-- Main Navigation -->
+            <!-- Main Navigation - CORRECTED LINKS -->
             <nav class="primary-navigation" id="primary-navigation" aria-label="Primary Navigation">
                 <ul class="nav-list">
                     <li class="nav-item">
@@ -1241,31 +1426,39 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="projects.htm" class="nav-link" data-page="projects">
+                            <i class="fas fa-project-diagram nav-icon"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="news.htm" class="nav-link" data-page="news">
+                            <i class="fas fa-newspaper nav-icon"></i>
+                            <span>News</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="contact.htm" class="nav-link" data-page="contact">
                             <i class="fas fa-envelope nav-icon"></i>
                             <span>Contact</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="intranet.htm" class="nav-link" data-page="intranet">
-                            <i class="fas fa-network-wired nav-icon"></i>
-                            <span>Intranet</span>
-                        </a>
-                    </li>
                 </ul>
             </nav>
+            
+            <!-- CTA Button -->
+            <div class="header-cta">
+                <a href="contact.htm" class="cta-button">
+                    <span>Get Your Quote</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
         
-        <!-- Secondary Navigation -->
+        <!-- Secondary Navigation - CORRECTED LINKS -->
         <nav class="secondary-navigation" aria-label="Secondary Navigation">
             <div class="container">
                 <ul class="secondary-nav-list">
-                    <li class="secondary-nav-item">
-                        <a href="news.htm" class="secondary-nav-link" data-page="news">
-                            <i class="fas fa-newspaper"></i>
-                            <span>News</span>
-                        </a>
-                    </li>
                     <li class="secondary-nav-item">
                         <a href="company.htm" class="secondary-nav-link" data-page="company">
                             <i class="fas fa-building"></i>
@@ -1625,25 +1818,36 @@
         </div>
     </section>
 
-    <!-- ==================== FOOTER ==================== -->
+    <!-- ==================== FOOTER - EXACTLY LIKE INDEX.HTM ==================== -->
     <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
-                <!-- Company Info -->
+                <!-- Company Info avec la MÊME IMAGE de logo - TRANSPARENT BACKGROUND -->
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <div class="footer-logo-icon">
-                            <i class="fas fa-ship"></i>
-                        </div>
+                        <img src="GPS-Logo-2012.JPG" alt="GPS International Logo" class="footer-logo-image">
                         <div class="footer-logo-text">
-                            <span class="logo-main">GPS International</span>
-                            <span class="logo-tagline">Global Project Services</span>
+                            <span class="footer-logo-main">GPS International</span>
+                            <span class="footer-logo-tagline">Global Project Services International</span>
                         </div>
                     </div>
                     <p class="footer-description">
-                        Delivering excellence in oil and gas logistics since 2008. 
-                        Your trusted partner for complex logistics solutions in challenging environments.
+                        Delivering excellence in oil and gas logistics since 2008. Trusted by major energy companies worldwide.
                     </p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <a href="tel:+441224015670" class="contact-link">+44 1224 015670</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <a href="tel:+21622254554" class="contact-link">+216 22 254 554</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <a href="mailto:info@gps-oillogistics.com" class="contact-link">info@gps-oillogistics.com</a>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Quick Links -->
@@ -1654,53 +1858,49 @@
                             <li><a href="index.htm" class="footer-link"><i class="fas fa-home"></i> Home</a></li>
                             <li><a href="services.htm" class="footer-link"><i class="fas fa-cogs"></i> Services</a></li>
                             <li><a href="references.htm" class="footer-link"><i class="fas fa-star"></i> References</a></li>
-                            <li><a href="faq.htm" class="footer-link active"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                            <li><a href="projects.htm" class="footer-link"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                            <li><a href="news.htm" class="footer-link"><i class="fas fa-newspaper"></i> News</a></li>
                             <li><a href="contact.htm" class="footer-link"><i class="fas fa-envelope"></i> Contact</a></li>
                         </ul>
                     </nav>
                 </div>
                 
-                <!-- Contact Info -->
+                <!-- Company Pages -->
                 <div class="footer-section">
-                    <h3 class="footer-title">Contact Information</h3>
-                    <address class="footer-address">
-                        <strong>Tunisia Headquarters:</strong><br>
-                        Parc d'activites economiques de Zarzis<br>
-                        BP 91 - Port de Zarzis 4337<br>
-                        Tunisia
-                        
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-phone contact-icon"></i>
-                                <a href="tel:+441224015670" class="contact-link">+44 1224 015670</a>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone contact-icon"></i>
-                                <a href="tel:+21622254554" class="contact-link">+216 22 254 554</a>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope contact-icon"></i>
-                                <a href="mailto:info@gps-oillogistics.com" class="contact-link">info@gps-oillogistics.com</a>
-                            </div>
-                        </div>
-                    </address>
+                    <h3 class="footer-title">Company</h3>
+                    <nav aria-label="Company Navigation">
+                        <ul class="footer-links">
+                            <li><a href="company.htm" class="footer-link"><i class="fas fa-building"></i> About Us</a></li>
+                            <li><a href="why-zarzis.htm" class="footer-link"><i class="fas fa-map-marker-alt"></i> Why Zarzis?</a></li>
+                            <li><a href="partners.htm" class="footer-link"><i class="fas fa-handshake"></i> Partners</a></li>
+                            <li><a href="faq.htm" class="footer-link active"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                            <li><a href="privacy.htm" class="footer-link"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                            <li><a href="terms.htm" class="footer-link"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+                        </ul>
+                    </nav>
                 </div>
                 
                 <!-- Global Offices -->
                 <div class="footer-section">
                     <h3 class="footer-title">Global Offices</h3>
-                    <div class="global-offices">
-                        <div class="office-item">
-                            <strong><i class="fas fa-map-marker-alt"></i> Libya:</strong><br>
+                    <address class="footer-address">
+                        <div class="address-item">
+                            <strong>Tunisia Headquarters:</strong><br>
+                            Parc d'activites economiques de Zarzis<br>
+                            BP 91 - Port de Zarzis 4337<br>
+                            Tunisia
+                        </div>
+                        <div class="address-item">
+                            <strong>Libya Office:</strong><br>
                             WGPS Libya - Rashassan, near ElEntelaka Former gas station, Tripoli<br>
                             <a href="tel:+218213403749" class="contact-link">+218 21 340 3749</a>
                         </div>
-                        <div class="office-item">
-                            <strong><i class="fas fa-map-marker-alt"></i> Iraq:</strong><br>
+                        <div class="address-item">
+                            <strong>Iraq Office:</strong><br>
                             GPS Iraq - Justice Tower floor 14, Office 23, Erbil<br>
                             <a href="tel:+9647504325583" class="contact-link">+964 750 432 5583</a>
                         </div>
-                    </div>
+                    </address>
                 </div>
             </div>
             
@@ -1728,6 +1928,20 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Set current year
             document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Header scroll effect
+            const header = document.querySelector('.site-header');
+            const secondaryNav = document.querySelector('.secondary-navigation');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                    secondaryNav.classList.add('visible');
+                } else {
+                    header.classList.remove('scrolled');
+                    secondaryNav.classList.remove('visible');
+                }
+            });
             
             // Mobile navigation toggle
             const mobileToggle = document.querySelector('.mobile-menu-toggle');
@@ -1791,7 +2005,7 @@
             
             // Set active navigation based on current page
             const currentPage = window.location.pathname.split('/').pop();
-            const navLinks = document.querySelectorAll('.nav-link, .secondary-nav-link');
+            const navLinks = document.querySelectorAll('.nav-link, .secondary-nav-link, .footer-link');
             
             navLinks.forEach(link => {
                 const linkHref = link.getAttribute('href');
@@ -1861,7 +2075,7 @@
                 }, 1000);
             }
             
-            // Search functionality (simulated)
+            // Add search functionality (simplified version)
             const searchInput = document.createElement('div');
             searchInput.innerHTML = `
                 <div class="search-container" style="max-width: 600px; margin: var(--space-xl) auto;">
@@ -1897,23 +2111,6 @@
                                     item.style.opacity = '1';
                                     item.style.transform = 'translateY(0)';
                                     
-                                    // Highlight search term
-                                    const questionEl = item.querySelector('h3');
-                                    const answerEl = item.querySelector('.faq-answer');
-                                    
-                                    const originalQuestion = questionEl.innerHTML;
-                                    const originalAnswer = answerEl.innerHTML;
-                                    
-                                    questionEl.innerHTML = originalQuestion.replace(
-                                        new RegExp(searchTerm, 'gi'),
-                                        match => `<mark style="background-color: #fef3c7; padding: 2px 4px; border-radius: 4px;">${match}</mark>`
-                                    );
-                                    
-                                    answerEl.innerHTML = originalAnswer.replace(
-                                        new RegExp(searchTerm, 'gi'),
-                                        match => `<mark style="background-color: #fef3c7; padding: 2px 4px; border-radius: 4px;">${match}</mark>`
-                                    );
-                                    
                                     // Open matching items
                                     item.classList.add('active');
                                 } else {
@@ -1931,13 +2128,6 @@
                                 item.style.opacity = '1';
                                 item.style.transform = 'translateY(0)';
                                 
-                                // Remove highlights
-                                const questionEl = item.querySelector('h3');
-                                const answerEl = item.querySelector('.faq-answer');
-                                
-                                questionEl.innerHTML = questionEl.textContent;
-                                answerEl.innerHTML = answerEl.textContent;
-                                
                                 // Close all items except first
                                 if (item !== faqItems[0]) {
                                     item.classList.remove('active');
@@ -1948,78 +2138,11 @@
                 }
             }
             
-            // Add print FAQ functionality
-            const printBtn = document.createElement('button');
-            printBtn.innerHTML = `
-                <i class="fas fa-print"></i>
-                <span>Print FAQ</span>
-            `;
-            printBtn.className = 'category-btn';
-            printBtn.style.marginLeft = 'auto';
-            printBtn.style.background = 'var(--color-primary)';
-            printBtn.style.color = 'white';
-            printBtn.style.border = 'none';
-            
-            printBtn.addEventListener('click', () => {
-                window.print();
-            });
-            
-            const faqCategories = document.querySelector('.faq-categories');
-            if (faqCategories) {
-                faqCategories.appendChild(printBtn);
+            // Initialize with secondary nav hidden
+            if (window.scrollY <= 50) {
+                secondaryNav.classList.remove('visible');
             }
-            
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        e.preventDefault();
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-            
-            // Add keyboard navigation for FAQ
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-                    e.preventDefault();
-                    
-                    const activeItems = Array.from(faqItems).filter(item => 
-                        item.classList.contains('active')
-                    );
-                    
-                    if (activeItems.length > 0) {
-                        const currentIndex = Array.from(faqItems).indexOf(activeItems[0]);
-                        let nextIndex;
-                        
-                        if (e.key === 'ArrowDown') {
-                            nextIndex = (currentIndex + 1) % faqItems.length;
-                        } else {
-                            nextIndex = (currentIndex - 1 + faqItems.length) % faqItems.length;
-                        }
-                        
-                        // Close current item
-                        faqItems[currentIndex].classList.remove('active');
-                        // Open next item
-                        faqItems[nextIndex].classList.add('active');
-                        
-                        // Scroll into view
-                        faqItems[nextIndex].scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center'
-                        });
-                    }
-                }
-            });
         });
     </script>
 </body>
-
 </html>
