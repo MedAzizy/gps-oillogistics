@@ -13,29 +13,10 @@
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <head>
-    <!-- Favicon GPS Oillogistic - Minimaliste -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-        <!-- Carré avec coins arrondis -->
-        <rect x='15' y='15' width='70' height='70' rx='15' fill='%231a365d'/>
-        
-        <!-- G stylisée -->
-        <text x='50' y='65' 
-              font-family='Helvetica, Arial, sans-serif' 
-              font-size='40' 
-              font-weight='800' 
-              fill='white' 
-              text-anchor='middle'
-              letter-spacing='-1'>G</text>
-        
-        <!-- Barre horizontale (logistique) -->
-        <rect x='30' y='45' width='40' height='6' fill='%23f97316'/>
-        
-        <!-- Point GPS -->
-        <circle cx='65' cy='35' r='4' fill='%23f97316'/>
-    </svg>">
-</head>
+    
+    <!-- Favicon GPS International -->
+    <link rel="icon" type="image/x-icon" href="GPS-Logo-2012.JPG">
+    
     <style>
         /* ==================== CSS RESET & VARIABLES ==================== */
         :root {
@@ -59,6 +40,10 @@
             --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             --gradient-accent: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
             --gradient-zarzis: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            
+            /* Glass Morphism */
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
             
             /* Spacing */
             --space-xs: 0.25rem;
@@ -113,6 +98,7 @@
             color: #334155;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             min-height: 100vh;
+            overflow-x: hidden;
         }
         
         /* ==================== TYPOGRAPHY ==================== */
@@ -125,7 +111,7 @@
         }
         
         h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -133,7 +119,7 @@
         }
         
         h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             position: relative;
             padding-bottom: var(--space-md);
         }
@@ -166,9 +152,10 @@
         }
         
         .lead {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 500;
             color: var(--color-primary);
+            line-height: 1.6;
         }
         
         a {
@@ -180,6 +167,105 @@
         
         a:hover {
             color: var(--color-accent);
+        }
+        
+        /* ==================== LOGO STYLES ==================== */
+        .logo-image {
+            height: 50px;
+            width: auto;
+            transition: all var(--transition-fast);
+            object-fit: contain;
+            /* Remove white background using blend mode */
+            background: transparent !important;
+            mix-blend-mode: multiply;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        
+        .logo-link:hover .logo-image {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+        
+        /* ==================== FOOTER LOGO STYLES - TRANSPARENT BACKGROUND ==================== */
+        .footer-logo-image {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            transition: all var(--transition-fast);
+            background: transparent !important;
+            padding: 8px;
+            border-radius: var(--radius-sm);
+            /* For dark background - make logo white */
+            filter: 
+                brightness(0) 
+                invert(1)
+                drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+        
+        .footer-logo:hover .footer-logo-image {
+            transform: scale(1.05);
+            filter: 
+                brightness(0) 
+                invert(1)
+                drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+        }
+        
+        /* ==================== LOGO TEXT STYLES ==================== */
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            min-width: 200px;
+        }
+        
+        .logo-main {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        
+        .logo-tagline {
+            font-size: 0.75rem;
+            color: #a7b1bf;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            white-space: normal;
+            line-height: 1.2;
+            width: auto;
+        }
+        
+        .site-header.scrolled .logo-tagline {
+            font-size: 0.75rem;
+        }
+        
+        /* ==================== FOOTER LOGO TEXT STYLES ==================== */
+        .footer-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo-main {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        
+        .footer-logo-tagline {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            white-space: normal;
+            line-height: 1.2;
+            width: auto;
         }
         
         /* ==================== LAYOUT & CONTAINER ==================== */
@@ -199,7 +285,7 @@
         .site-header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            position: sticky;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
@@ -207,6 +293,12 @@
             border-bottom: 1px solid rgba(226, 232, 240, 0.5);
             box-shadow: var(--shadow-sm);
             padding: var(--space-sm) 0;
+            transition: all var(--transition-normal);
+        }
+        
+        .site-header.scrolled {
+            padding: var(--space-xs) 0;
+            box-shadow: var(--shadow-lg);
         }
         
         .header-container {
@@ -225,50 +317,8 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            gap: var(--space-sm);
+            gap: var(--space-md);
             position: relative;
-        }
-        
-        .logo-icon {
-            background: var(--gradient-primary);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .logo-main {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-        }
-        
-        .logo-tagline {
-            font-size: 0.75rem;
-            color: #64748b;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-        
-        /* Main Navigation */
-        .primary-navigation {
-            display: flex;
-            align-items: center;
         }
         
         .nav-list {
@@ -358,6 +408,19 @@
             backdrop-filter: blur(10px);
             border-top: 1px solid rgba(226, 232, 240, 0.5);
             border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all var(--transition-normal);
+        }
+        
+        .secondary-navigation.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
         
         .secondary-nav-list {
@@ -371,7 +434,7 @@
         .secondary-nav-link {
             color: #64748b;
             font-size: 0.9rem;
-            transition: color 0.3s;
+            transition: color var(--transition-fast);
             display: flex;
             align-items: center;
             gap: 5px;
@@ -386,8 +449,57 @@
             font-weight: 600;
         }
         
-        /* ==================== HERO SECTION ==================== */
-        .hero-section {
+        /* Header CTA */
+        .header-cta {
+            margin-left: var(--space-lg);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--color-accent), #fb923c);
+            color: white;
+            font-weight: 600;
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            transition: all var(--transition-fast);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: left 0.7s;
+        }
+        
+        .cta-button:hover:before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(249, 115, 22, 0.4);
+            background: linear-gradient(135deg, #fb923c, var(--color-accent));
+        }
+        
+        /* ==================== NEWS PAGE SPECIFIC STYLES ==================== */
+        /* HERO SECTION FOR NEWS PAGE */
+        .news-hero {
             min-height: 70vh;
             display: flex;
             align-items: center;
@@ -398,9 +510,11 @@
             background-size: cover;
             background-position: center;
             position: relative;
+            margin-top: -80px;
+            padding-top: 180px;
         }
         
-        .hero-section:before {
+        .news-hero:before {
             content: '';
             position: absolute;
             top: 0;
@@ -414,14 +528,14 @@
                 var(--color-success) 100%);
         }
         
-        .hero-container {
+        .news-hero-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: var(--space-xxxl);
             align-items: center;
         }
         
-        .hero-content {
+        .news-hero-content {
             position: relative;
             z-index: 2;
         }
@@ -504,7 +618,7 @@
             font-weight: 600;
         }
         
-        .hero-visual {
+        .news-hero-visual {
             position: relative;
         }
         
@@ -548,7 +662,7 @@
             color: #64748b;
         }
         
-        /* ==================== NEWS SECTION ==================== */
+        /* NEWS SECTION */
         .news-section {
             background: white;
             position: relative;
@@ -705,7 +819,7 @@
             font-weight: bold;
         }
         
-        /* ==================== FEATURED NEWS ==================== */
+        /* FEATURED NEWS */
         .featured-section {
             background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
             position: relative;
@@ -784,7 +898,7 @@
             margin-bottom: var(--space-lg);
         }
         
-        /* ==================== ARCHIVE SECTION ==================== */
+        /* ARCHIVE SECTION */
         .archive-section {
             background: white;
             position: relative;
@@ -841,9 +955,14 @@
             color: var(--color-accent);
         }
         
-        /* ==================== CTA SECTION ==================== */
+        /* CTA SECTION */
         .cta-section {
-            background: linear-gradient(135deg, var(--color-dark), var(--color-primary));
+            background: linear-gradient(135deg, 
+                rgba(15, 23, 42, 0.95) 0%,
+                rgba(30, 41, 59, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
             color: white;
             position: relative;
             overflow: hidden;
@@ -963,6 +1082,131 @@
             transform: translateX(5px);
         }
         
+        /* ==================== GLOBAL OFFICES - IMPROVED HORIZONTAL STYLES ==================== */
+        .global-offices {
+            width: 100%;
+        }
+
+        .office-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--space-md);
+            align-items: stretch;
+        }
+
+        .office-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all var(--transition-normal);
+            width: 170px;
+            min-height: 280px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .office-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .office-card-header {
+            padding: var(--space-sm) var(--space-md);
+            text-align: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 0.75rem;
+            min-height: 32px;
+        }
+
+        .office-country-icon {
+            font-size: 0.7rem;
+        }
+
+        .office-card-body {
+            padding: var(--space-md);
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .office-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-sm);
+            font-size: 1rem;
+        }
+
+        .office-city {
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: var(--space-xs);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .office-address {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.7rem;
+            line-height: 1.3;
+            margin-bottom: var(--space-sm);
+            flex: 1;
+        }
+
+        .office-contact {
+            margin-bottom: var(--space-sm);
+        }
+
+        .office-contact .contact-link {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.7rem;
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+        }
+
+        .office-contact .contact-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .office-badge {
+            background: rgba(249, 115, 22, 0.1);
+            color: var(--color-accent);
+            padding: 3px 6px;
+            border-radius: var(--radius-sm);
+            font-size: 0.6rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            font-weight: 500;
+            margin-top: auto;
+        }
+        
         /* ==================== FOOTER ==================== */
         .site-footer {
             background: var(--color-dark);
@@ -997,21 +1241,8 @@
         .footer-logo {
             display: flex;
             align-items: center;
-            gap: var(--space-md);
+            gap: var(--space-lg);
             margin-bottom: var(--space-lg);
-        }
-        
-        .footer-logo-icon {
-            background: linear-gradient(135deg, white, #e2e8f0);
-            color: var(--color-primary);
-            width: 50px;
-            height: 50px;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow-md);
         }
         
         .footer-description {
@@ -1070,41 +1301,24 @@
             gap: var(--space-sm);
         }
         
-        .contact-item-footer {
+        .contact-item {
             display: flex;
             align-items: center;
             gap: var(--space-sm);
             color: rgba(255, 255, 255, 0.7);
         }
         
-        .contact-icon-footer {
+        .contact-icon {
             color: var(--color-accent);
             min-width: 20px;
         }
         
-        .contact-link-footer {
+        .contact-link {
             color: rgba(255, 255, 255, 0.7);
         }
         
-        .contact-link-footer:hover {
+        .contact-link:hover {
             color: var(--color-accent);
-        }
-        
-        .global-offices {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-md);
-        }
-        
-        .office-item {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
-        }
-        
-        .office-item strong {
-            color: white;
-            display: block;
-            margin-bottom: 2px;
         }
         
         .footer-bottom {
@@ -1162,14 +1376,22 @@
                 padding: 0 var(--space-lg);
             }
             
-            .hero-container {
+            .news-hero-container {
                 gap: var(--space-xxl);
+            }
+            
+            .office-cards {
+                gap: var(--space-sm);
+            }
+            
+            .office-card {
+                width: 160px;
             }
         }
         
         @media (max-width: 992px) {
             h1 { font-size: 3rem; }
-            h2 { font-size: 2.25rem; }
+            h2 { font-size: 2.5rem; }
             h3 { font-size: 1.5rem; }
             
             .hero-title { 
@@ -1183,15 +1405,47 @@
             
             .cta-title { font-size: 2.5rem; }
             
+            .news-hero-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-xxl);
+            }
+            
             .news-grid,
             .featured-grid {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 gap: var(--space-lg);
             }
             
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: var(--space-xxl);
+            .logo-text {
+                min-width: 180px;
+            }
+            
+            .logo-main {
+                font-size: 1.3rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.7rem;
+            }
+            
+            .footer-logo-image {
+                height: 45px;
+            }
+            
+            .footer-logo-main {
+                font-size: 1.3rem;
+            }
+            
+            .footer-logo-tagline {
+                font-size: 0.7rem;
+            }
+            
+            .office-cards {
+                justify-content: center;
+            }
+            
+            .office-card {
+                width: 150px;
             }
         }
         
@@ -1232,9 +1486,20 @@
                 justify-content: center;
             }
             
-            .hero-section {
+            .header-cta {
+                display: none;
+            }
+            
+            .secondary-nav-list {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: var(--space-md);
+                padding: var(--space-sm) var(--space-lg);
+            }
+            
+            .news-hero {
                 min-height: auto;
-                padding: 120px 0 var(--space-xxxl);
+                padding: 140px 0 var(--space-xxxl);
             }
             
             .hero-title {
@@ -1271,10 +1536,60 @@
                 grid-template-columns: 1fr;
                 gap: var(--space-xl);
             }
+            
+            .logo-image {
+                height: 40px;
+            }
+            
+            .logo-text {
+                min-width: 140px;
+            }
+            
+            .logo-main {
+                font-size: 1.1rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.65rem;
+                white-space: normal;
+                line-height: 1.1;
+            }
+            
+            .site-header.scrolled .logo-tagline {
+                font-size: 0.65rem;
+            }
+            
+            .footer-logo {
+                gap: var(--space-md);
+            }
+            
+            .footer-logo-image {
+                height: 40px;
+            }
+            
+            .footer-logo-main {
+                font-size: 1.1rem;
+            }
+            
+            .footer-logo-tagline {
+                font-size: 0.65rem;
+            }
+            
+            .office-cards {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-sm);
+                justify-items: center;
+            }
+            
+            .office-card {
+                width: 100%;
+                max-width: 170px;
+            }
         }
         
         @media (max-width: 576px) {
-            h1 { font-size: 2.25rem; }
+            h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
             h3 { font-size: 1.375rem; }
             
@@ -1291,6 +1606,68 @@
                 right: var(--space-md);
                 width: 50px;
                 height: 50px;
+            }
+            
+            .logo-image {
+                height: 35px;
+            }
+            
+            .logo-text {
+                min-width: 120px;
+            }
+            
+            .logo-main {
+                font-size: 1rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.6rem;
+            }
+            
+            .site-header.scrolled .logo-tagline {
+                font-size: 0.6rem;
+            }
+            
+            .footer-logo {
+                gap: var(--space-sm);
+            }
+            
+            .footer-logo-image {
+                height: 35px;
+            }
+            
+            .footer-logo-main {
+                font-size: 1rem;
+            }
+            
+            .footer-logo-tagline {
+                font-size: 0.6rem;
+            }
+            
+            .office-cards {
+                grid-template-columns: 1fr;
+                max-width: 250px;
+                margin: 0 auto;
+            }
+            
+            .office-card {
+                max-width: 250px;
+                width: 100%;
+            }
+            
+            .office-card-body {
+                padding: var(--space-md);
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .office-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .office-card {
+                width: 100%;
+                max-width: 100%;
             }
         }
         
@@ -1322,15 +1699,13 @@
     <!-- ==================== HEADER ==================== -->
     <header class="site-header" role="banner">
         <div class="container header-container">
-            <!-- Logo -->
+            <!-- Logo avec image GPS-Logo-2012.JPG -->
             <div class="logo-section">
                 <a href="index.htm" class="logo-link" aria-label="GPS International Home">
-                    <div class="logo-icon">
-                        <i class="fas fa-ship"></i>
-                    </div>
+                    <img src="GPS-Logo-2012.JPG" alt="GPS International Logo" class="logo-image">
                     <div class="logo-text">
                         <span class="logo-main">GPS International</span>
-                        <span class="logo-tagline">Global Project Services</span>
+                        <span class="logo-tagline">Global Project Services International</span>
                     </div>
                 </a>
                 <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
@@ -1338,19 +1713,13 @@
                 </button>
             </div>
             
-            <!-- Main Navigation -->
+            <!-- Main Navigation - CORRECTED LINKS -->
             <nav class="primary-navigation" id="primary-navigation" aria-label="Primary Navigation">
                 <ul class="nav-list">
                     <li class="nav-item">
                         <a href="index.htm" class="nav-link" data-page="home">
                             <i class="fas fa-home nav-icon"></i>
                             <span>Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="news.htm" class="nav-link active" data-page="news" aria-current="page">
-                            <i class="fas fa-newspaper nav-icon"></i>
-                            <span>News</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -1372,31 +1741,33 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="news.htm" class="nav-link active" data-page="news" aria-current="page">
+                            <i class="fas fa-newspaper nav-icon"></i>
+                            <span>News</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="contact.htm" class="nav-link" data-page="contact">
                             <i class="fas fa-envelope nav-icon"></i>
                             <span>Contact</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="intranet.htm" class="nav-link" data-page="intranet">
-                            <i class="fas fa-network-wired nav-icon"></i>
-                            <span>Intranet</span>
-                        </a>
-                    </li>
                 </ul>
             </nav>
+            
+            <!-- CTA Button -->
+            <div class="header-cta">
+                <a href="contact.htm" class="cta-button">
+                    <span>Get Your Quote</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
         
-        <!-- Secondary Navigation -->
+        <!-- Secondary Navigation - CORRECTED LINKS -->
         <nav class="secondary-navigation" aria-label="Secondary Navigation">
             <div class="container">
                 <ul class="secondary-nav-list">
-                    <li class="secondary-nav-item">
-                        <a href="news.htm" class="secondary-nav-link active" data-page="news" aria-current="page">
-                            <i class="fas fa-newspaper"></i>
-                            <span>News</span>
-                        </a>
-                    </li>
                     <li class="secondary-nav-item">
                         <a href="company.htm" class="secondary-nav-link" data-page="company">
                             <i class="fas fa-building"></i>
@@ -1426,356 +1797,402 @@
         </nav>
     </header>
 
-    <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero-section" aria-labelledby="hero-title">
-        <div class="container hero-container">
-            <div class="hero-content fade-in-up">
-                <div class="hero-badge">
-                    <i class="fas fa-newspaper badge-icon"></i>
-                    <span class="badge-text">Latest Updates & Announcements</span>
-                </div>
-                <h1 id="hero-title" class="hero-title">
-                    <span class="hero-subtitle">Stay Informed</span>
-                    News & Updates
-                </h1>
-                <p class="hero-description">
-                    Discover the latest developments, project milestones, and industry insights from GPS International's global operations across multiple continents.
-                </p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="15">15+</span>
-                        <span class="stat-label">Years Excellence</span>
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main id="main-content" class="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="news-hero" aria-labelledby="hero-title">
+            <div class="container news-hero-container">
+                <div class="news-hero-content fade-in-up">
+                    <div class="hero-badge">
+                        <i class="fas fa-newspaper badge-icon"></i>
+                        <span class="badge-text">Latest Updates & Announcements</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="200">200+</span>
-                        <span class="stat-label">Projects Delivered</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="98">98%</span>
-                        <span class="stat-label">Success Rate</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="12">12</span>
-                        <span class="stat-label">Countries Served</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="hero-visual fade-in-up" style="animation-delay: 0.1s;">
-                <div class="news-visual">
-                    <div class="news-visual-content">
-                        <i class="fas fa-bullhorn"></i>
-                        <h3>Real-time Updates</h3>
-                        <p>Stay current with our latest achievements and industry developments</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== NEWS SECTION ==================== -->
-    <section class="news-section" aria-labelledby="news-title">
-        <div class="container">
-            <h2 id="news-title" class="section-title fade-in-up">Latest Announcements</h2>
-            <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
-                Stay informed about our recent achievements, project milestones, and industry developments
-            </p>
-            
-            <div class="news-grid">
-                <!-- News Item 1 -->
-                <article class="news-card fade-in-up">
-                    <div class="news-header">
-                        <div class="news-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h3 class="news-title">End of TOTALEnergies Contract</h3>
-                        <div class="news-date">
-                            <i class="far fa-calendar"></i>
-                            Latest Update
-                        </div>
-                        <span class="news-category">Contract Update</span>
-                    </div>
-                    <div class="news-content">
-                        <p class="news-description">
-                            Unable to find an agreement with NOC on NW Exploration offshore field, 
-                            TOTALEnergies withdrew from Zarzis Base. GPS International acted since 
-                            2009 as Integrated Logistics Provider for TOTALEnergies for all exploration 
-                            activities offshore Libya.
-                        </p>
-                        
-                        <div class="news-highlights">
-                            <h4><i class="fas fa-star"></i> Key Partnership Highlights</h4>
-                            <ul class="highlight-list">
-                                <li><strong>Duration:</strong> 14+ years of successful partnership (2009-2023)</li>
-                                <li><strong>Role:</strong> Exclusive Integrated Logistics Provider for offshore exploration</li>
-                                <li><strong>Operations:</strong> Managed Zarzis Supply Base operations</li>
-                                <li><strong>Scope:</strong> Comprehensive logistics support for all offshore activities</li>
-                                <li><strong>Status:</strong> Contract concluded with full operational success</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- News Item 2 -->
-                <article class="news-card fade-in-up" style="animation-delay: 0.1s;">
-                    <div class="news-header">
-                        <div class="news-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="news-title">Board Meeting: 2022 Fiscal Exercise</h3>
-                        <div class="news-date">
-                            <i class="far fa-calendar"></i>
-                            September 11, 2023
-                        </div>
-                        <span class="news-category">Financial Update</span>
-                    </div>
-                    <div class="news-content">
-                        <p class="news-description">
-                            The Board meeting for the fiscal year 2022 was held on September 11, 2023. 
-                            The board agreed on strategic cost-cutting measures following the conclusion 
-                            of the TOTALEnergies contract and decided to call for the shareholders meeting 
-                            on October 25, 2023.
-                        </p>
-                        
-                        <div class="news-highlights">
-                            <h4><i class="fas fa-bullseye"></i> Strategic Decisions</h4>
-                            <ul class="highlight-list">
-                                <li><strong>Meeting Date:</strong> September 11, 2023</li>
-                                <li><strong>Focus Area:</strong> 2022 Fiscal Year Performance Review</li>
-                                <li><strong>Key Decision:</strong> Implementation of strategic cost optimization measures</li>
-                                <li><strong>Action Plan:</strong> Shareholders meeting scheduled for October 25, 2023</li>
-                                <li><strong>Objective:</strong> Ensure long-term financial sustainability and growth</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- News Item 3 -->
-                <article class="news-card fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="news-header">
-                        <div class="news-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="news-title">Shareholders Meeting: 2022 Fiscal Exercise</h3>
-                        <div class="news-date">
-                            <i class="far fa-calendar"></i>
-                            October 25, 2023
-                        </div>
-                        <span class="news-category">Corporate Governance</span>
-                    </div>
-                    <div class="news-content">
-                        <p class="news-description">
-                            The Shareholders meeting for the fiscal year 2022 was held on October 25, 2023. 
-                            Shareholders were comprehensively briefed on the company's strategic response 
-                            to the conclusion of the TOTALEnergies contract, including detailed cost optimization 
-                            measures.
-                        </p>
-                        
-                        <div class="news-highlights">
-                            <h4><i class="fas fa-check-circle"></i> Meeting Outcomes</h4>
-                            <ul class="highlight-list">
-                                <li><strong>Date:</strong> October 25, 2023 - Full shareholder participation</li>
-                                <li><strong>Discussion:</strong> Financial performance and strategic direction</li>
-                                <li><strong>Decision:</strong> No dividends distributed for 2022 fiscal year</li>
-                                <li><strong>Strategy:</strong> Earnings retention for future strategic initiatives</li>
-                                <li><strong>Focus:</strong> Reinvestment in growth opportunities and stability</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== FEATURED NEWS ==================== -->
-    <section class="featured-section" aria-labelledby="featured-title">
-        <div class="container">
-            <h2 id="featured-title" class="section-title fade-in-up">Industry Insights</h2>
-            <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
-                Expert perspectives on logistics, supply chain management, and industry trends
-            </p>
-            
-            <div class="featured-grid">
-                <div class="featured-card fade-in-up">
-                    <div class="featured-image">
-                        <i class="fas fa-ship"></i>
-                    </div>
-                    <div class="featured-content">
-                        <h3>Maritime Logistics Evolution</h3>
-                        <p>How digital transformation is reshaping offshore supply chain management in challenging environments.</p>
-                        <a href="#" class="btn btn-secondary" style="margin-top: var(--space-md);">
-                            <span>Read Analysis</span>
-                            <i class="fas fa-arrow-right btn-icon"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="featured-card fade-in-up" style="animation-delay: 0.1s;">
-                    <div class="featured-image">
-                        <i class="fas fa-chart-network"></i>
-                    </div>
-                    <div class="featured-content">
-                        <h3>Supply Chain Resilience</h3>
-                        <p>Building robust logistics networks that withstand geopolitical and environmental challenges.</p>
-                        <a href="#" class="btn btn-secondary" style="margin-top: var(--space-md);">
-                            <span>Explore Strategies</span>
-                            <i class="fas fa-arrow-right btn-icon"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="featured-card fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="featured-image">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <div class="featured-content">
-                        <h3>Sustainable Operations</h3>
-                        <p>Implementing eco-friendly practices in oil & gas logistics for reduced environmental impact.</p>
-                        <a href="#" class="btn btn-secondary" style="margin-top: var(--space-md);">
-                            <span>Learn More</span>
-                            <i class="fas fa-arrow-right btn-icon"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== ARCHIVE SECTION ==================== -->
-    <section class="archive-section" aria-labelledby="archive-title">
-        <div class="container">
-            <h2 id="archive-title" class="section-title fade-in-up">News Archive</h2>
-            <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
-                Browse our historical updates and past announcements
-            </p>
-            
-            <div class="archive-grid fade-in-up">
-                <div class="archive-card">
-                    <div class="archive-year">2023</div>
-                    <ul class="archive-list">
-                        <li><a href="#"><i class="far fa-file-alt"></i> Q4 Operations Report</a></li>
-                        <li><a href="#"><i class="far fa-file-alt"></i> New Partnership Announcement</a></li>
-                        <li><a href="#"><i class="far fa-file-alt"></i> Safety Milestone Achieved</a></li>
-                    </ul>
-                </div>
-                
-                <div class="archive-card">
-                    <div class="archive-year">2022</div>
-                    <ul class="archive-list">
-                        <li><a href="#"><i class="far fa-file-alt"></i> Annual Report 2022</a></li>
-                        <li><a href="#"><i class="far fa-file-alt"></i> Infrastructure Expansion</a></li>
-                        <li><a href="#"><i class="far fa-file-alt"></i> Industry Awards</a></li>
-                    </ul>
-                </div>
-                
-                <div class="archive-card">
-                    <div class="archive-year">2021</div>
-                    <ul class="archive-list">
-                        <li><a href="#"><i class="far fa-file-alt"></i> COVID-19 Response</a></li>
-                        <li><a href="#"><i class="far fa-file-alt"></i> Technology Implementation</a></li>
-                        <li><a href="#"><i class="far fa-file-alt"></i> Market Expansion</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== CTA SECTION ==================== -->
-    <section class="cta-section" aria-labelledby="cta-title">
-        <div class="container">
-            <div class="cta-content fade-in-up">
-                <div class="cta-text">
-                    <h2 id="cta-title" class="cta-title">Stay Updated with GPS</h2>
-                    <p class="cta-description">
-                        Subscribe to our newsletter for exclusive industry insights, project updates, 
-                        and company announcements delivered directly to your inbox.
+                    <h1 id="hero-title" class="hero-title">
+                        <span class="hero-subtitle">Stay Informed</span>
+                        News & Updates
+                    </h1>
+                    <p class="hero-description">
+                        Discover the latest developments, project milestones, and industry insights from GPS International's global operations across multiple continents.
                     </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="15">15+</span>
+                            <span class="stat-label">Years Excellence</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="200">200+</span>
+                            <span class="stat-label">Projects Delivered</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="98">98%</span>
+                            <span class="stat-label">Success Rate</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="12">12</span>
+                            <span class="stat-label">Countries Served</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="cta-actions">
-                    <a href="contact.htm" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i>
-                        <span>Subscribe to Newsletter</span>
-                    </a>
-                    <a href="references.htm" class="btn btn-secondary">
-                        <i class="fas fa-star"></i>
-                        <span>View Our Success Stories</span>
-                    </a>
-                    <a href="index.htm" class="btn btn-secondary">
-                        <i class="fas fa-home"></i>
-                        <span>Back to Home</span>
-                    </a>
+                
+                <div class="news-hero-visual fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="news-visual">
+                        <div class="news-visual-content">
+                            <i class="fas fa-bullhorn"></i>
+                            <h3>Real-time Updates</h3>
+                            <p>Stay current with our latest achievements and industry developments</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- News Section -->
+        <section class="news-section" aria-labelledby="news-title">
+            <div class="container">
+                <h2 id="news-title" class="section-title fade-in-up">Latest Announcements</h2>
+                <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
+                    Stay informed about our recent achievements, project milestones, and industry developments
+                </p>
+                
+                <div class="news-grid">
+                    <!-- News Item 1 -->
+                    <article class="news-card fade-in-up">
+                        <div class="news-header">
+                            <div class="news-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3 class="news-title">End of TOTALEnergies Contract</h3>
+                            <div class="news-date">
+                                <i class="far fa-calendar"></i>
+                                Latest Update
+                            </div>
+                            <span class="news-category">Contract Update</span>
+                        </div>
+                        <div class="news-content">
+                            <p class="news-description">
+                                Unable to find an agreement with NOC on NW Exploration offshore field, 
+                                TOTALEnergies withdrew from Zarzis Base. GPS International acted since 
+                                2009 as Integrated Logistics Provider for TOTALEnergies for all exploration 
+                                activities offshore Libya.
+                            </p>
+                            
+                            <div class="news-highlights">
+                                <h4><i class="fas fa-star"></i> Key Partnership Highlights</h4>
+                                <ul class="highlight-list">
+                                    <li><strong>Duration:</strong> 14+ years of successful partnership (2009-2023)</li>
+                                    <li><strong>Role:</strong> Exclusive Integrated Logistics Provider for offshore exploration</li>
+                                    <li><strong>Operations:</strong> Managed Zarzis Supply Base operations</li>
+                                    <li><strong>Scope:</strong> Comprehensive logistics support for all offshore activities</li>
+                                    <li><strong>Status:</strong> Contract concluded with full operational success</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- News Item 2 -->
+                    <article class="news-card fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="news-header">
+                            <div class="news-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="news-title">Board Meeting: 2022 Fiscal Exercise</h3>
+                            <div class="news-date">
+                                <i class="far fa-calendar"></i>
+                                September 11, 2023
+                            </div>
+                            <span class="news-category">Financial Update</span>
+                        </div>
+                        <div class="news-content">
+                            <p class="news-description">
+                                The Board meeting for the fiscal year 2022 was held on September 11, 2023. 
+                                The board agreed on strategic cost-cutting measures following the conclusion 
+                                of the TOTALEnergies contract and decided to call for the shareholders meeting 
+                                on October 25, 2023.
+                            </p>
+                            
+                            <div class="news-highlights">
+                                <h4><i class="fas fa-bullseye"></i> Strategic Decisions</h4>
+                                <ul class="highlight-list">
+                                    <li><strong>Meeting Date:</strong> September 11, 2023</li>
+                                    <li><strong>Focus Area:</strong> 2022 Fiscal Year Performance Review</li>
+                                    <li><strong>Key Decision:</strong> Implementation of strategic cost optimization measures</li>
+                                    <li><strong>Action Plan:</strong> Shareholders meeting scheduled for October 25, 2023</li>
+                                    <li><strong>Objective:</strong> Ensure long-term financial sustainability and growth</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- News Item 3 -->
+                    <article class="news-card fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="news-header">
+                            <div class="news-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="news-title">Shareholders Meeting: 2022 Fiscal Exercise</h3>
+                            <div class="news-date">
+                                <i class="far fa-calendar"></i>
+                                October 25, 2023
+                            </div>
+                            <span class="news-category">Corporate Governance</span>
+                        </div>
+                        <div class="news-content">
+                            <p class="news-description">
+                                The Shareholders meeting for the fiscal year 2022 was held on October 25, 2023. 
+                                Shareholders were comprehensively briefed on the company's strategic response 
+                                to the conclusion of the TOTALEnergies contract, including detailed cost optimization 
+                                measures.
+                            </p>
+                            
+                            <div class="news-highlights">
+                                <h4><i class="fas fa-check-circle"></i> Meeting Outcomes</h4>
+                                <ul class="highlight-list">
+                                    <li><strong>Date:</strong> October 25, 2023 - Full shareholder participation</li>
+                                    <li><strong>Discussion:</strong> Financial performance and strategic direction</li>
+                                    <li><strong>Decision:</strong> No dividends distributed for 2022 fiscal year</li>
+                                    <li><strong>Strategy:</strong> Earnings retention for future strategic initiatives</li>
+                                    <li><strong>Focus:</strong> Reinvestment in growth opportunities and stability</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured News -->
+        <section class="featured-section" aria-labelledby="featured-title">
+            <div class="container">
+                <h2 id="featured-title" class="section-title fade-in-up">Industry Insights</h2>
+                <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
+                    Expert perspectives on logistics, supply chain management, and industry trends
+                </p>
+                
+                <div class="featured-grid">
+                    <div class="featured-card fade-in-up">
+                        <div class="featured-image">
+                            <i class="fas fa-ship"></i>
+                        </div>
+                        <div class="featured-content">
+                            <h3>Maritime Logistics Evolution</h3>
+                            <p>How digital transformation is reshaping offshore supply chain management in challenging environments.</p>
+                            <a href="#" class="btn btn-secondary" style="margin-top: var(--space-md);">
+                                <span>Read Analysis</span>
+                                <i class="fas fa-arrow-right btn-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="featured-card fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="featured-image">
+                            <i class="fas fa-chart-network"></i>
+                        </div>
+                        <div class="featured-content">
+                            <h3>Supply Chain Resilience</h3>
+                            <p>Building robust logistics networks that withstand geopolitical and environmental challenges.</p>
+                            <a href="#" class="btn btn-secondary" style="margin-top: var(--space-md);">
+                                <span>Explore Strategies</span>
+                                <i class="fas fa-arrow-right btn-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="featured-card fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="featured-image">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="featured-content">
+                            <h3>Sustainable Operations</h3>
+                            <p>Implementing eco-friendly practices in oil & gas logistics for reduced environmental impact.</p>
+                            <a href="#" class="btn btn-secondary" style="margin-top: var(--space-md);">
+                                <span>Learn More</span>
+                                <i class="fas fa-arrow-right btn-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Archive Section -->
+        <section class="archive-section" aria-labelledby="archive-title">
+            <div class="container">
+                <h2 id="archive-title" class="section-title fade-in-up">News Archive</h2>
+                <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
+                    Browse our historical updates and past announcements
+                </p>
+                
+                <div class="archive-grid fade-in-up">
+                    <div class="archive-card">
+                        <div class="archive-year">2023</div>
+                        <ul class="archive-list">
+                            <li><a href="#"><i class="far fa-file-alt"></i> Q4 Operations Report</a></li>
+                            <li><a href="#"><i class="far fa-file-alt"></i> New Partnership Announcement</a></li>
+                            <li><a href="#"><i class="far fa-file-alt"></i> Safety Milestone Achieved</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="archive-card">
+                        <div class="archive-year">2022</div>
+                        <ul class="archive-list">
+                            <li><a href="#"><i class="far fa-file-alt"></i> Annual Report 2022</a></li>
+                            <li><a href="#"><i class="far fa-file-alt"></i> Infrastructure Expansion</a></li>
+                            <li><a href="#"><i class="far fa-file-alt"></i> Industry Awards</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="archive-card">
+                        <div class="archive-year">2021</div>
+                        <ul class="archive-list">
+                            <li><a href="#"><i class="far fa-file-alt"></i> COVID-19 Response</a></li>
+                            <li><a href="#"><i class="far fa-file-alt"></i> Technology Implementation</a></li>
+                            <li><a href="#"><i class="far fa-file-alt"></i> Market Expansion</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content fade-in-up">
+                    <div class="cta-text">
+                        <h2 id="cta-title" class="cta-title">Stay Updated with GPS</h2>
+                        <p class="cta-description">
+                            Subscribe to our newsletter for exclusive industry insights, project updates, 
+                            and company announcements delivered directly to your inbox.
+                        </p>
+                    </div>
+                    <div class="cta-actions">
+                        <a href="contact.htm" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            <span>Subscribe to Newsletter</span>
+                        </a>
+                        <a href="references.htm" class="btn btn-secondary">
+                            <i class="fas fa-star"></i>
+                            <span>View Our Success Stories</span>
+                        </a>
+                        <a href="index.htm" class="btn btn-secondary">
+                            <i class="fas fa-home"></i>
+                            <span>Back to Home</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- ==================== FOOTER ==================== -->
     <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
-                <!-- Company Info -->
+                <!-- Company Info avec la MÊME IMAGE de logo - TRANSPARENT BACKGROUND -->
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <div class="footer-logo-icon">
-                            <i class="fas fa-ship"></i>
-                        </div>
+                        <img src="GPS-Logo-2012.JPG" alt="GPS International Logo" class="footer-logo-image">
                         <div class="footer-logo-text">
-                            <span class="logo-main">GPS International</span>
-                            <span class="logo-tagline">Global Project Services</span>
+                            <span class="footer-logo-main">GPS International</span>
+                            <span class="footer-logo-tagline">Global Project Services International</span>
                         </div>
                     </div>
                     <p class="footer-description">
                         Specialized in advanced logistics and inventory management solutions for the oil and gas industry since 2008.
                     </p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <a href="tel:+441224015670" class="contact-link">+44 1224 015670</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <a href="tel:+21622254554" class="contact-link">+216 22 254 554</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <a href="mailto:info@gps-oillogistics.com" class="contact-link">info@gps-oillogistics.com</a>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Quick Links -->
                 <div class="footer-section">
                     <h3 class="footer-title">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.htm" class="footer-link"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="news.htm" class="footer-link active"><i class="fas fa-newspaper"></i> News</a></li>
-                        <li><a href="services.htm" class="footer-link"><i class="fas fa-cogs"></i> Services</a></li>
-                        <li><a href="references.htm" class="footer-link"><i class="fas fa-star"></i> References</a></li>
-                        <li><a href="why-zarzis.htm" class="footer-link"><i class="fas fa-map-marker-alt"></i> Why Zarzis?</a></li>
-                        <li><a href="contact.htm" class="footer-link"><i class="fas fa-envelope"></i> Contact</a></li>
-                    </ul>
+                    <nav aria-label="Footer Navigation">
+                        <ul class="footer-links">
+                            <li><a href="index.htm" class="footer-link"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="services.htm" class="footer-link"><i class="fas fa-cogs"></i> Services</a></li>
+                            <li><a href="references.htm" class="footer-link"><i class="fas fa-star"></i> References</a></li>
+                            <li><a href="projects.htm" class="footer-link"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                            <li><a href="news.htm" class="footer-link active"><i class="fas fa-newspaper"></i> News</a></li>
+                            <li><a href="contact.htm" class="footer-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                        </ul>
+                    </nav>
                 </div>
                 
-                <!-- Global Offices -->
+                <!-- Company Pages -->
                 <div class="footer-section">
-                    <h3 class="footer-title">Global Offices</h3>
+                    <h3 class="footer-title">Company</h3>
+                    <nav aria-label="Company Navigation">
+                        <ul class="footer-links">
+                            <li><a href="company.htm" class="footer-link"><i class="fas fa-building"></i> About Us</a></li>
+                            <li><a href="why-zarzis.htm" class="footer-link"><i class="fas fa-map-marker-alt"></i> Why Zarzis?</a></li>
+                            <li><a href="partners.htm" class="footer-link"><i class="fas fa-handshake"></i> Partners</a></li>
+                            <li><a href="faq.htm" class="footer-link"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                            <li><a href="privacy.htm" class="footer-link"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                            <li><a href="terms.htm" class="footer-link"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <!-- Global Offices - Footer Version -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Global Reach</h3>
                     <div class="global-offices">
-                        <div class="office-item">
-                            <strong>GPS International - Tunisia HQ</strong>
-                            Parc d'activites economiques de Zarzis<br>
-                            BP 91 - Port de Zarzis 4337<br>
-                            Tel: +44 1224 015670 / +216 22 254 554
-                        </div>
-                        <div class="office-item">
-                            <strong>WGPS Libya</strong>
-                            Rashassan, near ElEntelaka Former gas station, Tripoli<br>
-                            Tel: +44 1224 015670 / +218 21 340 3749
-                        </div>
-                        <div class="office-item">
-                            <strong>GPS Iraq</strong>
-                            Justice Tower floor 14, Office 23, Erbil<br>
-                            Tel: +44 1224 015670 / +964 750 4325583
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Contact Info -->
-                <div class="footer-section">
-                    <h3 class="footer-title">Contact Information</h3>
-                    <div class="contact-info">
-                        <div class="contact-item-footer">
-                            <i class="fas fa-phone contact-icon-footer"></i>
-                            <a href="tel:+441224015670" class="contact-link-footer">+44 1224 015670</a>
-                        </div>
-                        <div class="contact-item-footer">
-                            <i class="fas fa-envelope contact-icon-footer"></i>
-                            <a href="mailto:info@gps-oillogistics.com" class="contact-link-footer">info@gps-oillogistics.com</a>
+                        <div class="office-cards">
+                            <div class="office-card" style="background: rgba(255, 255, 255, 0.05);">
+                                <div class="office-card-header" style="background: rgba(30, 64, 175, 0.3);">
+                                    <i class="fas fa-flag office-country-icon"></i>
+                                    <span>TUNISIA</span>
+                                </div>
+                                <div class="office-card-body">
+                                    <div class="office-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <h4 class="office-city">Zarzis HQ</h4>
+                                    <p class="office-address">Main Operational Base, Zarzis Port Area</p>
+                                    <div class="office-contact">
+                                        <a href="tel:+21622254554" class="contact-link">
+                                            <i class="fas fa-phone"></i>
+                                            <span>+216 22 254 554</span>
+                                        </a>
+                                    </div>
+                                    <div class="office-badge">
+                                        <i class="fas fa-star"></i>
+                                        <span>Headquarters</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="office-card" style="background: rgba(255, 255, 255, 0.05);">
+                                <div class="office-card-header" style="background: rgba(5, 150, 105, 0.3);">
+                                    <i class="fas fa-flag office-country-icon"></i>
+                                    <span>UK</span>
+                                </div>
+                                <div class="office-card-body">
+                                    <div class="office-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <h4 class="office-city">Aberdeen</h4>
+                                    <p class="office-address">Europe Operations Center</p>
+                                    <div class="office-contact">
+                                        <a href="tel:+441224015670" class="contact-link">
+                                            <i class="fas fa-phone"></i>
+                                            <span>+44 1224 015670</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1784,21 +2201,41 @@
             <!-- Copyright -->
             <div class="footer-bottom">
                 <div class="copyright">
-                    <p>Copyright © <span id="current-year">2024</span> GPS International. All rights reserved.</p>
+                    <p>&copy; <span id="current-year">2024</span> GPS International. All rights reserved.</p>
+                    <p>
+                        <a href="privacy.htm" class="footer-link">Privacy Policy</a> | 
+                        <a href="terms.htm" class="footer-link">Terms of Service</a> | 
+                        <a href="sitemap.htm" class="footer-link">Sitemap</a>
+                    </p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-        <i class="fas fa-chevron-up"></i>
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- ==================== JAVASCRIPT ==================== -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Set current year
             document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Header scroll effect
+            const header = document.querySelector('.site-header');
+            const secondaryNav = document.querySelector('.secondary-navigation');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                    secondaryNav.classList.add('visible');
+                } else {
+                    header.classList.remove('scrolled');
+                    secondaryNav.classList.remove('visible');
+                }
+            });
             
             // Mobile navigation toggle
             const mobileToggle = document.querySelector('.mobile-menu-toggle');
@@ -1808,6 +2245,7 @@
                 mobileToggle.addEventListener('click', () => {
                     const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
                     mobileToggle.setAttribute('aria-expanded', !isExpanded);
+                    mobileToggle.classList.toggle('active');
                     primaryNav.classList.toggle('active');
                     document.body.classList.toggle('menu-open');
                 });
@@ -1817,12 +2255,13 @@
                     if (!primaryNav.contains(e.target) && !mobileToggle.contains(e.target)) {
                         primaryNav.classList.remove('active');
                         mobileToggle.setAttribute('aria-expanded', 'false');
+                        mobileToggle.classList.remove('active');
                         document.body.classList.remove('menu-open');
                     }
                 });
             }
             
-            // Counter animation for stats
+            // Counter animation
             const counters = document.querySelectorAll('[data-count]');
             
             const observer = new IntersectionObserver((entries) => {
@@ -1837,10 +2276,14 @@
                         const updateCounter = () => {
                             current += step;
                             if (current < target) {
-                                counter.textContent = Math.floor(current);
+                                counter.textContent = Math.floor(current) + 
+                                    (counter.getAttribute('data-count') === '98' ? '%' : 
+                                    (counter.getAttribute('data-count') === '12' ? '' : '+'));
                                 requestAnimationFrame(updateCounter);
                             } else {
-                                counter.textContent = target;
+                                counter.textContent = target + 
+                                    (counter.getAttribute('data-count') === '98' ? '%' : 
+                                    (counter.getAttribute('data-count') === '12' ? '' : '+'));
                             }
                         };
                         
@@ -1853,52 +2296,77 @@
             counters.forEach(counter => observer.observe(counter));
             
             // Back to top button
-            const backToTop = document.getElementById('back-to-top');
+            const backToTopBtn = document.querySelector('.back-to-top');
             
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    backToTop.classList.add('visible');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 500) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
+                });
+                
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Animate elements on scroll
+            const fadeElements = document.querySelectorAll('.fade-in-up');
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        fadeObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => {
+                el.style.animationPlayState = 'paused';
+                fadeObserver.observe(el);
+            });
+            
+            // Set active navigation based on current page
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link, .secondary-nav-link, .footer-link');
+            
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage || 
+                   (currentPage === '' && linkHref === 'index.htm')) {
+                    link.classList.add('active');
                 } else {
-                    backToTop.classList.remove('visible');
+                    link.classList.remove('active');
                 }
             });
             
-            backToTop.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Smooth scrolling for anchor links
+            // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (href !== '#' && href.startsWith('#')) {
-                        e.preventDefault();
-                        const targetElement = document.querySelector(href);
-                        if (targetElement) {
-                            window.scrollTo({
-                                top: targetElement.offsetTop - 100,
-                                behavior: 'smooth'
-                            });
-                        }
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
                     }
                 });
             });
             
-            // Add active class to current page in secondary navigation
-            const currentPage = window.location.pathname.split('/').pop();
-            const secondaryLinks = document.querySelectorAll('.secondary-nav-link');
-            
-            secondaryLinks.forEach(link => {
-                const linkHref = link.getAttribute('href');
-                if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.htm')) {
-                    link.classList.add('active');
-                }
-            });
+            // Initialize with secondary nav hidden
+            if (window.scrollY <= 50) {
+                secondaryNav.classList.remove('visible');
+            }
         });
     </script>
 </body>
-
 </html>
