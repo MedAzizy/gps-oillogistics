@@ -13,29 +13,10 @@
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <head>
-    <!-- Favicon GPS Oillogistic - Minimaliste -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-        <!-- Carré avec coins arrondis -->
-        <rect x='15' y='15' width='70' height='70' rx='15' fill='%231a365d'/>
-        
-        <!-- G stylisée -->
-        <text x='50' y='65' 
-              font-family='Helvetica, Arial, sans-serif' 
-              font-size='40' 
-              font-weight='800' 
-              fill='white' 
-              text-anchor='middle'
-              letter-spacing='-1'>G</text>
-        
-        <!-- Barre horizontale (logistique) -->
-        <rect x='30' y='45' width='40' height='6' fill='%23f97316'/>
-        
-        <!-- Point GPS -->
-        <circle cx='65' cy='35' r='4' fill='%23f97316'/>
-    </svg>">
-</head>
+    
+    <!-- Favicon GPS International -->
+    <link rel="icon" type="image/x-icon" href="GPS-Logo-2012.JPG">
+    
     <style>
         /* ==================== CSS RESET & VARIABLES ==================== */
         :root {
@@ -117,6 +98,7 @@
             color: #334155;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             min-height: 100vh;
+            overflow-x: hidden;
         }
         
         /* ==================== TYPOGRAPHY ==================== */
@@ -129,7 +111,7 @@
         }
         
         h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -137,7 +119,7 @@
         }
         
         h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             position: relative;
             padding-bottom: var(--space-md);
         }
@@ -170,9 +152,10 @@
         }
         
         .lead {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 500;
             color: var(--color-primary);
+            line-height: 1.6;
         }
         
         a {
@@ -184,6 +167,55 @@
         
         a:hover {
             color: var(--color-accent);
+        }
+        
+        /* ==================== LOGO STYLES ==================== */
+        .logo-image {
+            height: 50px;
+            width: auto;
+            transition: all var(--transition-fast);
+            object-fit: contain;
+            background: transparent !important;
+            mix-blend-mode: multiply;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        
+        .logo-link:hover .logo-image {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+        
+        /* ==================== LOGO TEXT STYLES ==================== */
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            min-width: 200px;
+        }
+        
+        .logo-main {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        
+        .logo-tagline {
+            font-size: 0.75rem;
+            color: #a7b1bf;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            white-space: normal;
+            line-height: 1.2;
+            width: auto;
+        }
+        
+        .site-header.scrolled .logo-tagline {
+            font-size: 0.75rem;
         }
         
         /* ==================== LAYOUT & CONTAINER ==================== */
@@ -203,7 +235,7 @@
         .site-header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            position: sticky;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
@@ -211,6 +243,12 @@
             border-bottom: 1px solid rgba(226, 232, 240, 0.5);
             box-shadow: var(--shadow-sm);
             padding: var(--space-sm) 0;
+            transition: all var(--transition-normal);
+        }
+        
+        .site-header.scrolled {
+            padding: var(--space-xs) 0;
+            box-shadow: var(--shadow-lg);
         }
         
         .header-container {
@@ -229,50 +267,8 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            gap: var(--space-sm);
+            gap: var(--space-md);
             position: relative;
-        }
-        
-        .logo-icon {
-            background: var(--gradient-primary);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .logo-main {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-        }
-        
-        .logo-tagline {
-            font-size: 0.75rem;
-            color: #64748b;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-        
-        /* Main Navigation */
-        .primary-navigation {
-            display: flex;
-            align-items: center;
         }
         
         .nav-list {
@@ -362,6 +358,19 @@
             backdrop-filter: blur(10px);
             border-top: 1px solid rgba(226, 232, 240, 0.5);
             border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all var(--transition-normal);
+        }
+        
+        .secondary-navigation.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
         
         .secondary-nav-list {
@@ -375,7 +384,7 @@
         .secondary-nav-link {
             color: #64748b;
             font-size: 0.9rem;
-            transition: color 0.3s;
+            transition: color var(--transition-fast);
             display: flex;
             align-items: center;
             gap: 5px;
@@ -446,10 +455,14 @@
             background: linear-gradient(135deg, 
                 rgba(255, 255, 255, 0.9) 0%,
                 rgba(248, 250, 252, 0.8) 100%),
-                url('https://images.unsplash.com/photo-1467539943496-543f6be8e62f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+                url('https://images.unsplash.com/photo-1467539943496-543f6be8e62f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             position: relative;
+            color: white;
+            margin-top: -80px;
+            padding-top: 180px;
         }
         
         .hero-section:before {
@@ -499,9 +512,13 @@
         }
         
         .hero-title {
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin-bottom: var(--space-lg);
             line-height: 1.1;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .hero-subtitle {
@@ -943,9 +960,10 @@
             background: linear-gradient(135deg, 
                 rgba(15, 23, 42, 0.95) 0%,
                 rgba(30, 41, 59, 0.95) 100%),
-                url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+                url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: white;
             position: relative;
             overflow: hidden;
@@ -973,7 +991,7 @@
         
         .cta-title {
             color: white;
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: var(--space-lg);
             background: linear-gradient(135deg, white, rgba(255, 255, 255, 0.9));
             -webkit-background-clip: text;
@@ -983,7 +1001,7 @@
         
         .cta-description {
             color: rgba(255, 255, 255, 0.8);
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             margin-bottom: var(--space-xxl);
         }
         
@@ -1099,21 +1117,54 @@
         .footer-logo {
             display: flex;
             align-items: center;
-            gap: var(--space-md);
+            gap: var(--space-lg);
             margin-bottom: var(--space-lg);
         }
         
-        .footer-logo-icon {
-            background: linear-gradient(135deg, white, #e2e8f0);
-            color: var(--color-primary);
-            width: 50px;
+        .footer-logo-image {
             height: 50px;
-            border-radius: var(--radius-md);
+            width: auto;
+            object-fit: contain;
+            transition: all var(--transition-fast);
+            background: transparent !important;
+            padding: 8px;
+            border-radius: var(--radius-sm);
+            filter: 
+                brightness(0) 
+                invert(1)
+                drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+        
+        .footer-logo:hover .footer-logo-image {
+            transform: scale(1.05);
+            filter: 
+                brightness(0) 
+                invert(1)
+                drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+        }
+        
+        .footer-logo-text {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .footer-logo-main {
+            font-family: var(--font-heading);
             font-size: 1.5rem;
-            box-shadow: var(--shadow-md);
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        
+        .footer-logo-tagline {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            white-space: normal;
+            line-height: 1.2;
+            width: auto;
         }
         
         .footer-description {
@@ -1154,6 +1205,11 @@
             transform: translateX(5px);
         }
         
+        .footer-link.active {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+        
         .footer-address {
             color: rgba(255, 255, 255, 0.7);
             font-style: normal;
@@ -1166,47 +1222,31 @@
             margin-bottom: var(--space-sm);
         }
         
-        .contact-info {
+        .footer-contact-info {
             display: flex;
             flex-direction: column;
             gap: var(--space-sm);
+            margin-top: var(--space-md);
         }
         
-        .contact-item {
+        .footer-contact-item {
             display: flex;
             align-items: center;
             gap: var(--space-sm);
             color: rgba(255, 255, 255, 0.7);
         }
         
-        .contact-icon {
+        .footer-contact-icon {
             color: var(--color-accent);
             min-width: 20px;
         }
         
-        .contact-link {
+        .footer-contact-link {
             color: rgba(255, 255, 255, 0.7);
         }
         
-        .contact-link:hover {
+        .footer-contact-link:hover {
             color: var(--color-accent);
-        }
-        
-        .global-offices {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-md);
-        }
-        
-        .office-item {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
-        }
-        
-        .office-item strong {
-            color: white;
-            display: block;
-            margin-bottom: 2px;
         }
         
         .footer-bottom {
@@ -1263,11 +1303,16 @@
             .container {
                 padding: 0 var(--space-lg);
             }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: var(--space-lg);
+            }
         }
         
         @media (max-width: 992px) {
             h1 { font-size: 3rem; }
-            h2 { font-size: 2.25rem; }
+            h2 { font-size: 2.5rem; }
             h3 { font-size: 1.5rem; }
             
             .hero-title { 
@@ -1286,15 +1331,28 @@
                 gap: var(--space-xxl);
             }
             
-            .services-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: var(--space-lg);
+            .logo-text {
+                min-width: 180px;
             }
             
-            .secondary-nav-list {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: var(--space-md);
+            .logo-main {
+                font-size: 1.3rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.7rem;
+            }
+            
+            .footer-logo-image {
+                height: 45px;
+            }
+            
+            .footer-logo-main {
+                font-size: 1.3rem;
+            }
+            
+            .footer-logo-tagline {
+                font-size: 0.7rem;
             }
         }
         
@@ -1339,9 +1397,16 @@
                 display: none;
             }
             
+            .secondary-nav-list {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: var(--space-md);
+                padding: var(--space-sm) var(--space-lg);
+            }
+            
             .hero-section {
+                padding-top: 140px;
                 min-height: auto;
-                padding: 120px 0 var(--space-xxxl);
             }
             
             .hero-title {
@@ -1377,7 +1442,6 @@
             
             .btn {
                 width: 100%;
-                max-width: 320px;
                 justify-content: center;
             }
             
@@ -1385,10 +1449,48 @@
                 grid-template-columns: 1fr;
                 gap: var(--space-xl);
             }
+            
+            .logo-image {
+                height: 40px;
+            }
+            
+            .logo-text {
+                min-width: 140px;
+            }
+            
+            .logo-main {
+                font-size: 1.1rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.65rem;
+                white-space: normal;
+                line-height: 1.1;
+            }
+            
+            .site-header.scrolled .logo-tagline {
+                font-size: 0.65rem;
+            }
+            
+            .footer-logo {
+                gap: var(--space-md);
+            }
+            
+            .footer-logo-image {
+                height: 40px;
+            }
+            
+            .footer-logo-main {
+                font-size: 1.1rem;
+            }
+            
+            .footer-logo-tagline {
+                font-size: 0.65rem;
+            }
         }
         
         @media (max-width: 576px) {
-            h1 { font-size: 2.25rem; }
+            h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
             h3 { font-size: 1.375rem; }
             
@@ -1404,6 +1506,42 @@
                 right: var(--space-md);
                 width: 50px;
                 height: 50px;
+            }
+            
+            .logo-image {
+                height: 35px;
+            }
+            
+            .logo-text {
+                min-width: 120px;
+            }
+            
+            .logo-main {
+                font-size: 1rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.6rem;
+            }
+            
+            .site-header.scrolled .logo-tagline {
+                font-size: 0.6rem;
+            }
+            
+            .footer-logo {
+                gap: var(--space-sm);
+            }
+            
+            .footer-logo-image {
+                height: 35px;
+            }
+            
+            .footer-logo-main {
+                font-size: 1rem;
+            }
+            
+            .footer-logo-tagline {
+                font-size: 0.6rem;
             }
         }
         
@@ -1446,15 +1584,13 @@
     <!-- ==================== HEADER ==================== -->
     <header class="site-header" role="banner">
         <div class="container header-container">
-            <!-- Logo -->
+            <!-- Logo avec image GPS-Logo-2012.JPG -->
             <div class="logo-section">
                 <a href="index.htm" class="logo-link" aria-label="GPS International Home">
-                    <div class="logo-icon">
-                        <i class="fas fa-ship"></i>
-                    </div>
+                    <img src="GPS-Logo-2012.JPG" alt="GPS International Logo" class="logo-image">
                     <div class="logo-text">
                         <span class="logo-main">GPS International</span>
-                        <span class="logo-tagline">Global Project Services</span>
+                        <span class="logo-tagline">Global Project Services International</span>
                     </div>
                 </a>
                 <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
@@ -1462,7 +1598,7 @@
                 </button>
             </div>
             
-            <!-- Main Navigation -->
+            <!-- Main Navigation - CORRECTED LINKS -->
             <nav class="primary-navigation" id="primary-navigation" aria-label="Primary Navigation">
                 <ul class="nav-list">
                     <li class="nav-item">
@@ -1490,6 +1626,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="news.htm" class="nav-link" data-page="news">
+                            <i class="fas fa-newspaper nav-icon"></i>
+                            <span>News</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="contact.htm" class="nav-link" data-page="contact">
                             <i class="fas fa-envelope nav-icon"></i>
                             <span>Contact</span>
@@ -1507,16 +1649,10 @@
             </div>
         </div>
         
-        <!-- Secondary Navigation -->
+        <!-- Secondary Navigation - CORRECTED LINKS -->
         <nav class="secondary-navigation" aria-label="Secondary Navigation">
             <div class="container">
                 <ul class="secondary-nav-list">
-                    <li class="secondary-nav-item">
-                        <a href="news.htm" class="secondary-nav-link" data-page="news">
-                            <i class="fas fa-newspaper"></i>
-                            <span>News</span>
-                        </a>
-                    </li>
                     <li class="secondary-nav-item">
                         <a href="company.htm" class="secondary-nav-link" data-page="company">
                             <i class="fas fa-building"></i>
@@ -1585,7 +1721,7 @@
         </section>
 
         <!-- Value Propositions -->
-        <section class="value-propositions-section" aria-labelledby="value-title">
+        <section class="value-propositions-section section" aria-labelledby="value-title">
             <div class="container">
                 <h2 id="value-title" class="section-title fade-in-up">Our Value Proposition</h2>
                 <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
@@ -1622,7 +1758,7 @@
         </section>
 
         <!-- Services Grid -->
-        <section class="services-grid-section" aria-labelledby="services-title">
+        <section class="services-grid-section section" aria-labelledby="services-title">
             <div class="container">
                 <h2 id="services-title" class="section-title fade-in-up">Our Core Services</h2>
                 <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
@@ -1802,7 +1938,7 @@
         </section>
 
         <!-- Industry Solutions -->
-        <section class="solutions-section" aria-labelledby="solutions-title">
+        <section class="solutions-section section" aria-labelledby="solutions-title">
             <div class="container">
                 <h2 id="solutions-title" class="section-title fade-in-up">Industry-Specific Solutions</h2>
                 <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
@@ -1856,7 +1992,7 @@
         </section>
 
         <!-- Technology & Systems -->
-        <section class="technology-section" aria-labelledby="technology-title">
+        <section class="technology-section section" aria-labelledby="technology-title">
             <div class="container">
                 <h2 id="technology-title" class="section-title fade-in-up">Technology & Systems</h2>
                 <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
@@ -1919,7 +2055,7 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="cta-section" aria-labelledby="cta-title">
+        <section class="cta-section section" aria-labelledby="cta-title">
             <div class="container">
                 <div class="cta-content fade-in-up">
                     <div class="cta-text">
@@ -1947,20 +2083,32 @@
     <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
-                <!-- Company Info -->
+                <!-- Company Info avec la MÊME IMAGE de logo - TRANSPARENT BACKGROUND -->
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <div class="footer-logo-icon">
-                            <i class="fas fa-ship"></i>
-                        </div>
+                        <img src="GPS-Logo-2012.JPG" alt="GPS International Logo" class="footer-logo-image">
                         <div class="footer-logo-text">
-                            <span class="logo-main">GPS International</span>
-                            <span class="logo-tagline">Global Project Services</span>
+                            <span class="footer-logo-main">GPS International</span>
+                            <span class="footer-logo-tagline">Global Project Services International</span>
                         </div>
                     </div>
                     <p class="footer-description">
-                        Delivering excellence in logistics since 2008. Trusted by major oil & gas companies worldwide.
+                        Delivering excellence in oil and gas logistics since 2008. Trusted by major energy companies worldwide.
                     </p>
+                    <div class="footer-contact-info">
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone footer-contact-icon"></i>
+                            <a href="tel:+441224015670" class="footer-contact-link">+44 1224 015670</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone footer-contact-icon"></i>
+                            <a href="tel:+21622254554" class="footer-contact-link">+216 22 254 554</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-envelope footer-contact-icon"></i>
+                            <a href="mailto:info@gps-oillogistics.com" class="footer-contact-link">info@gps-oillogistics.com</a>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Quick Links -->
@@ -1978,6 +2126,21 @@
                     </nav>
                 </div>
                 
+                <!-- Company Pages -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Company</h3>
+                    <nav aria-label="Company Navigation">
+                        <ul class="footer-links">
+                            <li><a href="company.htm" class="footer-link"><i class="fas fa-building"></i> About Us</a></li>
+                            <li><a href="why-zarzis.htm" class="footer-link"><i class="fas fa-map-marker-alt"></i> Why Zarzis?</a></li>
+                            <li><a href="partners.htm" class="footer-link"><i class="fas fa-handshake"></i> Partners</a></li>
+                            <li><a href="faq.htm" class="footer-link"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                            <li><a href="privacy.htm" class="footer-link"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                            <li><a href="terms.htm" class="footer-link"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
                 <!-- Contact Info -->
                 <div class="footer-section">
                     <h3 class="footer-title">Contact Information</h3>
@@ -1986,35 +2149,19 @@
                         Parc d'activites economiques de Zarzis<br>
                         BP 91 - Port de Zarzis 4337<br>
                         Tunisia
-                        
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-phone contact-icon"></i>
-                                <a href="tel:+441224015670" class="contact-link">+44 1224 015670</a>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone contact-icon"></i>
-                                <a href="tel:+21622254554" class="contact-link">+216 22 254 554</a>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope contact-icon"></i>
-                                <a href="mailto:info@gps-oillogistics.com" class="contact-link">info@gps-oillogistics.com</a>
-                            </div>
-                        </div>
                     </address>
-                </div>
-                
-                <!-- Global Offices -->
-                <div class="footer-section">
-                    <h3 class="footer-title">Global Offices</h3>
-                    <div class="global-offices">
-                        <div class="office-item">
-                            <strong><i class="fas fa-map-marker-alt"></i> Libya:</strong><br>
-                            <a href="tel:+218213403749" class="contact-link">+218 21 340 3749</a>
+                    <div class="footer-contact-info">
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone footer-contact-icon"></i>
+                            <a href="tel:+218213403749" class="footer-contact-link">+218 21 340 3749</a>
                         </div>
-                        <div class="office-item">
-                            <strong><i class="fas fa-map-marker-alt"></i> Iraq:</strong><br>
-                            <a href="tel:+9647504325583" class="contact-link">+964 750 432 5583</a>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone footer-contact-icon"></i>
+                            <a href="tel:+9647504325583" class="footer-contact-link">+964 750 432 5583</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-clock footer-contact-icon"></i>
+                            <a href="tel:+441224015670" class="footer-contact-link">24/7 Emergency Line</a>
                         </div>
                     </div>
                 </div>
@@ -2044,6 +2191,20 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Set current year
             document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Header scroll effect
+            const header = document.querySelector('.site-header');
+            const secondaryNav = document.querySelector('.secondary-navigation');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                    secondaryNav.classList.add('visible');
+                } else {
+                    header.classList.remove('scrolled');
+                    secondaryNav.classList.remove('visible');
+                }
+            });
             
             // Mobile navigation toggle
             const mobileToggle = document.querySelector('.mobile-menu-toggle');
@@ -2139,7 +2300,7 @@
             
             // Set active navigation based on current page
             const currentPage = window.location.pathname.split('/').pop();
-            const navLinks = document.querySelectorAll('.nav-link, .secondary-nav-link');
+            const navLinks = document.querySelectorAll('.nav-link, .secondary-nav-link, .footer-link');
             
             navLinks.forEach(link => {
                 const linkHref = link.getAttribute('href');
@@ -2179,8 +2340,12 @@
                     }
                 });
             });
+            
+            // Initialize with secondary nav hidden
+            if (window.scrollY <= 50) {
+                secondaryNav.classList.remove('visible');
+            }
         });
     </script>
 </body>
-
 </html>
