@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Major Projects & Case Studies | GPS International</title>
-    <meta name="description" content="Discover our major oil & gas logistics projects across Africa, Middle East, and Europe. Case studies with Total, Eni, Baker Hughes and more.">
+    <meta name="description" content="Discover our major oil & gas logistics projects with TotalEnergie and Baker Hughes. Professional case studies in North Africa.">
     <meta name="author" content="GPS International">
     
     <!-- Font Awesome -->
@@ -178,7 +178,6 @@
             width: auto;
             transition: all var(--transition-fast);
             object-fit: contain;
-            /* Remove white background using blend mode */
             background: transparent !important;
             mix-blend-mode: multiply;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
@@ -189,7 +188,7 @@
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
         }
         
-        /* ==================== FOOTER LOGO STYLES - TRANSPARENT BACKGROUND ==================== */
+        /* ==================== FOOTER LOGO STYLES ==================== */
         .footer-logo-image {
             height: 50px;
             width: auto;
@@ -198,19 +197,12 @@
             background: transparent !important;
             padding: 8px;
             border-radius: var(--radius-sm);
-            /* For dark background - make logo white */
-            filter: 
-                brightness(0) 
-                invert(1)
-                drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
         
         .footer-logo:hover .footer-logo-image {
             transform: scale(1.05);
-            filter: 
-                brightness(0) 
-                invert(1)
-                drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+            filter: brightness(0) invert(1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
         }
         
         /* ==================== LOGO TEXT STYLES ==================== */
@@ -282,6 +274,10 @@
         .section {
             padding: var(--space-xxxl) 0;
             position: relative;
+        }
+        
+        .text-center {
+            text-align: center;
         }
         
         /* ==================== HEADER & NAVIGATION ==================== */
@@ -481,12 +477,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 255, 255, 0.2),
-                transparent
-            );
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.7s;
         }
         
@@ -501,7 +492,6 @@
         }
         
         /* ==================== PROJECTS PAGE SPECIFIC STYLES ==================== */
-        /* HERO SECTION FOR PROJECTS PAGE */
         .projects-hero {
             min-height: 70vh;
             display: flex;
@@ -514,8 +504,8 @@
             background-position: center;
             position: relative;
             color: white;
-            margin-top: -80px;
-            padding-top: 180px;
+            margin-top: 80px;
+            padding: var(--space-xxxl) 0;
         }
         
         .projects-hero:before {
@@ -525,18 +515,17 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, 
-                #1e40af 0%,
-                #059669 25%,
-                #7c3aed 50%,
-                #dc2626 75%,
-                var(--color-accent) 100%);
+            background: linear-gradient(90deg, #1e40af 0%, var(--color-accent) 100%);
         }
         
         .projects-hero-container {
             text-align: center;
             position: relative;
             z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
         }
         
         .hero-badge {
@@ -569,10 +558,6 @@
             font-size: 4rem;
             margin-bottom: var(--space-lg);
             line-height: 1.1;
-            background: linear-gradient(135deg, white, rgba(255, 255, 255, 0.9));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
         
         .hero-subtitle {
@@ -589,6 +574,7 @@
             max-width: 800px;
             margin: 0 auto var(--space-xxl);
             font-weight: 400;
+            line-height: 1.6;
         }
         
         .hero-stats {
@@ -624,7 +610,7 @@
             font-weight: 600;
         }
         
-        /* FILTERS SECTION */
+        /* FILTERS SECTION - SIMPLIFIED */
         .filters-section {
             background: white;
             padding: var(--space-xl) 0;
@@ -637,15 +623,8 @@
         
         .filters-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-md);
             justify-content: center;
-        }
-        
-        .filter-group {
-            display: flex;
-            gap: var(--space-sm);
-            flex-wrap: wrap;
+            gap: var(--space-md);
         }
         
         .filter-btn {
@@ -660,6 +639,7 @@
             display: flex;
             align-items: center;
             gap: var(--space-sm);
+            white-space: nowrap;
         }
         
         .filter-btn:hover {
@@ -672,13 +652,14 @@
             background: var(--color-accent);
             color: white;
             border-color: var(--color-accent);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
         }
         
         .filter-icon {
             font-size: 0.9rem;
         }
         
-        /* PROJECTS GRID */
+        /* PROJECTS GRID - CENTERED FOR 2 PROJECTS */
         .projects-grid-section {
             background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
             position: relative;
@@ -686,9 +667,12 @@
         
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
             gap: var(--space-xl);
             margin-top: var(--space-xl);
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .project-card {
@@ -699,15 +683,13 @@
             transition: all var(--transition-slow);
             border: 1px solid rgba(226, 232, 240, 0.5);
             position: relative;
-            display: none; /* Hidden by default, shown by filter */
-        }
-        
-        .project-card.active {
             display: block;
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
         }
         
         .project-card:hover {
-            transform: translateY(-20px) scale(1.02);
+            transform: translateY(-10px);
             box-shadow: var(--shadow-xxl);
         }
         
@@ -720,13 +702,16 @@
             height: 5px;
         }
         
-        .project-card.region-na:before { background: #1e40af; }
-        .project-card.region-me:before { background: #059669; }
-        .project-card.region-eu:before { background: #7c3aed; }
-        .project-card.region-as:before { background: #dc2626; }
+        .project-card.totalenergie:before { 
+            background: linear-gradient(90deg, #ffe6cc 0%, var(--color-accent) 100%); 
+        }
+        
+        .project-card.baker-hughes:before { 
+            background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%); 
+        }
         
         .project-image {
-            height: 220px;
+            height: 250px;
             width: 100%;
             object-fit: cover;
             transition: transform var(--transition-slow);
@@ -737,7 +722,7 @@
         }
         
         .project-content {
-            padding: var(--space-xxl) var(--space-xl);
+            padding: var(--space-xl);
         }
         
         .project-header {
@@ -758,6 +743,7 @@
             padding: var(--space-md);
             border: 1px solid rgba(226, 232, 240, 0.5);
             box-shadow: var(--shadow-sm);
+            flex-shrink: 0;
         }
         
         .client-logo img {
@@ -792,7 +778,7 @@
         .project-features li {
             padding: var(--space-sm) 0;
             position: relative;
-            padding-left: 2rem;
+            padding-left: 1.5rem;
             color: #475569;
             border-bottom: 1px solid rgba(226, 232, 240, 0.5);
         }
@@ -840,91 +826,19 @@
             color: var(--color-secondary);
         }
         
-        /* TIMELINE SECTION */
-        .timeline-section {
-            background: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .timeline-container {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, 
-                #1e40af 0%,
-                #059669 33%,
-                #7c3aed 66%,
-                var(--color-accent) 100%);
-            border-radius: var(--radius-full);
-        }
-        
-        .timeline-items {
+        .project-tags {
             display: flex;
-            flex-direction: column;
-            gap: var(--space-xxl);
+            gap: 8px;
+            flex-wrap: wrap;
         }
         
-        .timeline-item {
-            position: relative;
-            width: calc(50% - 40px);
-            padding: var(--space-xl);
-            background: white;
-            border-radius: var(--radius-xl);
-            border: 1px solid rgba(226, 232, 240, 0.5);
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-fast);
-        }
-        
-        .timeline-item:nth-child(odd) {
-            align-self: flex-start;
-            margin-left: 0;
-            margin-right: auto;
-        }
-        
-        .timeline-item:nth-child(even) {
-            align-self: flex-end;
-            margin-left: auto;
-            margin-right: 0;
-        }
-        
-        .timeline-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .timeline-year {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--color-accent), #fb923c);
+        .tag {
+            background: #1e40af;
             color: white;
+            padding: 4px 12px;
             border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.25rem;
-            box-shadow: var(--shadow-lg);
-            z-index: 2;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-year {
-            right: -100px;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-year {
-            left: -100px;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
         
         /* STATS DASHBOARD */
@@ -977,39 +891,46 @@
             box-shadow: var(--shadow-md);
         }
         
-        .map-visual {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            position: relative;
-            border: 1px solid rgba(226, 232, 240, 0.5);
-        }
-        
-        .map-marker {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: var(--color-accent);
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-            transform: translate(-50%, -50%);
-        }
-        
-        .map-marker:hover:after {
-            content: attr(data-project);
-            position: absolute;
-            top: -40px;
-            left: 50%;
-            transform: translateX(-50%);
+        /* CLIENT FOCUS SECTION */
+        .client-focus-section {
             background: white;
-            padding: var(--space-sm) var(--space-md);
-            border-radius: var(--radius-sm);
-            font-size: 0.8rem;
-            white-space: nowrap;
-            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+        
+        .client-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .client-card {
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.5), rgba(241, 245, 249, 0.3));
+            border-radius: var(--radius-xl);
+            padding: var(--space-xxl);
+            text-align: center;
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            transition: all var(--transition-fast);
+        }
+        
+        .client-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            background: white;
+        }
+        
+        .client-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--space-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            background: rgba(248, 250, 252, 0.8);
+            border-radius: var(--radius-xl);
             border: 1px solid rgba(226, 232, 240, 0.5);
         }
         
@@ -1050,6 +971,7 @@
             color: #475569;
             margin-bottom: var(--space-xl);
             position: relative;
+            line-height: 1.6;
         }
         
         .testimonial-quote:before {
@@ -1080,10 +1002,12 @@
             color: white;
             font-size: 1.5rem;
             font-weight: 600;
+            flex-shrink: 0;
         }
         
         .author-info h4 {
             margin-bottom: var(--space-xs);
+            color: var(--color-dark);
         }
         
         .author-company {
@@ -1139,9 +1063,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, 
-                var(--color-accent) 0%,
-                var(--color-secondary) 100%);
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-secondary) 100%);
         }
         
         .cta-content {
@@ -1166,6 +1088,7 @@
             color: rgba(255, 255, 255, 0.8);
             font-size: 1.25rem;
             margin-bottom: var(--space-xxl);
+            line-height: 1.6;
         }
         
         .cta-actions {
@@ -1198,12 +1121,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 255, 255, 0.2),
-                transparent
-            );
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.7s;
         }
         
@@ -1246,131 +1164,6 @@
             transform: translateX(5px);
         }
         
-        /* ==================== GLOBAL OFFICES - IMPROVED HORIZONTAL STYLES ==================== */
-        .global-offices {
-            width: 100%;
-        }
-
-        .office-cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: var(--space-md);
-            align-items: stretch;
-        }
-
-        .office-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all var(--transition-normal);
-            width: 170px;
-            min-height: 280px;
-            box-shadow: var(--shadow-md);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .office-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-            border-color: rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .office-card-header {
-            padding: var(--space-sm) var(--space-md);
-            text-align: center;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--space-xs);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            font-size: 0.75rem;
-            min-height: 32px;
-        }
-
-        .office-country-icon {
-            font-size: 0.7rem;
-        }
-
-        .office-card-body {
-            padding: var(--space-md);
-            text-align: center;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .office-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto var(--space-sm);
-            font-size: 1rem;
-        }
-
-        .office-city {
-            color: white;
-            font-size: 0.9rem;
-            margin-bottom: var(--space-xs);
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        .office-address {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.7rem;
-            line-height: 1.3;
-            margin-bottom: var(--space-sm);
-            flex: 1;
-        }
-
-        .office-contact {
-            margin-bottom: var(--space-sm);
-        }
-
-        .office-contact .contact-link {
-            color: white;
-            background: rgba(255, 255, 255, 0.1);
-            padding: var(--space-xs) var(--space-sm);
-            border-radius: var(--radius-sm);
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 0.7rem;
-            transition: all var(--transition-fast);
-            white-space: nowrap;
-        }
-
-        .office-contact .contact-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: var(--color-accent);
-            transform: translateY(-2px);
-        }
-
-        .office-badge {
-            background: rgba(249, 115, 22, 0.1);
-            color: var(--color-accent);
-            padding: 3px 6px;
-            border-radius: var(--radius-sm);
-            font-size: 0.6rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
-            font-weight: 500;
-            margin-top: auto;
-        }
-        
         /* ==================== FOOTER ==================== */
         .site-footer {
             background: var(--color-dark);
@@ -1386,9 +1179,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, 
-                var(--color-accent) 0%,
-                var(--color-secondary) 100%);
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-secondary) 100%);
         }
         
         .footer-content {
@@ -1445,18 +1236,6 @@
         .footer-link:hover {
             color: var(--color-accent);
             transform: translateX(5px);
-        }
-        
-        .footer-address {
-            color: rgba(255, 255, 255, 0.7);
-            font-style: normal;
-            line-height: 1.6;
-        }
-        
-        .footer-address strong {
-            color: white;
-            display: block;
-            margin-bottom: var(--space-sm);
         }
         
         .contact-info {
@@ -1539,14 +1318,6 @@
             .container {
                 padding: 0 var(--space-lg);
             }
-            
-            .office-cards {
-                gap: var(--space-sm);
-            }
-            
-            .office-card {
-                width: 160px;
-            }
         }
         
         @media (max-width: 992px) {
@@ -1589,34 +1360,9 @@
                 font-size: 0.7rem;
             }
             
-            .office-cards {
-                justify-content: center;
-            }
-            
-            .office-card {
-                width: 150px;
-            }
-            
-            .timeline-year {
-                position: relative;
-                top: auto;
-                left: auto;
-                right: auto;
-                transform: none;
-                margin: 0 auto var(--space-lg);
-            }
-            
-            .timeline-item {
-                width: 100%;
-                margin: 0 0 var(--space-xl) 0 !important;
-            }
-            
-            .timeline-line {
-                display: none;
-            }
-            
             .projects-grid {
-                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                grid-template-columns: 1fr;
+                max-width: 600px;
             }
         }
         
@@ -1670,7 +1416,8 @@
             
             .projects-hero {
                 min-height: auto;
-                padding: 140px 0 var(--space-xxxl);
+                padding: 120px 0 var(--space-xxxl);
+                margin-top: 60px;
             }
             
             .hero-title {
@@ -1697,10 +1444,7 @@
             .filters-container {
                 flex-direction: column;
                 align-items: center;
-            }
-            
-            .filter-group {
-                justify-content: center;
+                gap: var(--space-md);
             }
             
             .cta-actions {
@@ -1756,18 +1500,6 @@
             
             .footer-logo-tagline {
                 font-size: 0.65rem;
-            }
-            
-            .office-cards {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--space-sm);
-                justify-items: center;
-            }
-            
-            .office-card {
-                width: 100%;
-                max-width: 170px;
             }
         }
         
@@ -1827,30 +1559,12 @@
                 font-size: 0.6rem;
             }
             
-            .office-cards {
-                grid-template-columns: 1fr;
-                max-width: 250px;
-                margin: 0 auto;
-            }
-            
-            .office-card {
-                max-width: 250px;
-                width: 100%;
-            }
-            
-            .office-card-body {
-                padding: var(--space-md);
-            }
-        }
-        
-        @media (max-width: 400px) {
-            .office-cards {
+            .projects-grid {
                 grid-template-columns: 1fr;
             }
             
-            .office-card {
-                width: 100%;
-                max-width: 100%;
+            .project-card {
+                margin: 0 var(--space-md);
             }
         }
         
@@ -1881,7 +1595,6 @@
     <!-- ==================== HEADER ==================== -->
     <header class="site-header" role="banner">
         <div class="container header-container">
-            <!-- Logo avec image GPS-Logo-2012.JPG -->
             <div class="logo-section">
                 <a href="index.htm" class="logo-link" aria-label="GPS International Home">
                     <img src="GPS-Logo-2012.JPG" alt="GPS International Logo" class="logo-image">
@@ -1895,7 +1608,6 @@
                 </button>
             </div>
             
-            <!-- Main Navigation - CORRECTED LINKS -->
             <nav class="primary-navigation" id="primary-navigation" aria-label="Primary Navigation">
                 <ul class="nav-list">
                     <li class="nav-item">
@@ -1937,7 +1649,6 @@
                 </ul>
             </nav>
             
-            <!-- CTA Button -->
             <div class="header-cta">
                 <a href="contact.htm" class="cta-button">
                     <span>Get Your Quote</span>
@@ -1946,7 +1657,6 @@
             </div>
         </div>
         
-        <!-- Secondary Navigation - CORRECTED LINKS -->
         <nav class="secondary-navigation" aria-label="Secondary Navigation">
             <div class="container">
                 <ul class="secondary-nav-list">
@@ -1986,105 +1696,79 @@
             <div class="container projects-hero-container">
                 <div class="hero-badge fade-in-up">
                     <i class="fas fa-project-diagram badge-icon"></i>
-                    <span class="badge-text">Major Projects Portfolio</span>
+                    <span class="badge-text">Premium Client Projects</span>
                 </div>
                 <h1 id="hero-title" class="hero-title fade-in-up">
-                    <span class="hero-subtitle">Global Success Stories</span>
-                    Major Projects & Case Studies
+                    <span class="hero-subtitle">Exclusive Partnerships</span>
+                    Major Client Projects
                 </h1>
                 <p class="hero-description fade-in-up" style="animation-delay: 0.1s;">
-                    Discover our landmark logistics projects across Africa, Middle East, and Europe. 
-                    Each case study demonstrates our commitment to excellence and innovation.
+                    Showcasing our strategic partnerships with industry leaders. 
+                    Discover how we deliver exceptional results for TotalEnergie and Baker Hughes.
                 </p>
                 <div class="hero-stats fade-in-up" style="animation-delay: 0.2s;">
                     <div class="stat-item">
-                        <span class="stat-number" data-count="50">50+</span>
-                        <span class="stat-label">Major Projects</span>
+                        <span class="stat-number" data-count="2">2</span>
+                        <span class="stat-label">Premium Clients</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-count="15">15+</span>
-                        <span class="stat-label">Countries</span>
+                        <span class="stat-number" data-count="54">54</span>
+                        <span class="stat-label">Months Partnership</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-count="25">25M+</span>
-                        <span class="stat-label">Tons Transported</span>
+                        <span class="stat-number" data-count="23">€23M+</span>
+                        <span class="stat-label">Total Value</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number" data-count="100">100%</span>
-                        <span class="stat-label">On-Time Delivery</span>
+                        <span class="stat-label">Client Satisfaction</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Filters Section -->
+        <!-- Simple Filters -->
         <section class="filters-section">
             <div class="container">
                 <div class="filters-container">
-                    <div class="filter-group">
-                        <button class="filter-btn active" data-filter="all">
-                            <i class="fas fa-layer-group filter-icon"></i>
-                            <span>All Projects</span>
-                        </button>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <span style="color: #64748b; margin-right: var(--space-sm);">Region:</span>
-                        <button class="filter-btn" data-filter="region-na">
-                            <i class="fas fa-map-marker-alt filter-icon"></i>
-                            <span>North Africa</span>
-                        </button>
-                        <button class="filter-btn" data-filter="region-me">
-                            <i class="fas fa-map-marker-alt filter-icon"></i>
-                            <span>Middle East</span>
-                        </button>
-                        <button class="filter-btn" data-filter="region-eu">
-                            <i class="fas fa-map-marker-alt filter-icon"></i>
-                            <span>Europe</span>
-                        </button>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <span style="color: #64748b; margin-right: var(--space-sm);">Service:</span>
-                        <button class="filter-btn" data-filter="service-heavy">
-                            <i class="fas fa-truck-moving filter-icon"></i>
-                            <span>Heavy Transport</span>
-                        </button>
-                        <button class="filter-btn" data-filter="service-marine">
-                            <i class="fas fa-ship filter-icon"></i>
-                            <span>Marine Ops</span>
-                        </button>
-                        <button class="filter-btn" data-filter="service-supply">
-                            <i class="fas fa-warehouse filter-icon"></i>
-                            <span>Supply Base</span>
-                        </button>
-                    </div>
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-layer-group filter-icon"></i>
+                        <span>Both Projects</span>
+                    </button>
+                    <button class="filter-btn" data-filter="totalenergie">
+                        <i class="fas fa-bolt filter-icon"></i>
+                        <span>TotalEnergie</span>
+                    </button>
+                    <button class="filter-btn" data-filter="baker-hughes">
+                        <i class="fas fa-industry filter-icon"></i>
+                        <span>Baker Hughes</span>
+                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Grid -->
+        <!-- Projects Grid - ONLY 2 PROJECTS -->
         <section class="projects-grid-section" aria-labelledby="projects-title">
             <div class="container">
                 <h2 id="projects-title" class="section-title fade-in-up">Featured Projects</h2>
                 <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
-                    Selection of our most challenging and innovative logistics projects
+                    Our flagship projects with industry-leading energy companies
                 </p>
                 
                 <div class="projects-grid">
-                    <!-- Project 1: Total - Tunisia -->
-                    <article class="project-card fade-in-up active region-na service-supply">
+                    <!-- Project 1: TotalEnergie - Tunisia -->
+                    <article class="project-card fade-in-up totalenergie" style="animation-delay: 0.1s;">
                         <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="Total Energy Supply Base Management"
+                             alt="TotalEnergie Supply Base Management"
                              class="project-image">
                         <div class="project-content">
                             <div class="project-header">
                                 <div>
-                                    <h3 class="project-title">Total Energy Supply Base Management</h3>
+                                    <h3 class="project-title">TotalEnergie Supply Base Management</h3>
                                     <p class="project-subtitle">Zarzis, Tunisia • 2020-2023</p>
                                 </div>
-                                <div class="client-logo">
-                                    <i class="fas fa-bolt" style="font-size: 2rem; color: var(--color-primary);"></i>
+                                <div class="client-logo" style="background: linear-gradient(135deg, #ffe6cc, #ffd9b3);">
+                                    <i class="fas fa-bolt" style="font-size: 2rem; color: #FFA41C;"></i>
                                 </div>
                             </div>
                             
@@ -2103,30 +1787,33 @@
                                 </div>
                             </div>
                             
-                            <p>Comprehensive management of Total's offshore supply base in Zarzis, supporting exploration activities in the Mediterranean Sea.</p>
+                            <p>Comprehensive management of TotalEnergie's offshore supply base in Zarzis, supporting exploration activities in the Mediterranean Sea with complete operational excellence.</p>
                             
                             <ul class="project-features">
-                                <li>Complete base facility management</li>
-                                <li>Inventory control for 5000+ items</li>
-                                <li>Third-party contractor coordination</li>
-                                <li>24/7 operations support</li>
-                                <li>Zero safety incidents</li>
+                                <li>Complete base facility management and operations</li>
+                                <li>Advanced inventory control for 5000+ critical items</li>
+                                <li>Third-party contractor coordination and supervision</li>
+                                <li>24/7 operations support and emergency response</li>
+                                <li>Zero safety incidents throughout contract period</li>
+                                <li>ISO 9001 certified quality management system</li>
                             </ul>
                             
                             <div class="project-cta">
-                                <a href="references.htm#total" class="project-link">
+                                <a href="references.htm#totalenergie" class="project-link">
                                     <i class="fas fa-external-link-alt"></i>
-                                    <span>View Case Study</span>
+                                    <span>View Full Case Study</span>
                                 </a>
                                 <div class="project-tags">
-                                    <span class="tag" style="background: #1e40af; color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem;">North Africa</span>
+                                    <span class="tag" style="background: #FFA41C;">TotalEnergie</span>
+                                    <span class="tag" style="background: var(--color-supply);">Supply Base</span>
+                                    <span class="tag" style="background: #059669;">North Africa</span>
                                 </div>
                             </div>
                         </div>
                     </article>
                     
                     <!-- Project 2: Baker Hughes - Libya -->
-                    <article class="project-card fade-in-up active region-na service-heavy">
+                    <article class="project-card fade-in-up baker-hughes" style="animation-delay: 0.2s;">
                         <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                              alt="Baker Hughes Heavy Equipment Transport"
                              class="project-image">
@@ -2136,8 +1823,8 @@
                                     <h3 class="project-title">Baker Hughes Heavy Equipment Transport</h3>
                                     <p class="project-subtitle">Libya • 2021-2022</p>
                                 </div>
-                                <div class="client-logo">
-                                    <i class="fas fa-industry" style="font-size: 2rem; color: var(--color-primary);"></i>
+                                <div class="client-logo" style="background: linear-gradient(135deg, #e6f0ff, #d4e4ff);">
+                                    <i class="fas fa-industry" style="font-size: 2rem; color: #1e40af;"></i>
                                 </div>
                             </div>
                             
@@ -2156,14 +1843,15 @@
                                 </div>
                             </div>
                             
-                            <p>Transport of oversized drilling equipment through challenging Libyan terrain with specialized heavy haulage equipment.</p>
+                            <p>Specialized transport of oversized drilling equipment through challenging Libyan terrain with state-of-the-art heavy haulage equipment and comprehensive logistics planning.</p>
                             
                             <ul class="project-features">
-                                <li>165-ton transformer transport</li>
-                                <li>Route surveying and obstacle clearance</li>
-                                <li>Permit acquisition across 3 regions</li>
-                                <li>Military escort coordination</li>
-                                <li>100% on-time delivery</li>
+                                <li>Transport of 165-ton transformer and drilling equipment</li>
+                                <li>Comprehensive route surveying and obstacle clearance</li>
+                                <li>Permit acquisition across 3 regions and border crossings</li>
+                                <li>Military escort coordination and security management</li>
+                                <li>100% on-time delivery despite challenging conditions</li>
+                                <li>Advanced GPS tracking and real-time monitoring</li>
                             </ul>
                             
                             <div class="project-cta">
@@ -2172,219 +1860,9 @@
                                     <span>View Project Details</span>
                                 </a>
                                 <div class="project-tags">
-                                    <span class="tag" style="background: #1e40af; color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem;">North Africa</span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Project 3: ENI - Mediterranean -->
-                    <article class="project-card fade-in-up active region-na service-marine">
-                        <img src="https://images.unsplash.com/photo-1542338101-8b15959eebc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="ENI Marine Operations Support"
-                             class="project-image">
-                        <div class="project-content">
-                            <div class="project-header">
-                                <div>
-                                    <h3 class="project-title">ENI Marine Operations Support</h3>
-                                    <p class="project-subtitle">Mediterranean Sea • 2019-2022</p>
-                                </div>
-                                <div class="client-logo">
-                                    <i class="fas fa-oil-can" style="font-size: 2rem; color: var(--color-primary);"></i>
-                                </div>
-                            </div>
-                            
-                            <div class="project-meta">
-                                <div class="meta-item">
-                                    <i class="fas fa-calendar-alt meta-icon"></i>
-                                    <span>42 Months</span>
-                                </div>
-                                <div class="meta-item">
-                                    <i class="fas fa-money-bill-wave meta-icon"></i>
-                                    <span>€12M Contract</span>
-                                </div>
-                                <div class="meta-item">
-                                    <i class="fas fa-ship meta-icon"></i>
-                                    <span>200+ Vessels</span>
-                                </div>
-                            </div>
-                            
-                            <p>Comprehensive marine support services for ENI's offshore drilling operations in the Mediterranean Sea.</p>
-                            
-                            <ul class="project-features">
-                                <li>Vessel agency services</li>
-                                <li>Stevedoring operations</li>
-                                <li>Crew changes and provisions</li>
-                                <li>Port coordination</li>
-                                <li>Emergency response planning</li>
-                            </ul>
-                            
-                            <div class="project-cta">
-                                <a href="references.htm#eni" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Read Case Study</span>
-                                </a>
-                                <div class="project-tags">
-                                    <span class="tag" style="background: #1e40af; color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem;">North Africa</span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Project 4: Iraq Ministry of Oil -->
-                    <article class="project-card fade-in-up active region-me service-heavy">
-                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="Iraq Ministry of Oil Infrastructure"
-                             class="project-image">
-                        <div class="project-content">
-                            <div class="project-header">
-                                <div>
-                                    <h3 class="project-title">Iraq Ministry of Oil Infrastructure Transport</h3>
-                                    <p class="project-subtitle">Basra, Iraq • 2022-2023</p>
-                                </div>
-                                <div class="client-logo">
-                                    <i class="fas fa-landmark" style="font-size: 2rem; color: var(--color-primary);"></i>
-                                </div>
-                            </div>
-                            
-                            <div class="project-meta">
-                                <div class="meta-item">
-                                    <i class="fas fa-calendar-alt meta-icon"></i>
-                                    <span>12 Months</span>
-                                </div>
-                                <div class="meta-item">
-                                    <i class="fas fa-money-bill-wave meta-icon"></i>
-                                    <span>€6M Contract</span>
-                                </div>
-                                <div class="meta-item">
-                                    <i class="fas fa-road meta-icon"></i>
-                                    <span>500km Route</span>
-                                </div>
-                            </div>
-                            
-                            <p>Transport of critical oil infrastructure components through challenging security environments in Southern Iraq.</p>
-                            
-                            <ul class="project-features">
-                                <li>Security coordination with Iraqi forces</li>
-                                <li>Route clearance and road improvement</li>
-                                <li>Customs clearance facilitation</li>
-                                <li>24/7 security escort</li>
-                                <li>Zero security incidents</li>
-                            </ul>
-                            
-                            <div class="project-cta">
-                                <a href="references.htm#iraq-oil" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>View Security Protocol</span>
-                                </a>
-                                <div class="project-tags">
-                                    <span class="tag" style="background: #059669; color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem;">Middle East</span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Project 5: European Pipeline Project -->
-                    <article class="project-card fade-in-up active region-eu service-heavy">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="European Pipeline Project"
-                             class="project-image">
-                        <div class="project-content">
-                            <div class="project-header">
-                                <div>
-                                    <h3 class="project-title">Trans-European Pipeline Components</h3>
-                                    <p class="project-subtitle">Germany to Italy • 2021</p>
-                                </div>
-                                <div class="client-logo">
-                                    <i class="fas fa-gas-pump" style="font-size: 2rem; color: var(--color-primary);"></i>
-                                </div>
-                            </div>
-                            
-                            <div class="project-meta">
-                                <div class="meta-item">
-                                    <i class="fas fa-calendar-alt meta-icon"></i>
-                                    <span>6 Months</span>
-                                </div>
-                                <div class="meta-item">
-                                    <i class="fas fa-money-bill-wave meta-icon"></i>
-                                    <span>€4.5M Contract</span>
-                                </div>
-                                <div class="meta-item">
-                                    <i class="fas fa-ruler-combined meta-icon"></i>
-                                    <span>Oversized Loads</span>
-                                </div>
-                            </div>
-                            
-                            <p>Transport of oversized pipeline components across 4 European countries with complex permit coordination.</p>
-                            
-                            <ul class="project-features">
-                                <li>Multi-country permit acquisition</li>
-                                <li>Route planning across 1500km</li>
-                                <li>Bridge reinforcement coordination</li>
-                                <li>Night transport scheduling</li>
-                                <li>Environmental compliance</li>
-                            </ul>
-                            
-                            <div class="project-cta">
-                                <a href="references.htm#europe-pipeline" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>View Route Map</span>
-                                </a>
-                                <div class="project-tags">
-                                    <span class="tag" style="background: #7c3aed; color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem;">Europe</span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Project 6: Offshore Wind Farm Support -->
-                    <article class="project-card fade-in-up active region-eu service-marine">
-                        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="Offshore Wind Farm Logistics"
-                             class="project-image">
-                        <div class="project-content">
-                            <div class="project-header">
-                                <div>
-                                    <h3 class="project-title">North Sea Wind Farm Logistics</h3>
-                                    <p class="project-subtitle">North Sea • 2020-2021</p>
-                                </div>
-                                <div class="client-logo">
-                                    <i class="fas fa-fan" style="font-size: 2rem; color: var(--color-primary);"></i>
-                                </div>
-                            </div>
-                            
-                            <div class="project-meta">
-                                <div class="meta-item">
-                                    <i class="fas fa-calendar-alt meta-icon"></i>
-                                    <span>18 Months</span>
-                                </div>
-                                <div class="meta-item">
-                                    <i class="fas fa-money-bill-wave meta-icon"></i>
-                                    <span>€9M Contract</span>
-                                </div>
-                                <div class="meta-item">
-                                    <i class="fas fa-wind meta-icon"></i>
-                                    <span>50 Turbines</span>
-                                </div>
-                            </div>
-                            
-                            <p>Marine logistics support for offshore wind farm installation in challenging North Sea conditions.</p>
-                            
-                            <ul class="project-features">
-                                <li>Specialist vessel coordination</li>
-                                <li>Weather window optimization</li>
-                                <li>Component storage management</li>
-                                <li>Port operations coordination</li>
-                                <li>Safety compliance in harsh conditions</li>
-                            </ul>
-                            
-                            <div class="project-cta">
-                                <a href="references.htm#wind-farm" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>View Weather Strategy</span>
-                                </a>
-                                <div class="project-tags">
-                                    <span class="tag" style="background: #7c3aed; color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem;">Europe</span>
+                                    <span class="tag" style="background: #1e40af;">Baker Hughes</span>
+                                    <span class="tag" style="background: var(--color-heavy);">Heavy Transport</span>
+                                    <span class="tag" style="background: #059669;">North Africa</span>
                                 </div>
                             </div>
                         </div>
@@ -2393,56 +1871,36 @@
             </div>
         </section>
 
-        <!-- Timeline Section -->
-        <section class="timeline-section" aria-labelledby="timeline-title">
+        <!-- Client Focus Section -->
+        <section class="client-focus-section" aria-labelledby="clients-title">
             <div class="container">
-                <h2 id="timeline-title" class="section-title fade-in-up">Our Project Timeline</h2>
+                <h2 id="clients-title" class="section-title fade-in-up">Our Premium Clients</h2>
                 <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
-                    Journey through our major milestones and project achievements over the years
+                    Strategic partnerships with industry leaders
                 </p>
                 
-                <div class="timeline-container fade-in-up">
-                    <div class="timeline-line"></div>
+                <div class="client-grid fade-in-up">
+                    <div class="client-card">
+                        <div class="client-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>TotalEnergie</h3>
+                        <p>Global energy company with operations in 130+ countries. One of the seven "Supermajor" oil companies.</p>
+                        <div class="project-tags" style="justify-content: center; margin-top: var(--space-md);">
+                            <span class="tag" style="background: #FFA41C;">Since 2020</span>
+                            <span class="tag" style="background: #059669;">Supply Base Ops</span>
+                        </div>
+                    </div>
                     
-                    <div class="timeline-items">
-                        <div class="timeline-item fade-in-up">
-                            <div class="timeline-year">2023</div>
-                            <h3>Iraq Ministry of Oil Project</h3>
-                            <p>Successfully completed transport of critical infrastructure in Southern Iraq with zero security incidents.</p>
-                            <div class="project-tags">
-                                <span class="tag" style="background: #059669; color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem; margin-right: 8px;">Middle East</span>
-                                <span class="tag" style="background: var(--color-accent); color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem;">Heavy Transport</span>
-                            </div>
+                    <div class="client-card">
+                        <div class="client-icon">
+                            <i class="fas fa-industry"></i>
                         </div>
-                        
-                        <div class="timeline-item fade-in-up" style="animation-delay: 0.1s;">
-                            <div class="timeline-year">2022</div>
-                            <h3>Total Energy Supply Base Extension</h3>
-                            <p>Extended contract for 3 more years based on exceptional performance and safety record.</p>
-                            <div class="project-tags">
-                                <span class="tag" style="background: #1e40af; color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem; margin-right: 8px;">North Africa</span>
-                                <span class="tag" style="background: var(--color-accent); color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem;">Supply Base</span>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item fade-in-up" style="animation-delay: 0.2s;">
-                            <div class="timeline-year">2021</div>
-                            <h3>Baker Hughes Libya Operations</h3>
-                            <p>Completed 165-ton heavy transport project through challenging Libyan terrain.</p>
-                            <div class="project-tags">
-                                <span class="tag" style="background: #1e40af; color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem; margin-right: 8px;">North Africa</span>
-                                <span class="tag" style="background: var(--color-accent); color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem;">Heavy Transport</span>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item fade-in-up" style="animation-delay: 0.3s;">
-                            <div class="timeline-year">2020</div>
-                            <h3>European Pipeline Project</h3>
-                            <p>Successfully coordinated multi-country transport of oversized pipeline components.</p>
-                            <div class="project-tags">
-                                <span class="tag" style="background: #7c3aed; color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem; margin-right: 8px;">Europe</span>
-                                <span class="tag" style="background: var(--color-accent); color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem;">Heavy Transport</span>
-                            </div>
+                        <h3>Baker Hughes</h3>
+                        <p>American industrial service company and one of the world's largest oil field services companies.</p>
+                        <div class="project-tags" style="justify-content: center; margin-top: var(--space-md);">
+                            <span class="tag" style="background: #1e40af;">Since 2021</span>
+                            <span class="tag" style="background: #dc2626;">Heavy Transport</span>
                         </div>
                     </div>
                 </div>
@@ -2454,7 +1912,7 @@
             <div class="container">
                 <h2 id="stats-title" class="section-title fade-in-up">Project Performance Metrics</h2>
                 <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
-                    Data-driven insights from our project portfolio across all regions
+                    Excellence delivered for our premium clients
                 </p>
                 
                 <div class="stats-dashboard fade-in-up">
@@ -2463,9 +1921,9 @@
                             <div class="stat-icon">
                                 <i class="fas fa-calendar-check"></i>
                             </div>
-                            <div class="stat-number">98.7%</div>
-                            <div class="stat-label">On-Time Delivery Rate</div>
-                            <p class="stat-description">Across all projects since 2018</p>
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">On-Time Delivery</div>
+                            <p class="stat-description">For both TotalEnergie & Baker Hughes</p>
                         </div>
                         
                         <div class="stat-card">
@@ -2473,7 +1931,7 @@
                                 <i class="fas fa-shield-alt"></i>
                             </div>
                             <div class="stat-number">0</div>
-                            <div class="stat-label">Lost Time Incidents</div>
+                            <div class="stat-label">Safety Incidents</div>
                             <p class="stat-description">Perfect safety record maintained</p>
                         </div>
                         
@@ -2481,30 +1939,19 @@
                             <div class="stat-icon">
                                 <i class="fas fa-dollar-sign"></i>
                             </div>
-                            <div class="stat-number">€50M+</div>
-                            <div class="stat-label">Total Project Value</div>
-                            <p class="stat-description">Cumulative contract value</p>
+                            <div class="stat-number">€23M+</div>
+                            <div class="stat-label">Combined Value</div>
+                            <p class="stat-description">Total contract value delivered</p>
                         </div>
                         
                         <div class="stat-card">
                             <div class="stat-icon">
-                                <i class="fas fa-globe-americas"></i>
+                                <i class="fas fa-users"></i>
                             </div>
-                            <div class="stat-number">15+</div>
-                            <div class="stat-label">Countries Served</div>
-                            <p class="stat-description">Across 3 continents</p>
+                            <div class="stat-number">70+</div>
+                            <div class="stat-label">Team Members</div>
+                            <p class="stat-description">Dedicated project teams</p>
                         </div>
-                    </div>
-                    
-                    <h3 class="section-subtitle" style="text-align: center; margin-bottom: var(--space-xl);">Global Project Footprint</h3>
-                    <div class="map-visual">
-                        <!-- Map markers positioned via CSS/JS -->
-                        <div class="map-marker" style="top: 30%; left: 45%;" data-project="Tunisia"></div>
-                        <div class="map-marker" style="top: 35%; left: 52%;" data-project="Libya"></div>
-                        <div class="map-marker" style="top: 40%; left: 55%;" data-project="Iraq"></div>
-                        <div class="map-marker" style="top: 25%; left: 48%;" data-project="Italy"></div>
-                        <div class="map-marker" style="top: 20%; left: 50%;" data-project="Germany"></div>
-                        <div class="map-marker" style="top: 15%; left: 47%;" data-project="North Sea"></div>
                     </div>
                 </div>
             </div>
@@ -2515,51 +1962,36 @@
             <div class="container">
                 <h2 id="testimonials-title" class="section-title fade-in-up">Client Testimonials</h2>
                 <p class="lead text-center fade-in-up" style="max-width: 800px; margin: 0 auto var(--space-xxl);">
-                    What our clients say about working with us on major projects
+                    What our premium clients say about working with us
                 </p>
                 
                 <div class="testimonials-carousel fade-in-up">
                     <div class="testimonial-slide active">
                         <div class="testimonial-quote">
-                            "GPS International demonstrated exceptional professionalism in managing our supply base operations. Their attention to safety and efficiency exceeded our expectations."
+                            "GPS International's management of our Zarzis supply base has been exceptional. Their attention to safety protocols and operational efficiency has exceeded our expectations, resulting in a contract extension for three additional years."
                         </div>
                         <div class="testimonial-author">
-                            <div class="author-avatar">
+                            <div class="author-avatar" style="background: linear-gradient(135deg, #FFA41C, #ff8c00);">
                                 JD
                             </div>
                             <div class="author-info">
                                 <h4>Jean Dupont</h4>
-                                <div class="author-company">Operations Director, Total Energy</div>
+                                <div class="author-company">Operations Director, TotalEnergie Tunisia</div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="testimonial-slide">
                         <div class="testimonial-quote">
-                            "The heavy transport project in Libya was completed ahead of schedule despite significant challenges. GPS International's expertise in complex logistics is unmatched."
+                            "The heavy transport project in Libya presented significant challenges, but GPS International's expertise in complex logistics and risk management ensured successful completion ahead of schedule. Their local knowledge and professional approach were invaluable."
                         </div>
                         <div class="testimonial-author">
-                            <div class="author-avatar">
+                            <div class="author-avatar" style="background: linear-gradient(135deg, #1e40af, #3b82f6);">
                                 MS
                             </div>
                             <div class="author-info">
                                 <h4>Mohamed Salim</h4>
-                                <div class="author-company">Project Manager, Baker Hughes</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-slide">
-                        <div class="testimonial-quote">
-                            "Working with GPS International on our marine operations has been a game-changer. Their local knowledge and global standards are the perfect combination."
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                AR
-                            </div>
-                            <div class="author-info">
-                                <h4>Ahmed Rahman</h4>
-                                <div class="author-company">Logistics Manager, ENI</div>
+                                <div class="author-company">Project Manager, Baker Hughes Libya</div>
                             </div>
                         </div>
                     </div>
@@ -2581,19 +2013,19 @@
             <div class="container">
                 <div class="cta-content fade-in-up">
                     <div class="cta-text">
-                        <h2 id="cta-title" class="cta-title">Start Your Next Project With Us</h2>
+                        <h2 id="cta-title" class="cta-title">Become Our Next Success Story</h2>
                         <p class="cta-description">
-                            Contact our project management team to discuss your specific requirements and get a tailored proposal.
+                            Join industry leaders like TotalEnergie and Baker Hughes. Contact us to discuss how we can deliver excellence for your projects.
                         </p>
                     </div>
                     <div class="cta-actions">
                         <a href="contact.htm" class="btn btn-primary">
                             <i class="fas fa-envelope"></i>
-                            <span>Request a Proposal</span>
+                            <span>Start Your Project</span>
                         </a>
-                        <a href="services.htm" class="btn btn-secondary">
-                            <i class="fas fa-cogs"></i>
-                            <span>Explore Services</span>
+                        <a href="references.htm" class="btn btn-secondary">
+                            <i class="fas fa-star"></i>
+                            <span>View All References</span>
                         </a>
                     </div>
                 </div>
@@ -2605,7 +2037,6 @@
     <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
-                <!-- Company Info avec la MÊME IMAGE de logo - TRANSPARENT BACKGROUND -->
                 <div class="footer-section">
                     <div class="footer-logo">
                         <img src="GPS-Logo-2012.JPG" alt="GPS International Logo" class="footer-logo-image">
@@ -2615,7 +2046,7 @@
                         </div>
                     </div>
                     <p class="footer-description">
-                        Delivering excellence in oil and gas logistics since 2008. Trusted by major energy companies worldwide.
+                        Trusted by industry leaders for excellence in oil and gas logistics. Delivering premium solutions since 2008.
                     </p>
                     <div class="contact-info">
                         <div class="contact-item">
@@ -2633,7 +2064,6 @@
                     </div>
                 </div>
                 
-                <!-- Quick Links -->
                 <div class="footer-section">
                     <h3 class="footer-title">Quick Links</h3>
                     <nav aria-label="Footer Navigation">
@@ -2648,7 +2078,6 @@
                     </nav>
                 </div>
                 
-                <!-- Company Pages -->
                 <div class="footer-section">
                     <h3 class="footer-title">Company</h3>
                     <nav aria-label="Company Navigation">
@@ -2662,10 +2091,8 @@
                         </ul>
                     </nav>
                 </div>
-                
-
+            </div>
             
-            <!-- Copyright -->
             <div class="footer-bottom">
                 <div class="copyright">
                     <p>&copy; <span id="current-year">2024</span> GPS International. All rights reserved.</p>
@@ -2694,7 +2121,7 @@
             const header = document.querySelector('.site-header');
             const secondaryNav = document.querySelector('.secondary-navigation');
             
-            window.addEventListener('scroll', () => {
+            function updateHeader() {
                 if (window.scrollY > 50) {
                     header.classList.add('scrolled');
                     secondaryNav.classList.add('visible');
@@ -2702,14 +2129,18 @@
                     header.classList.remove('scrolled');
                     secondaryNav.classList.remove('visible');
                 }
-            });
+            }
+            
+            window.addEventListener('scroll', updateHeader);
+            updateHeader(); // Initial check
             
             // Mobile navigation toggle
             const mobileToggle = document.querySelector('.mobile-menu-toggle');
             const primaryNav = document.getElementById('primary-navigation');
             
             if (mobileToggle && primaryNav) {
-                mobileToggle.addEventListener('click', () => {
+                mobileToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
                     mobileToggle.setAttribute('aria-expanded', !isExpanded);
                     mobileToggle.classList.toggle('active');
@@ -2719,7 +2150,7 @@
                 
                 // Close menu when clicking outside
                 document.addEventListener('click', (e) => {
-                    if (!primaryNav.contains(e.target) && !mobileToggle.contains(e.target)) {
+                    if (!primaryNav.contains(e.target) && !mobileToggle.contains(e.target) && primaryNav.classList.contains('active')) {
                         primaryNav.classList.remove('active');
                         mobileToggle.setAttribute('aria-expanded', 'false');
                         mobileToggle.classList.remove('active');
@@ -2744,11 +2175,19 @@
                             current += step;
                             if (current < target) {
                                 counter.textContent = Math.floor(current) + 
-                                    (counter.getAttribute('data-count') === '100' ? '%' : '+');
+                                    (counter.getAttribute('data-count') === '100' ? '%' : 
+                                     counter.getAttribute('data-count') === '2' ? '' : 
+                                     counter.getAttribute('data-count') === '54' ? '' : 
+                                     counter.getAttribute('data-count') === '23' ? 'M+' : 
+                                     counter.getAttribute('data-count') === '70' ? '+' : '+');
                                 requestAnimationFrame(updateCounter);
                             } else {
                                 counter.textContent = target + 
-                                    (counter.getAttribute('data-count') === '100' ? '%' : '+');
+                                    (counter.getAttribute('data-count') === '100' ? '%' : 
+                                     counter.getAttribute('data-count') === '2' ? '' : 
+                                     counter.getAttribute('data-count') === '54' ? '' : 
+                                     counter.getAttribute('data-count') === '23' ? 'M+' : 
+                                     counter.getAttribute('data-count') === '70' ? '+' : '');
                             }
                         };
                         
@@ -2760,7 +2199,7 @@
             
             counters.forEach(counter => observer.observe(counter));
             
-            // Project filtering system
+            // Project filtering system - SIMPLIFIED
             const filterButtons = document.querySelectorAll('.filter-btn');
             const projectCards = document.querySelectorAll('.project-card');
             
@@ -2775,14 +2214,12 @@
                     
                     // Show/hide projects based on filter
                     projectCards.forEach(card => {
+                        card.style.display = 'block';
                         if (filter === 'all') {
-                            card.classList.add('active');
                             card.style.display = 'block';
                         } else if (card.classList.contains(filter)) {
-                            card.classList.add('active');
                             card.style.display = 'block';
                         } else {
-                            card.classList.remove('active');
                             card.style.display = 'none';
                         }
                     });
@@ -2812,10 +2249,22 @@
                 });
                 
                 // Auto-rotate slides every 5 seconds
-                setInterval(() => {
+                let slideInterval = setInterval(() => {
                     currentSlide = (currentSlide + 1) % slides.length;
                     showSlide(currentSlide);
                 }, 5000);
+                
+                // Pause on hover
+                const carousel = document.querySelector('.testimonials-carousel');
+                if (carousel) {
+                    carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+                    carousel.addEventListener('mouseleave', () => {
+                        slideInterval = setInterval(() => {
+                            currentSlide = (currentSlide + 1) % slides.length;
+                            showSlide(currentSlide);
+                        }, 5000);
+                    });
+                }
             }
             
             // Back to top button
@@ -2843,6 +2292,8 @@
             const fadeObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
+                        const delay = entry.target.style.animationDelay || '0s';
+                        entry.target.style.animationDelay = delay;
                         entry.target.style.animationPlayState = 'running';
                         fadeObserver.unobserve(entry.target);
                     }
@@ -2867,40 +2318,6 @@
                     link.classList.remove('active');
                 }
             });
-            
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-            
-            // Map marker interactions
-            const mapMarkers = document.querySelectorAll('.map-marker');
-            mapMarkers.forEach(marker => {
-                marker.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translate(-50%, -50%) scale(1.3)';
-                });
-                
-                marker.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translate(-50%, -50%) scale(1)';
-                });
-            });
-            
-            // Initialize with secondary nav hidden
-            if (window.scrollY <= 50) {
-                secondaryNav.classList.remove('visible');
-            }
         });
     </script>
 </body>
