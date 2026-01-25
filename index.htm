@@ -178,7 +178,6 @@
             width: auto;
             transition: all var(--transition-fast);
             object-fit: contain;
-            /* Remove white background using blend mode */
             background: transparent !important;
             mix-blend-mode: multiply;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
@@ -189,7 +188,7 @@
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
         }
         
-        /* ==================== FOOTER LOGO STYLES - TRANSPARENT BACKGROUND ==================== */
+        /* ==================== FOOTER LOGO STYLES ==================== */
         .footer-logo-image {
             height: 50px;
             width: auto;
@@ -198,19 +197,12 @@
             background: transparent !important;
             padding: 8px;
             border-radius: var(--radius-sm);
-            /* For dark background - make logo white */
-            filter: 
-                brightness(0) 
-                invert(1)
-                drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
         
         .footer-logo:hover .footer-logo-image {
             transform: scale(1.05);
-            filter: 
-                brightness(0) 
-                invert(1)
-                drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+            filter: brightness(0) invert(1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
         }
         
         /* ==================== LOGO TEXT STYLES ==================== */
@@ -297,17 +289,22 @@
             box-shadow: var(--shadow-sm);
             padding: var(--space-sm) 0;
             transition: all var(--transition-normal);
+            height: 80px;
+            display: flex;
+            align-items: center;
         }
         
         .site-header.scrolled {
             padding: var(--space-xs) 0;
             box-shadow: var(--shadow-lg);
+            height: 70px;
         }
         
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
         }
         
         .logo-section {
@@ -405,14 +402,14 @@
             transform: scale(1.05);
         }
         
-        /* Secondary Navigation */
+        /* Secondary Navigation - CORRECTION SIMPLIFIÉE */
         .secondary-navigation {
             background: rgba(241, 245, 249, 0.95);
             backdrop-filter: blur(10px);
             border-top: 1px solid rgba(226, 232, 240, 0.5);
             border-bottom: 1px solid rgba(226, 232, 240, 0.5);
             position: fixed;
-            top: 80px;
+            top: 80px; /* Hauteur initiale du header */
             left: 0;
             right: 0;
             z-index: 999;
@@ -514,8 +511,12 @@
             background-attachment: fixed;
             position: relative;
             color: white;
+            padding-top: 80px; /* Hauteur du header */
             margin-top: -80px;
-            padding-top: 180px;
+        }
+        
+        .site-header.scrolled ~ main .hero-section {
+            padding-top: 70px; /* Hauteur réduite du header quand scrollé */
         }
         
         .hero-section:before {
@@ -996,6 +997,131 @@
             box-shadow: var(--shadow-md);
         }
         
+        /* ==================== GLOBAL OFFICES ==================== */
+        .global-offices {
+            width: 100%;
+        }
+
+        .office-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--space-md);
+            align-items: stretch;
+        }
+
+        .office-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all var(--transition-normal);
+            width: 170px;
+            min-height: 280px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .office-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .office-card-header {
+            padding: var(--space-sm) var(--space-md);
+            text-align: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 0.75rem;
+            min-height: 32px;
+        }
+
+        .office-country-icon {
+            font-size: 0.7rem;
+        }
+
+        .office-card-body {
+            padding: var(--space-md);
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .office-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-sm);
+            font-size: 1rem;
+        }
+
+        .office-city {
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: var(--space-xs);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .office-address {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.7rem;
+            line-height: 1.3;
+            margin-bottom: var(--space-sm);
+            flex: 1;
+        }
+
+        .office-contact {
+            margin-bottom: var(--space-sm);
+        }
+
+        .office-contact .contact-link {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.7rem;
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+        }
+
+        .office-contact .contact-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .office-badge {
+            background: rgba(249, 115, 22, 0.1);
+            color: var(--color-accent);
+            padding: 3px 6px;
+            border-radius: var(--radius-sm);
+            font-size: 0.6rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            font-weight: 500;
+            margin-top: auto;
+        }
+        
         /* ==================== TESTIMONIALS ==================== */
         .testimonials-section {
             background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
@@ -1216,131 +1342,6 @@
             transform: translateX(5px);
         }
         
-        /* ==================== GLOBAL OFFICES - IMPROVED HORIZONTAL STYLES ==================== */
-        .global-offices {
-            width: 100%;
-        }
-
-        .office-cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: var(--space-md);
-            align-items: stretch;
-        }
-
-        .office-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all var(--transition-normal);
-            width: 170px; /* Taille réduite pour être plus compact */
-            min-height: 280px;
-            box-shadow: var(--shadow-md);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .office-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-            border-color: rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .office-card-header {
-            padding: var(--space-sm) var(--space-md);
-            text-align: center;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--space-xs);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            font-size: 0.75rem;
-            min-height: 32px;
-        }
-
-        .office-country-icon {
-            font-size: 0.7rem;
-        }
-
-        .office-card-body {
-            padding: var(--space-md);
-            text-align: center;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .office-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto var(--space-sm);
-            font-size: 1rem;
-        }
-
-        .office-city {
-            color: white;
-            font-size: 0.9rem;
-            margin-bottom: var(--space-xs);
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        .office-address {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.7rem;
-            line-height: 1.3;
-            margin-bottom: var(--space-sm);
-            flex: 1;
-        }
-
-        .office-contact {
-            margin-bottom: var(--space-sm);
-        }
-
-        .office-contact .contact-link {
-            color: white;
-            background: rgba(255, 255, 255, 0.1);
-            padding: var(--space-xs) var(--space-sm);
-            border-radius: var(--radius-sm);
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 0.7rem;
-            transition: all var(--transition-fast);
-            white-space: nowrap;
-        }
-
-        .office-contact .contact-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: var(--color-accent);
-            transform: translateY(-2px);
-        }
-
-        .office-badge {
-            background: rgba(249, 115, 22, 0.1);
-            color: var(--color-accent);
-            padding: 3px 6px;
-            border-radius: var(--radius-sm);
-            font-size: 0.6rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
-            font-weight: 500;
-            margin-top: auto;
-        }
-        
         /* ==================== FOOTER ==================== */
         .site-footer {
             background: var(--color-dark);
@@ -1363,13 +1364,22 @@
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: var(--space-xxl);
             padding: var(--space-xxxl) 0 var(--space-xxl);
         }
         
         .footer-section {
             position: relative;
+            padding: var(--space-lg);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .footer-section:first-child {
+            background: rgba(255, 255, 255, 0.03);
         }
         
         .footer-logo {
@@ -1392,14 +1402,14 @@
             margin-bottom: var(--space-lg);
             padding-bottom: var(--space-sm);
             border-bottom: 2px solid var(--color-accent);
+            display: inline-block;
         }
         
         .footer-links {
             list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: var(--space-sm);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
         }
         
         .footer-link {
@@ -1410,11 +1420,28 @@
             gap: var(--space-sm);
             padding: var(--space-xs) 0;
             font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-link:before {
+            content: '';
+            position: absolute;
+            left: -100%;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--color-accent);
+            transition: left 0.3s ease;
         }
         
         .footer-link:hover {
             color: var(--color-accent);
             transform: translateX(5px);
+        }
+        
+        .footer-link:hover:before {
+            left: 0;
         }
         
         .footer-address {
@@ -1432,38 +1459,73 @@
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: var(--space-sm);
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
         }
         
         .contact-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: var(--space-sm);
             color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
         }
         
         .contact-icon {
             color: var(--color-accent);
             min-width: 20px;
+            margin-top: 2px;
         }
         
         .contact-link {
             color: rgba(255, 255, 255, 0.7);
+            transition: color var(--transition-fast);
         }
         
         .contact-link:hover {
             color: var(--color-accent);
         }
         
+        .contact-text {
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+        
         .footer-bottom {
             padding: var(--space-xl) 0;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
+            margin-top: var(--space-xl);
         }
         
         .copyright {
             color: rgba(255, 255, 255, 0.5);
             font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .social-links {
+            margin-bottom: var(--space-lg);
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-full);
+            color: white;
+            margin: 0 var(--space-sm);
+            transition: all var(--transition-fast);
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background: var(--color-accent);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
         }
         
         /* ==================== BACK TO TOP ==================== */
@@ -1525,6 +1587,11 @@
             
             .office-card {
                 width: 160px;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-xl);
             }
         }
         
@@ -1640,7 +1707,7 @@
             }
             
             .hero-section {
-                padding-top: 140px;
+                padding-top: 80px;
                 min-height: auto;
             }
             
@@ -1909,13 +1976,8 @@
                 </ul>
             </nav>
             
-            <!-- CTA Button -->
-            <div class="header-cta">
-                <a href="contact.htm" class="cta-button">
-                    <span>Get Your Quote</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
+            <!-- CTA Button - SUPPRIMÉ -->
+            
         </div>
         
         <!-- Secondary Navigation - CORRECTED LINKS -->
@@ -2015,7 +2077,7 @@
                             </div>
                             <div>
                                 <div style="font-weight: 600; color: var(--color-dark);">Real-time Tracking</div>
-                                <div style="font-size: 0.9rem; color: #64748b;">Live shipment monitoring</div>
+                                <div style="font-size: 0.9rem; color: #64748b;">Live Inventory monitoring </div>
                             </div>
                         </div>
                         
@@ -2062,9 +2124,10 @@
                     
                     <!-- Technip -->
                     <div class="client-logo">
+
                         <img src="technip.JPG" 
                              alt="Technip Logo"
-                             style="width: 70px paddings 70px">
+                             style="width: 100px; padding: -50px;">
                     </div>
                 </div>
             </div>
@@ -2124,45 +2187,45 @@
                         </div>
                     </div>
                     
-                    <!-- Service 4: Hot Heavy Transport -->
+                    <!-- Service 4: Customs and Freight -->
                     <div class="service-card equipment fade-in-up" style="animation-delay: 0.3s;">
                         <div class="service-icon" style="background: linear-gradient(135deg, var(--color-equipment), #ea580c);">
                             <i class="fas fa-fire"></i>
                         </div>
                         <h3>Customs and Freight</h3>
-                        <p> Complete management of customs clearance and international freight forwarding services.</p>
+                        <p>Complete management of customs clearance and international freight forwarding services.</p>
                         <div class="service-cta">
-                            <a href="services.htm#heavy-transport" class="service-link" style="display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-equipment); font-weight: 600;">
+                            <a href="services.htm#customs-freight" class="service-link" style="display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-equipment); font-weight: 600;">
                                 <span>Learn More</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                     
-                    <!-- Service 5: Engineering Support -->
+                    <!-- Service 5: Heavy Transport -->
                     <div class="service-card procurement fade-in-up" style="animation-delay: 0.4s;">
                         <div class="service-icon" style="background: linear-gradient(135deg, var(--color-procurement), #0891b2);">
                             <i class="fas fa-cogs"></i>
                         </div>
-                        <h3>Heavy transport</h3>
+                        <h3>Heavy Transport</h3>
                         <p>Specialized transport of oversized and time-critical equipment with temperature-controlled solutions.</p>
                         <div class="service-cta">
-                            <a href="services.htm#engineering" class="service-link" style="display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-procurement); font-weight: 600;">
+                            <a href="services.htm#heavy-transport" class="service-link" style="display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-procurement); font-weight: 600;">
                                 <span>Learn More</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                     
-                    <!-- Service 6: Customs and Freight -->
+                    <!-- Service 6: Engineering Support -->
                     <div class="service-card supply fade-in-up" style="animation-delay: 0.5s;">
                         <div class="service-icon">
                             <i class="fas fa-warehouse"></i>
                         </div>
-                        <h3>engineering support</h3>
+                        <h3>Engineering Support</h3>
                         <p>Technical engineering solutions including equipment installation, maintenance, and field support.</p>
                         <div class="service-cta">
-                            <a href="services.htm#customs" class="service-link" style="display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-supply); font-weight: 600;">
+                            <a href="services.htm#engineering-support" class="service-link" style="display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--color-supply); font-weight: 600;">
                                 <span>Learn More</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
@@ -2178,7 +2241,8 @@
                 </div>
             </div>
         </section>
-         <!-- Value Propositions -->
+        
+        <!-- Value Propositions -->
         <section class="value-section section" aria-labelledby="value-title">
             <div class="container">
                 <h2 id="value-title" class="section-title fade-in-up">Why Choose GPS International?</h2>
@@ -2313,9 +2377,6 @@
             </div>
         </section>
 
-       
-
-        
         <!-- Testimonials -->
         <section class="testimonials-section section" aria-labelledby="testimonials-title">
             <div class="container">
@@ -2392,7 +2453,7 @@
                     <div class="cta-actions">
                         <a href="contact.htm" class="btn btn-primary">
                             <i class="fas fa-envelope"></i>
-                            <span>Get Your Quote</span>
+                            <span>Contact Us</span>
                         </a>
                         <a href="services.htm" class="btn btn-secondary">
                             <i class="fas fa-cogs"></i>
@@ -2403,11 +2464,12 @@
             </div>
         </section>
     </main>
-         <!-- ==================== FOOTER ==================== -->
+
+    <!-- ==================== FOOTER - FIXED VERSION ==================== -->
     <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
-                <!-- Company Info avec la MÊME IMAGE de logo - TRANSPARENT BACKGROUND -->
+                <!-- Company Info with Logo -->
                 <div class="footer-section">
                     <div class="footer-logo">
                         <img src="GPS-Logo-2012.JPG" alt="GPS International Logo" class="footer-logo-image">
@@ -2432,6 +2494,11 @@
                             <i class="fas fa-envelope contact-icon"></i>
                             <a href="mailto:info@gps-oillogistics.com" class="contact-link">info@gps-oillogistics.com</a>
                         </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <span class="contact-text">Parc d'activites economiques de Zarzis<br>
+                            BP 91 - Port de Zarzis 4337, Tunisia</span>
+                        </div>
                     </div>
                 </div>
                 
@@ -2440,7 +2507,7 @@
                     <h3 class="footer-title">Quick Links</h3>
                     <nav aria-label="Footer Navigation">
                         <ul class="footer-links">
-                            <li><a href="index.htm" class="footer-link active"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="index.htm" class="footer-link"><i class="fas fa-home"></i> Home</a></li>
                             <li><a href="services.htm" class="footer-link"><i class="fas fa-cogs"></i> Services</a></li>
                             <li><a href="references.htm" class="footer-link"><i class="fas fa-star"></i> References</a></li>
                             <li><a href="projects.htm" class="footer-link"><i class="fas fa-project-diagram"></i> Projects</a></li>
@@ -2459,52 +2526,12 @@
                             <li><a href="why-zarzis.htm" class="footer-link"><i class="fas fa-map-marker-alt"></i> Why Zarzis?</a></li>
                             <li><a href="partners.htm" class="footer-link"><i class="fas fa-handshake"></i> Partners</a></li>
                             <li><a href="faq.htm" class="footer-link"><i class="fas fa-question-circle"></i> FAQ</a></li>
-                            <li><a href="privacy.htm" class="footer-link"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
-                            <li><a href="terms.htm" class="footer-link"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+                            
                         </ul>
                     </nav>
                 </div>
                 
-                <!-- Contact Information - ADDED THIS SECTION -->
-                <div class="footer-section">
-                    <h3 class="footer-title">Contact Information</h3>
-                    <address class="footer-address">
-                        <strong>Tunisia Headquarters:</strong><br>
-                        Parc d'activites economiques de Zarzis<br>
-                        BP 91 - Port de Zarzis 4337<br>
-                        Tunisia
-                    </address>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-phone contact-icon"></i>
-                            <a href="tel:+218213403749" class="contact-link">+218 21 340 3749</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone contact-icon"></i>
-                            <a href="tel:+9647504325583" class="contact-link">+964 750 432 5583</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock contact-icon"></i>
-                            <a href="tel:+441224015670" class="contact-link">24/7 Emergency Line</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Copyright -->
-            <div class="footer-bottom">
-                <div class="copyright">
-                    <p>&copy; <span id="current-year">2024</span> GPS International. All rights reserved.</p>
-                    <p>
-                        <a href="privacy.htm" class="footer-link">Privacy Policy</a> | 
-                        <a href="terms.htm" class="footer-link">Terms of Service</a> | 
-                        <a href="sitemap.htm" class="footer-link">Sitemap</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-           
+               
     </footer>
 
     <!-- ==================== BACK TO TOP ==================== -->
@@ -2515,12 +2542,18 @@
     <!-- ==================== JAVASCRIPT ==================== -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Set current year
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-            
             // Header scroll effect
             const header = document.querySelector('.site-header');
             const secondaryNav = document.querySelector('.secondary-navigation');
+            
+            // Fonction pour mettre à jour la position de la navigation secondaire
+            function updateSecondaryNavPosition() {
+                if (header.classList.contains('scrolled')) {
+                    secondaryNav.style.top = '70px';
+                } else {
+                    secondaryNav.style.top = '80px';
+                }
+            }
             
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -2530,7 +2563,19 @@
                     header.classList.remove('scrolled');
                     secondaryNav.classList.remove('visible');
                 }
+                updateSecondaryNavPosition();
             });
+            
+            // Mettre à jour la position initiale
+            updateSecondaryNavPosition();
+            
+            // Écouter les transitions du header
+            header.addEventListener('transitionend', function() {
+                updateSecondaryNavPosition();
+            });
+            
+            // Mettre à jour aussi sur resize
+            window.addEventListener('resize', updateSecondaryNavPosition);
             
             // Mobile navigation toggle
             const mobileToggle = document.querySelector('.mobile-menu-toggle');
@@ -2678,18 +2723,6 @@
                             behavior: 'smooth'
                         });
                     }
-                });
-            });
-            
-            // Office marker interactions
-            const officeMarkers = document.querySelectorAll('.office-marker');
-            officeMarkers.forEach(marker => {
-                marker.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                });
-                
-                marker.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translate(-50%, -50%) scale(1)';
                 });
             });
             
